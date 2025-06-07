@@ -1,11 +1,31 @@
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
+import {
+  HomePage,
+  AboutUsPage,
+  LoginPage,
+  PartnershipPage,
+  ProductsPage,
+  ProductDetailsPage,
+} from "./pages";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      hello
-    </div>
+    <Router>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about-us" element={<AboutUsPage />} />
+          <Route path="/partnership" element={<PartnershipPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:id" element={<ProductDetailsPage />} />
+        </Route>
+
+        {/* Login page has no layout */}
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
