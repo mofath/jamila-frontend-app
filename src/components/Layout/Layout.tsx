@@ -7,7 +7,7 @@ const Layout: React.FC = () => {
   return (
     <div className="layout-container">
       <Header />
-      <main className="main-content bg-red-300">
+      <main className="main-content">
         <Outlet /> {/* This is where the routed page will render */}
       </main>
       <Footer />

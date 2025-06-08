@@ -1,0 +1,23 @@
+.floating-review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.floating-review-card__review {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.floating-review-card__review h4 {
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.floating-review-card__review p {
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  font-size: 16px;
+}

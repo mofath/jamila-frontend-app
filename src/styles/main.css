@@ -1,0 +1,8 @@
+/* import settings */
+@import url(./normalize.css);
+@import url(./colors.css);
+@import url(./typography.css);
+@import url(./spacing.css);
+
+/* import components */
+@import url(./elements.css);

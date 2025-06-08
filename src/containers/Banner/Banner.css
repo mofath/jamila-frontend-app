@@ -1,0 +1,62 @@
+.banner {
+  width: 100%;
+}
+
+.banner__wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+
+.banner__text-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 64px 0 48px 0;
+  font-family: var(--font-outfit);
+}
+
+.banner__text-wrapper p {
+  /* font-family: Outfit; */
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 100%;
+  letter-spacing: 2%;
+  text-align: center;
+}
+
+.banner__image {
+  background-image: url("/public/assets/images/home-banner-bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  width: 100%;
+  height: 600px;
+  display: block;
+}
+
+.banner__content {
+  position: relative;
+}
+
+.floating-review-card--bottom-left {
+  position: absolute;
+  bottom: 16px;
+  left: 100px;
+  width: 373px;
+  background: var(--gradient-warm-to-yellow);
+  color: var(--color-text-300);
+}
+
+.floating-review-card--top-right {
+  position: absolute;
+  top: 50px;
+  right: 200px;
+  width: 373px;
+  background: var(--gradient-warm-to-olive);
+  color: var(--color-text-300);
+}
