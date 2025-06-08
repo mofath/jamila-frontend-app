@@ -7,8 +7,8 @@ const Banner = () => {
     <div className="banner">
       <div className="banner__container container mx-auto">
         <div className="banner__text-wrapper">
-          <p> Crafting Wellness, One Glass </p>
-          <p> at a Time Meet Our Juice Shop</p>
+          <p className="heading-1"> Crafting Wellness, One Glass </p>
+          <p className="heading-1"> at a Time Meet Our Juice Shop</p>
         </div>
       </div>
       <div className="banner__wrapper">
