@@ -2,61 +2,66 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;400;700&family=Outfit:wght@100;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;400;700&family=Outfit:wght@100;400;700&family=Caveat:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@100;400;700&family=Outfit:wght@100;400;700&family=Caveat:wght@400;700&family=Poppins:wght@100;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Jost:wght@100;400;700&family=Outfit:wght@100;400;700&family=Poppins:wght@100;400;700&family=Nunito:wght@200;400;600;700&display=swap");
 
 :root {
   --font-jost: "Jost", sans-serif;
   --font-outfit: "Outfit", sans-serif;
   --font-caveat: "Caveat", cursive;
   --font-poppins: "Poppins", sans-serif;
-}
-
-body {
-  font-family: var(--font-primary);
+  --font-nunito: "Nunito", sans-serif;
 }
 
 .heading-1 {
   font-family: var(--font-outfit);
-  font-family: Outfit;
   font-weight: 800;
   font-size: 72px;
-  line-height: 100%;
   letter-spacing: 2%;
+  line-height: normal;
 }
 
 .heading-2 {
   font-family: var(--font-outfit);
+
   font-weight: 700;
   font-size: 54px;
-  line-height: 100%;
   letter-spacing: 0%;
+  line-height: normal;
 }
 
 .heading-3 {
-  font-size: 24px;
-  font-weight: 600;
   font-family: var(--font-outfit);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.heading-4 {
+  font-family: var(--font-outfit);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .heading-5 {
   font-family: var(--font-outfit);
   font-weight: 600;
   font-size: 24px;
-  line-height: 100%;
   letter-spacing: 0%;
+  line-height: normal;
 }
 
 .subtitle {
   font-family: var(--font-caveat);
   font-weight: 700;
   font-size: 32px;
-  line-height: 100%;
   letter-spacing: 0%;
+  line-height: normal;
 }
 
 .text {
   font-family: var(--font-poppins);
   font-weight: 400;
   font-size: 16px;
-  line-height: 28px;
   letter-spacing: 2%;
 }

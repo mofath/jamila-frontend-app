@@ -1,5 +1,7 @@
 import Banner from "../../containers/Banner/Banner";
+import BrandStorySection from "../../containers/BrandStorySection/BrandStorySection";
 import NutritionStats from "../../containers/NutritionStats/NutritionStats";
+import TopSellingProducts from "../../containers/TopSellingProducts/TopSellingProducts";
 import "./HomePage.css";
 
 const HomePage: React.FC = () => {
@@ -7,6 +9,8 @@ const HomePage: React.FC = () => {
     <div className="home-page">
       <Banner />
       <NutritionStats />
+      <BrandStorySection />
+      <TopSellingProducts />
     </div>
   );
 };

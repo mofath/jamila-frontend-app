@@ -1,0 +1,44 @@
+.brand-story-section {
+  padding: 4rem 1rem;
+  background-color: #fff;
+}
+
+.brand-story-section__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.brand-story-section__image-wrapper {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.brand-story-section__image {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.brand-story-section__content {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+.brand-story-section__content .subtitle {
+  color: var(--color-text-600);
+}
+
+.brand-story-section__content .heading-2 {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+
+.brand-story-section__content .text {
+  color: var(--color-text-400);
+}
