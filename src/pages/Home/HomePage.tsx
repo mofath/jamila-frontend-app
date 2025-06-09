@@ -1,4 +1,5 @@
 import Banner from "../../containers/Banner/Banner";
+import BenefitsSection from "../../containers/BenefitsSection/BenefitsSection";
 import BrandStorySection from "../../containers/BrandStorySection/BrandStorySection";
 import NutritionStats from "../../containers/NutritionStats/NutritionStats";
 import OurStorySection from "../../containers/OurStorySection/OurStorySection";
@@ -15,6 +16,7 @@ const HomePage: React.FC = () => {
       <TopSellingProducts />
       <TeamSection />
       <OurStorySection />
+      <BenefitsSection />
     </div>
   );
 };
