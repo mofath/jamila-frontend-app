@@ -1,0 +1,28 @@
+.our-story-section__container  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.our-story-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 600px;
+}
+
+.our-story-section__content .subtitle {
+  color: var(--color-text-600);
+}
+
+.our-story-section__content .text {
+  color: var(--color-text-400);
+}
+
+.our-story-section__decoration {
+  max-width: 553px;
+  width: 553px;
+  height: 500px;
+  position: relative;
+}
+
