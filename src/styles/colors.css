@@ -34,4 +34,10 @@
   --gradient-orange: linear-gradient(90deg, #ffb168 0%, #ffd359 100%);
   --gradient-grapes: linear-gradient(90deg, #9479a6 0%, #9f71bd 116.62%);
   --gradient-kiwi: linear-gradient(90deg, #d0e484 0%, #a1bc1b 116.62%);
+
+  --gradient-golden: linear-gradient(
+    180deg,
+    #fff4d7 0%,
+    rgba(255, 244, 215, 0) 100%
+  );
 }
