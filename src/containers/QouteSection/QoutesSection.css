@@ -1,0 +1,39 @@
+.qoute-section__qoute {
+  text-align: center;
+  border: 1px dashed #f9b401;
+  background: #fffdf3;
+  width: 100%;
+  height: 500px;
+  padding: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.qout-section__heading img {
+  width: 64px;
+}
+
+.qout-section__footer {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.qout-section__footer img {
+  width: 80px;
+}
+
+.qoute-section__qoute p {
+  font-family: Caveat;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
