@@ -8,9 +8,12 @@
   --color-light-green: #d0e484;
   --color-olive-green: #a1bc1b;
 
-  --color-text-300: #f2f2f2;
+  --color-text-300: var(--color-gray-100);
   --color-text-400: #777777;
   --color-text-600: #f9b401;
+
+  --color-border-100: #000;
+  --color-border-200: var(--color-gray-100);
 
   /*  */
   --gradient-warm-to-yellow: linear-gradient(
@@ -29,6 +32,8 @@
   --color-orange: #ffd359;
   --color-grapes: #9f71bd;
   --color-kiwi: #a1bc1b;
+
+  --color-danger-100: #ff4d4f;
 
   --gradient-berry: linear-gradient(89.99deg, #ff6162 -10.36%, #fe5d5c 99.99%);
   --gradient-orange: linear-gradient(90deg, #ffb168 0%, #ffd359 100%);

@@ -1,6 +1,7 @@
 import Banner from "../../containers/Banner/Banner";
 import BenefitsSection from "../../containers/BenefitsSection/BenefitsSection";
 import BrandStorySection from "../../containers/BrandStorySection/BrandStorySection";
+import NewsletterSection from "../../containers/NewsletterSection/NewsletterSection";
 import NutritionStats from "../../containers/NutritionStats/NutritionStats";
 import OurStorySection from "../../containers/OurStorySection/OurStorySection";
 import TeamSection from "../../containers/TeamSection/TeamSection";
@@ -17,6 +18,7 @@ const HomePage: React.FC = () => {
       <TeamSection />
       <OurStorySection />
       <BenefitsSection />
+      <NewsletterSection />
     </div>
   );
 };
