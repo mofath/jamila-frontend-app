@@ -1,6 +1,6 @@
 import React from "react";
 import { topSellingProductsData } from "../../data/top-selling-products";
-import ProductBestSellingCard from "../../components/ProdutMostSellinCard/ProductBestSellingCard";
+import ProductBestSellingCard from "../../components/ProdutBestSellinCard/ProductBestSellingCard";
 import "./TopSellingProducts.css";
 
 const TopSellingProducts: React.FC = () => {
