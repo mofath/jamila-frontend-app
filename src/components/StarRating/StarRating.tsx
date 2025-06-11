@@ -28,14 +28,19 @@ const StarRating: React.FC<StarRatingProps> = ({
             ? "/assets/icons/filled-star.svg"
             : "/assets/icons/star.svg";
 
+        const goldenIconPath =
+          type === "filled"
+            ? "/assets/icons/filled-star-gold.svg"
+            : "/assets/icons/star-gold.svg";
+
         return (
           <span key={index} className={`star star--${type}`}>
             {variant === "character" ? (
-              type === "filled" ? (
-                "★"
-              ) : (
-                "☆"
-              )
+              <img
+                src={goldenIconPath}
+                alt={`${type} star`}
+                className="star__icon"
+              />
             ) : (
               <img src={iconPath} alt={`${type} star`} className="star__icon" />
             )}

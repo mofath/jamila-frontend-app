@@ -3,7 +3,7 @@ export const productsData = [
   {
     id: 1,
     name: "Sunrise Delight",
-    image: "/images/sunrise-delight.jpg",
+    image: "/assets/images/juice-product.png",
     price: 4.99,
     rating: 4.8,
     description:
@@ -14,7 +14,7 @@ export const productsData = [
   {
     id: 2,
     name: "Berry Mojito",
-    image: "/images/berry-mojito.jpg",
+    image: "/assets/images/juice-product.png",
     price: 5.49,
     rating: 4.7,
     description: "A refreshing twist of strawberries, mint, and lime.",
@@ -24,7 +24,7 @@ export const productsData = [
   {
     id: 3,
     name: "Green Energy",
-    image: "/images/green-energy.jpg",
+    image: "/assets/images/juice-product.png",
     price: 5.99,
     rating: 4.6,
     description: "A detoxifying shot of kale, kiwi, and spirulina.",
@@ -34,7 +34,7 @@ export const productsData = [
   {
     id: 4,
     name: "Mango Tango",
-    image: "/images/mango-tango.jpg",
+    image: "/assets/images/juice-product.png",
     price: 5.29,
     rating: 4.9,
     description: "A sweet and tangy blend of mango and pineapple.",
@@ -44,7 +44,7 @@ export const productsData = [
   {
     id: 5,
     name: "Garden Fresh",
-    image: "/images/garden-fresh.jpg",
+    image: "/assets/images/juice-product.png",
     price: 4.59,
     rating: 4.3,
     description: "Cool cucumber and mint fusion with apple juice.",
@@ -54,7 +54,7 @@ export const productsData = [
   {
     id: 6,
     name: "Detox Elixir",
-    image: "/images/detox-elixir.jpg",
+    image: "/assets/images/juice-product.png",
     price: 5.79,
     rating: 4.5,
     description: "Activated charcoal and lemon in a powerful cleansing blend.",
@@ -64,7 +64,7 @@ export const productsData = [
   {
     id: 7,
     name: "Crimson Punch",
-    image: "/images/crimson-punch.jpg",
+    image: "/assets/images/juice-product.png",
     price: 5.69,
     rating: 4.4,
     description: "Pomegranate, hibiscus, and apple – a red punch of flavor.",
@@ -76,7 +76,7 @@ export const productsData = [
   {
     id: 8,
     name: "Cocoa Crunch",
-    image: "/images/cocoa-crunch.jpg",
+    image: "/assets/images/juice-product.png",
     price: 2.49,
     rating: 4.7,
     description: "Crunchy chocolate bites with almond and sea salt.",
@@ -86,7 +86,7 @@ export const productsData = [
   {
     id: 9,
     name: "Peanut Butter Bliss",
-    image: "/images/peanut-bliss.jpg",
+    image: "/assets/images/juice-product.png",
     price: 2.79,
     rating: 4.6,
     description: "Smooth peanut butter filled treats for energy boosts.",
@@ -96,7 +96,7 @@ export const productsData = [
   {
     id: 10,
     name: "Trail Mix Supreme",
-    image: "/images/trail-mix.jpg",
+    image: "/assets/images/juice-product.png",
     price: 3.99,
     rating: 4.5,
     description: "A mix of dried fruits, nuts, and chocolate chunks.",
@@ -108,7 +108,7 @@ export const productsData = [
   {
     id: 11,
     name: "Vanilla Cold Brew",
-    image: "/images/vanilla-brew.jpg",
+    image: "/assets/images/juice-product.png",
     price: 3.99,
     rating: 4.6,
     description: "Slow-brewed coffee with a hint of vanilla.",
@@ -118,7 +118,7 @@ export const productsData = [
   {
     id: 12,
     name: "Mocha Madness",
-    image: "/images/mocha-madness.jpg",
+    image: "/assets/images/juice-product.png",
     price: 4.29,
     rating: 4.8,
     description: "Rich espresso blended with cocoa and cream.",
@@ -128,7 +128,7 @@ export const productsData = [
   {
     id: 13,
     name: "Caramel Drizzle",
-    image: "/images/caramel-drizzle.jpg",
+    image: "/assets/images/juice-product.png",
     price: 4.59,
     rating: 4.7,
     description: "Smooth coffee topped with creamy caramel swirl.",
@@ -140,7 +140,7 @@ export const productsData = [
   {
     id: 14,
     name: "Tropical Storm",
-    image: "/images/tropical-storm.jpg",
+    image: "/assets/images/juice-product.png",
     price: 5.99,
     rating: 4.9,
     description: "Pineapple, coconut, and banana in a tropical delight.",
@@ -150,7 +150,7 @@ export const productsData = [
   {
     id: 15,
     name: "Purple Haze",
-    image: "/images/purple-haze.jpg",
+    image: "/assets/images/juice-product.png",
     price: 5.49,
     rating: 4.5,
     description: "Blueberries, grapes, and blackberries in a purple mix.",
@@ -160,7 +160,7 @@ export const productsData = [
   {
     id: 16,
     name: "Strawberry Glow",
-    image: "/images/strawberry-glow.jpg",
+    image: "/assets/images/juice-product.png",
     price: 5.19,
     rating: 4.6,
     description: "Strawberries blended with banana and yogurt.",
@@ -172,7 +172,7 @@ export const productsData = [
   {
     id: 17,
     name: "Choco Lava Cake",
-    image: "/images/choco-lava.jpg",
+    image: "/assets/images/juice-product.png",
     price: 3.89,
     rating: 4.8,
     description: "Rich chocolate cake with molten core.",
@@ -182,7 +182,7 @@ export const productsData = [
   {
     id: 18,
     name: "Mango Cheesecake",
-    image: "/images/mango-cheesecake.jpg",
+    image: "/assets/images/juice-product.png",
     price: 4.29,
     rating: 4.7,
     description: "Smooth cheesecake with a tropical mango topping.",
@@ -192,7 +192,7 @@ export const productsData = [
   {
     id: 19,
     name: "Mint Choco Chip",
-    image: "/images/mint-choco.jpg",
+    image: "/assets/images/juice-product.png",
     price: 3.79,
     rating: 4.5,
     description: "Mint ice cream loaded with chocolate chunks.",
@@ -204,7 +204,7 @@ export const productsData = [
   {
     id: 20,
     name: "Hazelnut Fuel",
-    image: "/images/hazelnut-bar.jpg",
+    image: "/assets/images/juice-product.png",
     price: 2.99,
     rating: 4.4,
     description: "High-protein hazelnut bar for quick recovery.",
@@ -214,7 +214,7 @@ export const productsData = [
   {
     id: 21,
     name: "Cranberry Power",
-    image: "/images/cranberry-bar.jpg",
+    image: "/assets/images/juice-product.png",
     price: 2.89,
     rating: 4.3,
     description: "Cranberry and oats bar packed with antioxidants.",
@@ -224,7 +224,7 @@ export const productsData = [
   {
     id: 22,
     name: "Banana Boost",
-    image: "/images/banana-boost.jpg",
+    image: "/assets/images/juice-product.png",
     price: 2.49,
     rating: 4.6,
     description: "Banana-flavored power bar enriched with protein.",
@@ -236,7 +236,7 @@ export const productsData = [
   {
     id: 23,
     name: "Citrus Charger",
-    image: "/images/citrus-charger.jpg",
+    image: "/assets/images/juice-product.png",
     price: 4.99,
     rating: 4.5,
     description: "Oranges, lemons, and grapefruits for an immune punch.",
@@ -246,7 +246,7 @@ export const productsData = [
   {
     id: 24,
     name: "Minty Melon",
-    image: "/images/minty-melon.jpg",
+    image: "/assets/images/juice-product.png",
     price: 5.09,
     rating: 4.4,
     description: "Melon and mint combo for summer refreshment.",
@@ -258,7 +258,7 @@ export const productsData = [
   {
     id: 25,
     name: "Espresso Shot",
-    image: "/images/espresso-shot.jpg",
+    image: "/assets/images/juice-product.png",
     price: 2.49,
     rating: 4.7,
     description: "Straight-up espresso for serious caffeine lovers.",
@@ -270,7 +270,7 @@ export const productsData = [
   {
     id: 26,
     name: "Blueberry Tart",
-    image: "/images/blueberry-tart.jpg",
+    image: "/assets/images/juice-product.png",
     price: 4.19,
     rating: 4.6,
     description: "Tart crust with sweet blueberry filling.",
@@ -282,7 +282,7 @@ export const productsData = [
   {
     id: 27,
     name: "Spicy Chickpeas",
-    image: "/images/spicy-chickpeas.jpg",
+    image: "/assets/images/juice-product.png",
     price: 2.39,
     rating: 4.2,
     description: "Crispy roasted chickpeas with a spicy kick.",
@@ -294,7 +294,7 @@ export const productsData = [
   {
     id: 28,
     name: "Avocado Zen",
-    image: "/images/avocado-zen.jpg",
+    image: "/assets/images/juice-product.png",
     price: 5.59,
     rating: 4.7,
     description: "Avocado blended with lime and honey.",
@@ -305,7 +305,7 @@ export const productsData = [
   {
     id: 29,
     name: "Pink Paradise",
-    image: "/images/pink-paradise.jpg",
+    image: "/assets/images/juice-product.png",
     price: 5.49,
     rating: 4.8,
     description: "Watermelon, strawberry, and lemon smoothie.",
@@ -316,7 +316,7 @@ export const productsData = [
   {
     id: 30,
     name: "Chocolate Espresso Bites",
-    image: "/images/espresso-bites.jpg",
+    image: "/assets/images/juice-product.png",
     price: 3.29,
     rating: 4.9,
     description: "Caffeinated bites for a sweet energy kick.",
