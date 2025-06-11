@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     <footer className="footer">
       <div className="footer__container container mx-auto">
         <div className="footer__heading">
-          <p className="subtitle">Jamila Juice</p>
+          <span className="subtitle">Jamila Juice</span>
           <p className="subtitle">Revitalize your senses, one sip at a time.</p>
         </div>
         <div className="footer__opening-hours">

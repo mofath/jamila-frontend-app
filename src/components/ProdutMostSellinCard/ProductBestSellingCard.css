@@ -1,0 +1,115 @@
+.product-best-selling-card {
+  width: 100%;
+  min-width: 0;
+  max-width: 700px;
+  position: relative;
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.product-best-selling-card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  z-index: -1;
+}
+
+.product-best-selling-card.berry .price {
+  color: var(--color-berry);
+}
+
+.product-best-selling-card.berry::before {
+  background: var(--gradient-berry);
+}
+
+.product-best-selling-card.orange::before {
+  background: var(--gradient-orange);
+}
+
+.product-best-selling-card.orange .price {
+  color: var(--color-orange);
+}
+
+.product-best-selling-card.grapes::before {
+  background: var(--gradient-grapes);
+}
+
+.product-best-selling-card.grapes .price {
+  color: var(--color-grapes);
+}
+
+.product-best-selling-card.kiwi::before {
+  background: var(--gradient-kiwi);
+  color: var(--color-kiwi);
+}
+
+.product-best-selling-card.kiwi .price {
+  color: var(--color-kiwi);
+}
+
+.product-best-selling-card > * {
+  flex: 1;
+}
+
+.product-best-selling-card__image-wrapper {
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.product-best-selling-card__image {
+  position: relative;
+  transform: rotate(-11deg);
+  width: 380px;
+  left: -25px;
+}
+
+.product-best-selling-card__price-display {
+  min-width: 150px;
+  min-height: 150px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+
+.product-best-selling-card__price-display-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-best-selling-card__price-display .text {
+  color: var(--color-text-400);
+}
+
+.product-best-selling-card__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px 16px 32px 16px;
+  color: #fff;
+}
+
+.product-best-selling-card__features {
+  margin-top: 8px;
+}
+
+.product-best-selling-card__features li::before {
+  content: "✔";
+  color: var(--color-text-300);
+  margin-right: 16px;
+}

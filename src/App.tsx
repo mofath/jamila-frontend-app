@@ -5,7 +5,7 @@ import {
   AboutUsPage,
   LoginPage,
   PartnershipPage,
-  ProductsPage,
+  MenuPage,
   ProductDetailsPage,
 } from "./pages";
 
@@ -17,7 +17,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutUsPage />} />
           <Route path="/partnership" element={<PartnershipPage />} />
-          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/menu" element={<MenuPage />} />
           <Route path="/products/:id" element={<ProductDetailsPage />} />
         </Route>
 

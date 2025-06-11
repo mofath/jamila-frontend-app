@@ -22,126 +22,8 @@
   justify-content: center;
 }
 
-.top-selling-products__grid>* {
+.top-selling-products__grid > * {
   flex: 0 0 calc(50% - 12px);
-}
-
-.top-selling-products__card {
-  width: 100%;
-  min-width: 0;
-  max-width: 700px;
-  position: relative;
-  flex: 1 1 100%;
-  display: flex;
-  flex-direction: row;
-  gap: 24px;
-}
-
-
-.top-selling-products__card::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 75%;
-  z-index: -1;
-}
-
-.top-selling-products__card.berry .price {
-  color: var(--color-berry);
-}
-
-.top-selling-products__card.berry::before {
-  background: var(--gradient-berry);
-}
-
-.top-selling-products__card.orange::before {
-  background: var(--gradient-orange);
-}
-
-.top-selling-products__card.orange .price {
-  color: var(--color-orange);
-}
-
-.top-selling-products__card.grapes::before {
-  background: var(--gradient-grapes);
-}
-
-.top-selling-products__card.grapes .price {
-  color: var(--color-grapes);
-}
-
-.top-selling-products__card.kiwi::before {
-  background: var(--gradient-kiwi);
-  color: var(--color-kiwi);
-}
-
-.top-selling-products__card.kiwi .price {
-  color: var(--color-kiwi);
-}
-
-.top-selling-products__card>* {
-  flex: 1;
-}
-
-.top-selling-products__image-wrapper {
-  position: relative;
-  padding-bottom: 16px;
-}
-
-.top-selling-products__image {
-  position: relative;
-  transform: rotate(-11deg);
-  width: 380px;
-  left: -25px;
-}
-
-.top-selling-products__price-display {
-  min-width: 150px;
-  min-height: 150px;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  flex-shrink: 0;
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-}
-
-.top-selling-products__price-display-content {
-  display: flex;
-  flex-direction: column;
-    align-items: center;
-  justify-content: center;
-}
-
-.top-selling-products__price-display .text {
-  color: var(--color-text-400);
-}
-
-.top-selling-products__info {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 16px 16px 32px 16px;
-  color: #fff;
-}
-
-
-.top-selling-products__features {
-  margin-top: 8px;
-}
-
-.top-selling-products__features li::before {
-  content: "✔";
-  color: var(--color-text-300);
-  margin-right: 16px;
 }
 
 @media (max-width: 768px) {
@@ -149,7 +31,7 @@
     flex-direction: column;
   }
 
-  .top-selling-products__grid>* {
+  .top-selling-products__grid > * {
     flex: 1 1 100%;
   }
 }
