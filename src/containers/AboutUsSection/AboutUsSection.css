@@ -1,0 +1,17 @@
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.about-section__heading .subtitle {
+  color: var(--color-text-600);
+  margin-bottom: 24px;
+}
+
+.about-section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: var(--color-text-400);
+}
