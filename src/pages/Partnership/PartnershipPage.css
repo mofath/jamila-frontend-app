@@ -1,0 +1,16 @@
+.partnership-page {
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+.partnership-page__benefits-wrapper {
+  background: linear-gradient(
+    180deg,
+    #fff4d7 -27.49%,
+    rgba(255, 244, 215, 0) 100%
+  );
+  padding: 16px 0;
+}

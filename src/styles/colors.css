@@ -2,12 +2,16 @@
   --color-gray-100: #f2f2f2;
 
   --color-secondary-100: #fe6060;
+  --color-secondary-200: #FCCA40;
+  --color-secondary-300: #fde49f;
 
   --color-warm-orange: #ffb168;
   --color-light-yellow: #ffd359;
   --color-light-green: #d0e484;
   --color-olive-green: #a1bc1b;
 
+
+  --color-text-200: #1A1A1A;
   --color-text-300: var(--color-gray-100);
   --color-text-400: #777777;
   --color-text-600: #f9b401;

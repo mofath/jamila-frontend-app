@@ -1,0 +1,34 @@
+.partnership-cost-planner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.partnership-cost-planner__header-row,
+.partnership-cost-planner__row {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.partnership-cost-planner__header-row > div,
+.partnership-cost-planner__row > div {
+  flex: 1;
+  height: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 2%;
+}
+
+.partnership-cost-planner__header-row > div {
+  background: var(--color-secondary-200);
+}
+
+.partnership-cost-planner__row > div {
+  background: var(--color-secondary-300);
+}

@@ -1,0 +1,28 @@
+.franchise-application-form__container {
+  display: flex;
+  flex-direction: row;
+  gap: 96px;
+}
+
+.franchise-application-form__container > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.partnership-cost-planner__wrapper .subtitle,
+.partner-info-form__wrapper .subtitle {
+  color: var(--color-text-600);
+}
+
+.partnership-cost-planner__wrapper .text,
+.partner-info-form__wrapper .text {
+  color: var(--color-text-400);
+}
+
+
+.partnership-cost-planner__wrapper .heading-2,
+.partner-info-form__wrapper .heading-2 {
+  margin: 30px 0;
+}
