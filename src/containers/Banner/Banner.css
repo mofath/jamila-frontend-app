@@ -9,28 +9,31 @@
   height: auto;
 }
 
-.banner__text-wrapper {
+.banner__heading {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 64px;
   padding: 64px 0 48px 0;
-  font-family: var(--font-outfit);
 }
 
-.banner__text-wrapper p {
-  /* font-family: Outfit; */
+.banner__heading .heading-1 {
   font-weight: 800;
-  font-size: 72px;
   line-height: 100%;
   letter-spacing: 2%;
   text-align: center;
 }
 
+.banner__heading .subtitle {
+  color: var(--color-text-600);
+  margin-bottom: 16px;
+}
+
+
 .banner__image {
-  background-image: url("/public/assets/images/home-banner-bg.png");
+  background-image: url("/public/assets/images/banner-bg.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left center;

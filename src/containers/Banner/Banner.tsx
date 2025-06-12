@@ -6,9 +6,12 @@ const Banner = () => {
   return (
     <div className="banner">
       <div className="banner__container container mx-auto">
-        <div className="banner__text-wrapper">
-          <p className="heading-1"> Crafting Wellness, One Glass </p>
-          <p className="heading-1"> at a Time Meet Our Juice Shop</p>
+        <div className="banner__heading">
+          <div className="banner__headline-group">
+            <p className="heading-1"> Crafting Wellness, One Glass </p>
+            <p className="heading-1"> at a Time Meet Our Juice Shop</p>
+          </div>
+          <p className="subtitle">Crafting Wellness, One Glass at a Time Meet Our Juice Shop</p>
         </div>
       </div>
       <div className="banner__wrapper">
