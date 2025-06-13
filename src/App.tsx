@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ROUTES } from "./constants/routes.constants"; 
 import Layout from "./components/Layout/Layout";
 import {
   HomePage,
@@ -7,6 +8,7 @@ import {
   PartnershipPage,
   MenuPage,
   ProductDetailsPage,
+  ContactUsPage,
 } from "./pages";
 
 const App = () => {
@@ -14,15 +16,15 @@ const App = () => {
     <Router>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutUsPage />} />
-          <Route path="/partnership" element={<PartnershipPage />} />
-          <Route path="/menu" element={<MenuPage />} />
-          <Route path="/products/:id" element={<ProductDetailsPage />} />
+          <Route path={ROUTES.HOME} element={<HomePage />} />
+          <Route path={ROUTES.ABOUT} element={<AboutUsPage />} />
+          <Route path={ROUTES.PARTNERSHIP} element={<PartnershipPage />} />
+          <Route path={ROUTES.MENU} element={<MenuPage />} />
+          <Route path={ROUTES.PRODUCT_DETAILS} element={<ProductDetailsPage />} />
+          <Route path={ROUTES.CONTACT} element={<ContactUsPage />} />
         </Route>
-
         {/* Login page has no layout */}
-        <Route path="/login" element={<LoginPage />} />
+        <Route path={ROUTES.LOGIN} element={<LoginPage />} />
       </Routes>
     </Router>
   );

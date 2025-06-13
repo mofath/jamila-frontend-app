@@ -4,3 +4,4 @@ export { default as Input } from './Input/Input';
 export { default as StarRating } from './StarRating/StarRating';
 export { default as ProductMenuCard } from './ProductMenuCard/ProductMenuCard';
 export { default as ProductBestSellingCard } from './ProdutBestSellinCard/ProductBestSellingCard';
+export { default as Textarea } from './Textarea/Textarea';
