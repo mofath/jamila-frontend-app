@@ -7,7 +7,6 @@ import OurStorySection from "../../containers/OurStorySection/OurStorySection";
 import QoutesSection from "../../containers/QouteSection/QoutesSection";
 import TeamSection from "../../containers/TeamSection/TeamSection";
 import TopSellingProducts from "../../containers/TopSellingProducts/TopSellingProducts";
-
 import "./HomePage.css";
 
 const HomePage: React.FC = () => {

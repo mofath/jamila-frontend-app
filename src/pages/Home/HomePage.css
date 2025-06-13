@@ -1,3 +1,7 @@
 .home-page {
-  padding: 32px 0 64px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+  padding-bottom: 100px;
+  padding-top: 100px;
 }

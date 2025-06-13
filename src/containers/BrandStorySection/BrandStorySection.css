@@ -1,20 +1,13 @@
-.brand-story-section {
-  padding: 4rem 1rem;
-  background-color: #fff;
-}
 
 .brand-story-section__container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 48px;
 }
 
-.brand-story-section__image-wrapper {
-  flex: 1 1 400px;
-  display: flex;
-  justify-content: center;
+.brand-story-section__container > * {
+  flex: 1;
 }
 
 .brand-story-section__image {
@@ -25,8 +18,10 @@
 }
 
 .brand-story-section__content {
-  flex: 1 1 400px;
-  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  justify-content: flex-end;
 }
 
 .brand-story-section__content .subtitle {
@@ -37,7 +32,6 @@
   margin-top: 20px;
   margin-bottom: 50px;
 }
-
 
 .brand-story-section__content .text {
   color: var(--color-text-400);

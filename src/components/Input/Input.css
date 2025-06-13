@@ -25,6 +25,16 @@
   color: var(--color-text-400);
 }
 
+.form-group__input--secondary {
+  color: var(--color-text-300);
+  border: solid 1px var(--color-border-200);
+}
+
+.form-group__input--secondary::placeholder {
+  color: var(--color-text-300);
+}
+
+
 .form-group__input:focus,
 .form-group__input:active {
   outline: none;

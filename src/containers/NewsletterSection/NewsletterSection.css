@@ -2,10 +2,11 @@
   position: relative;
   padding: 3rem 0;
   overflow: hidden;
-  height: 700px;
+  height: 760px;
   background-image: url("/public/assets/images/wave-bg.svg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .newsletter-section__container {
