@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import StarRating from "../StarRating/StarRating";
 import "./ProductMenuCard.css";
+import { ROUTES } from "../../constants/routes.constants";
 
 interface ProductMenuCardProps {
   id: number;
@@ -20,22 +22,25 @@ const ProductMenuCard: React.FC<ProductMenuCardProps> = ({
   price,
   rating,
   description,
-  gradient,
-  category,
   label,
 }) => {
   return (
-    <div className={`product-menu-card ${label}`}>
-      <div className="product-menu-card__image-wrapper">
-        <img src={image} alt={name} className="product-menu-card__image" />
+    <Link
+      to={id ? ROUTES.getProductDetails(id) : "#"}
+      className="product-best-selling-card-link"
+    >
+      <div className={`product-menu-card ${label}`}>
+        <div className="product-menu-card__image-wrapper">
+          <img src={image} alt={name} className="product-menu-card__image" />
+        </div>
+        <div className="product-menu-card__info">
+          <p className="heading-4">{name}</p>
+          <p className="text">{description}</p>
+          <StarRating rating={rating} variant="character" />
+          <div className="product-menu-card__price heading-2">${price}</div>
+        </div>
       </div>
-      <div className="product-menu-card__info">
-        <p className="heading-4">{name}</p>
-        <p className="text">{description}</p>
-        <StarRating rating={rating} variant="character" />
-        <div className="product-menu-card__price heading-2">${price}</div>
-      </div>
-    </div>
+    </Link>
   );
 };
 

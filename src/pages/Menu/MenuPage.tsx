@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { productsData } from "../../data/products-data";
-import "./MenuPage.css";
 import { ProductMenuCard } from "../../components";
+import "./MenuPage.css";
 
 const menuFilters = [
   { id: 1, label: "All", name: "all" },
@@ -45,31 +45,23 @@ const MenuPage: React.FC = () => {
         </div>
         {/* Products List */}
         <div className="menu-products-list">
-          {productsData.map(
-            ({
-              id,
-              name,
-              image,
-              price,
-              rating,
-              description,
-              gradient,
-              category,
-            }) => {
-              return (
-                <ProductMenuCard
-                  id={id}
-                  name={name}
-                  image={image}
-                  price={price}
-                  rating={rating}
-                  description={description}
-                  gradient={gradient}
-                  category={category}
-                />
-              );
-            }
-          )}
+          {productsData
+            .filter((product) =>
+              activeFilter === "all" ? true : product.category === activeFilter
+            )
+            .map((product) => (
+              <ProductMenuCard
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                image={product.image}
+                price={product.price}
+                rating={product.rating}
+                description={product.description}
+                gradient={product.gradient}
+                category={product.category}
+              />
+            ))}
         </div>
       </div>
     </div>

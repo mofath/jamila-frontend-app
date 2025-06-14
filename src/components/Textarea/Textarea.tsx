@@ -48,8 +48,8 @@ const Textarea: React.ForwardRefRenderFunction<HTMLTextAreaElement, TextareaProp
         onBlur={onBlur}
         className={
           error
-            ? "form-group__input form-group__input--error"
-            : `form-group__input form-group__input--${variant}`
+            ? "form-group__textarea form-group__textarea--error"
+            : `form-group__textarea form-group__textarea--${variant}`
         }
       />
       {error && (
