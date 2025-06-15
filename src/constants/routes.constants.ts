@@ -3,12 +3,12 @@ export const ROUTES = {
   ABOUT: "/about",
   PARTNERSHIP: "/partnership",
   MENU: "/menu",
-  PRODUCT_DETAILS: "/products/:id",
+  PRODUCT_DETAILS: "/categories/:categoryId/products/:id",
   PRODUCTS: "/products/",
   CONTACT: "/contact",
   LOGIN: "/login",
 
-  getProductDetails: (id: string | number) => {
-    return `/products/${id}`;
+  getProductDetails: (categoryId: string | number, id: string | number) => {
+    return `/categories/${categoryId}/products/${id}`;
   },
 };

@@ -12,6 +12,7 @@ interface ProductMenuCardProps {
   description: string;
   gradient: string;
   category: string;
+  categoryId: string;
   label?: string;
 }
 
@@ -23,10 +24,11 @@ const ProductMenuCard: React.FC<ProductMenuCardProps> = ({
   rating,
   description,
   label,
+  categoryId,
 }) => {
   return (
     <Link
-      to={id ? ROUTES.getProductDetails(id) : "#"}
+      to={id ? ROUTES.getProductDetails(categoryId, id) : "#"}
       className="product-best-selling-card-link"
     >
       <div className={`product-menu-card ${label}`}>

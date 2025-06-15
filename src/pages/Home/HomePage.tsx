@@ -15,7 +15,7 @@ const HomePage: React.FC = () => {
       <Banner />
       <NutritionStats />
       <BrandStorySection />
-      <TopSellingProducts />
+      {/* <TopSellingProducts /> */}
       <TeamSection />
       <OurStorySection />
       <BenefitsSection />

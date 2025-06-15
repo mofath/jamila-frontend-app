@@ -1,5 +1,5 @@
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 import { firebaseDb } from "../firebase/firebaseApp";
 import { toKebabCase } from "../utils/toKebabCase";
 
@@ -27,7 +27,32 @@ export const firebaseApi = createApi({
         }
       },
     }),
+    getProductById: builder.query<
+      any,
+      { categoryId: string; productId: string }
+    >({
+      async queryFn({ categoryId, productId }) {
+        try {
+          const productRef = doc(
+            firebaseDb,
+            "Categories",
+            categoryId,
+            "Products",
+            productId
+          );
+          const productSnap = await getDoc(productRef);
 
+          if (!productSnap.exists()) {
+            return { error: { status: 404, error: "Product not found" } };
+          }
+
+          const data = { id: productSnap.id, ...productSnap.data() };
+          return { data };
+        } catch (error: any) {
+          return { error: { status: "CUSTOM_ERROR", error: error.message } };
+        }
+      },
+    }),
     getSettings: builder.query<any[], void>({
       async queryFn() {
         try {
@@ -72,4 +97,5 @@ export const {
   useLazyGetProductsByCategoryQuery,
   useGetSettingsQuery,
   useGetCategoriesQuery,
+  useGetProductByIdQuery
 } = firebaseApi;

@@ -65,6 +65,7 @@ const MenuPage: React.FC = () => {
                 description={product.description}
                 gradient={product.gradient}
                 category={product.category}
+                categoryId={activeCategory}
               />
             ))
           ) : (

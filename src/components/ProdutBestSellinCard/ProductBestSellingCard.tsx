@@ -11,6 +11,7 @@ interface ProductBestSellingCardProps {
   gradient?: string;
   volume: string;
   features: string[];
+  categoryId?: string;
 }
 
 const ProductBestSellingCard: React.FC<ProductBestSellingCardProps> = ({
@@ -21,10 +22,11 @@ const ProductBestSellingCard: React.FC<ProductBestSellingCardProps> = ({
   label,
   volume,
   features,
+  categoryId = "",
 }) => {
   return (
     <Link
-      to={id ? ROUTES.getProductDetails(id) : "#"}
+      to={id ? ROUTES.getProductDetails(categoryId, id) : "#"}
       className="product-best-selling-card-link"
     >
       <div className={`product-best-selling-card ${label}`}>
