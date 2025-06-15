@@ -15,6 +15,7 @@ const TopSellingProducts: React.FC = () => {
           ({ id, name, label, price, volume, features, image }) => {
             return (
               <ProductBestSellingCard
+                key={id}
                 id={id}
                 name={name}
                 label={label}

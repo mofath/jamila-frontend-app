@@ -10,9 +10,9 @@ const BenefitsSection = () => {
           <h4 className="heading-4">The Benefits of Juices from our Shop</h4>
         </div>
         <div className="benefits-sections__benefits-list">
-          {benefitsData.map(({ title, text, image }) => {
+          {benefitsData.map(({ id, title, text, image }) => {
             return (
-              <div className="benefits-sections__benefits-item">
+              <div key={id} className="benefits-sections__benefits-item">
                 <img src={image} alt="" />
                 <p className="heading-4">{title}</p>
                 <p className="text">{text}</p>

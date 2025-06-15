@@ -11,8 +11,8 @@ const NutritionStats: React.FC = () => {
 
   return (
     <div className="nutrition-stats container mx-auto">
-      {nutrientStats.map(({ label, title, text }) => (
-        <div className="nutrition-stats__item">
+      {nutrientStats.map(({ label, title, text, id }) => (
+        <div key={id} className="nutrition-stats__item">
           <div className="nutrition-stats__icon-circle">
             <img
               src={nutritionStatsIcons[label]}
