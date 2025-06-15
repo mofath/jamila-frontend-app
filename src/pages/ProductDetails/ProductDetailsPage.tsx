@@ -19,7 +19,8 @@ const ProductDetailsPage: React.FC = () => {
   });
 
   if (isLoading) return <div className="loader">Loading...</div>;
-  if (isError) return <div className="error">❌ Error: {(error as any).error}</div>;
+  if (isError)
+    return <div className="error">❌ Error: {(error as any).error}</div>;
   if (!product) return <div className="not-found">Product not found</div>;
 
   return (
@@ -29,8 +30,7 @@ const ProductDetailsPage: React.FC = () => {
           name={product.name}
           image={product.image}
           description={product.description}
-          price={product.price}
-          size={product.size}
+          pricesBySize={product.pricesBySize}
         />
         <BenefitsSection />
         <FAQSection />

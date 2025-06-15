@@ -47,17 +47,17 @@
 }
 
 .button--primary {
-  background-color: var(--color-secondary-100);
+  background-color: var(--color-primary-100) !important;
   color: white;
 }
 
 .button--secondary {
-  background: linear-gradient(90deg, #d0e484 0%, #a1bc1b 116.62%);
+  background: linear-gradient(90deg, #d0e484 0%, #a1bc1b 116.62%) !important;
   color: white;
 }
 
 .button--accent {
-  background-color: var(--color-red-100);
+  background-color: var(--color-red-100) !important;
   color: white;
 }
 

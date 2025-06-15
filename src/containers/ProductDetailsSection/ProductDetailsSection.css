@@ -12,8 +12,8 @@
 
 .brand-story-section__image {
   position: relative;
-  width: 100%; 
-  left: 0;   
+  width: 100%;
+  left: 0;
   display: block;
   object-fit: contain;
   max-width: 100%;
@@ -39,6 +39,33 @@
 
 .product-details-section__content .text {
   color: var(--color-text-400);
+}
+
+.product-details-section__select-size {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-details-section__size-options {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.product-size-button {
+  padding: 8px 16px;
+  border: 1px solid var(--color-primary-100);
+  color: var(--color-primary-100);
+  background-color: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.product-size-button.active {
+  background-color: var(--color-primary-100);
+  color: white;
 }
 
 .product-details-section__price {

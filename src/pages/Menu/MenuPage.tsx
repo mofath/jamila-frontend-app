@@ -60,7 +60,7 @@ const MenuPage: React.FC = () => {
                 id={product.id}
                 name={product.name}
                 image={product.image}
-                price={product.price}
+                price={product?.pricesBySize?.medium || product?.pricesBySize?.default}
                 rating={product.rating}
                 description={product.description}
                 gradient={product.gradient}
