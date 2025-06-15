@@ -1,0 +1,39 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  margin: 100px auto;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.filter-item {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-family: var(--font-poppins);
+  color: var(--color-text-300);
+  padding: 10px 20px;
+  border-radius: 999px; 
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  color: #ff4d4f;
+}
+
+.filter-item.active {
+  background-color: #ff4d4f;
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.filter-item:hover {
+  background-color: #ffecec;
+}

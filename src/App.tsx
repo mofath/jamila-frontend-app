@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ROUTES } from "./constants/routes.constants"; 
+import { initializeApp, getApps } from "firebase/app";
+import { ROUTES } from "./constants/routes.constants";
 import Layout from "./components/Layout/Layout";
 import {
   HomePage,
@@ -20,7 +21,10 @@ const App = () => {
           <Route path={ROUTES.ABOUT} element={<AboutUsPage />} />
           <Route path={ROUTES.PARTNERSHIP} element={<PartnershipPage />} />
           <Route path={ROUTES.MENU} element={<MenuPage />} />
-          <Route path={ROUTES.PRODUCT_DETAILS} element={<ProductDetailsPage />} />
+          <Route
+            path={ROUTES.PRODUCT_DETAILS}
+            element={<ProductDetailsPage />}
+          />
           <Route path={ROUTES.CONTACT} element={<ContactUsPage />} />
         </Route>
         {/* Login page has no layout */}

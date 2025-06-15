@@ -1,18 +1,33 @@
-import { useState } from "react";
-import { productsData } from "../../data/products-data";
+import { useState, useEffect } from "react";
+import { RiDrinksLine as DrinkIcon } from "react-icons/ri";
 import { ProductMenuCard } from "../../components";
+import {
+  useGetCategoriesQuery,
+  useLazyGetProductsByCategoryQuery,
+} from "../../apis/firebaseApi";
 import "./MenuPage.css";
-
-const menuFilters = [
-  { id: 1, label: "All", name: "all" },
-  { id: 2, label: "Juice", name: "juice" },
-  { id: 3, label: "Sweets", name: "sweets" },
-  { id: 4, label: "Product of the Month", name: "productOfMonth" },
-  { id: 5, label: "Cakes", name: "cakes" },
-];
+import Filters from "./Filters/Filters";
 
 const MenuPage: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState("all");
+  const [activeCategory, setActiveCategory] = useState("");
+  const { data: categories = [] } = useGetCategoriesQuery();
+  const [getProducts, { data: products = [], isLoading }] =
+    useLazyGetProductsByCategoryQuery();
+
+  // 👉 Set first category once categories are fetched
+  useEffect(() => {
+    if (categories.length && !activeCategory) {
+      const firstCategoryId = categories[0].id;
+      setActiveCategory(firstCategoryId);
+      getProducts(firstCategoryId);
+    }
+  }, [categories, activeCategory, getProducts]);
+
+  useEffect(() => {
+    if (activeCategory) {
+      getProducts(activeCategory);
+    }
+  }, [activeCategory, getProducts]);
 
   return (
     <div className="menu-page">
@@ -30,26 +45,16 @@ const MenuPage: React.FC = () => {
           </div>
         </div>
         {/* Filters */}
-        <div className="menu-page__filters">
-          {menuFilters.map((filter) => (
-            <div
-              key={filter.id}
-              className={`menu-page__filter-item ${
-                activeFilter === filter.name ? "active" : ""
-              }`}
-              onClick={() => setActiveFilter(filter.name)}
-            >
-              {filter.label}
-            </div>
-          ))}
-        </div>
+        <Filters
+          categories={categories}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+        />
+
         {/* Products List */}
         <div className="menu-products-list">
-          {productsData
-            .filter((product) =>
-              activeFilter === "all" ? true : product.category === activeFilter
-            )
-            .map((product) => (
+          {products.length > 0 ? (
+            products.map((product) => (
               <ProductMenuCard
                 key={product.id}
                 id={product.id}
@@ -61,7 +66,17 @@ const MenuPage: React.FC = () => {
                 gradient={product.gradient}
                 category={product.category}
               />
-            ))}
+            ))
+          ) : (
+            <div className="empty-state">
+              <span className="empty-state__icon-wrapper">
+                <DrinkIcon size={69} color="#d3d9dd" />
+              </span>
+              <div>
+                <p>No drinks in this category</p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
