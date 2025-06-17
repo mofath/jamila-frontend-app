@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { initializeApp, getApps } from "firebase/app";
 import { ROUTES } from "./constants/routes.constants";
 import Layout from "./components/Layout/Layout";
+import { Toaster } from "react-hot-toast";
 import {
   HomePage,
   AboutUsPage,
@@ -30,6 +30,7 @@ const App = () => {
         {/* Login page has no layout */}
         <Route path={ROUTES.LOGIN} element={<LoginPage />} />
       </Routes>
+      <Toaster position="top-center" />
     </Router>
   );
 };

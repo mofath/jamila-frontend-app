@@ -1,5 +1,5 @@
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
-import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { collection, getDocs, doc, getDoc, setDoc } from "firebase/firestore";
 import { firebaseDb } from "../firebase/firebaseApp";
 import { toKebabCase } from "../utils/toKebabCase";
 
@@ -90,6 +90,33 @@ export const firebaseApi = createApi({
         }
       },
     }),
+    createUserProfile: builder.mutation<
+      void,
+      { uid: string; username: string; email: string; phone: string }
+    >({
+      async queryFn({ uid, username, email, phone }) {
+        try {
+          const userRef = doc(firebaseDb, "users", uid);
+          const snapshot = await getDoc(userRef);
+
+          if (!snapshot.exists()) {
+            await setDoc(userRef, {
+              username,
+              email,
+              phone,
+              createdAt: new Date().toISOString(),
+            });
+            console.log("✅ New user profile created");
+          } else {
+            console.log("ℹ️ User already exists");
+          }
+
+          return { data: undefined };
+        } catch (error: any) {
+          return { error: { status: "CUSTOM_ERROR", error: error.message } };
+        }
+      },
+    }),
   }),
 });
 
@@ -97,5 +124,6 @@ export const {
   useLazyGetProductsByCategoryQuery,
   useGetSettingsQuery,
   useGetCategoriesQuery,
-  useGetProductByIdQuery
+  useGetProductByIdQuery,
+  useCreateUserProfileMutation,
 } = firebaseApi;

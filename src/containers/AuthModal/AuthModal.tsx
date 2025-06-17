@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
-import { createUserProfileIfNotExist } from "../../firebase/auth";
+import { useCreateUserProfileMutation } from "../../apis/firebaseApi";
 import { auth } from "../../firebase/firebaseApp";
 import Button from "../../components/Button/Button";
+import toast from "react-hot-toast";
 import "./AuthModal.css";
 
 export const AuthModal = ({ onClose }: { onClose: () => void }) => {
@@ -14,23 +15,25 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
   const [otp, setOtp] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const [createUserProfile] = useCreateUserProfileMutation();
+
   const validateInputs = () => {
     const trimmedPhone = phone.trim();
     if (!trimmedPhone.match(/^\+?\d{10,15}$/)) {
-      alert("❌ Please enter a valid phone number with country code.");
+      toast.error("❌ Please enter a valid phone number with country code.");
       return false;
     }
     if (mode === "signup") {
       const trimmedUsername = username.trim();
       const trimmedEmail = email.trim();
       if (!trimmedUsername) {
-        alert("❌ Username is required.");
+        toast.error("❌ Username is required.");
         return false;
       }
       if (
         !trimmedEmail.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
       ) {
-        alert("❌ Please enter a valid email address.");
+        toast.error("❌ Please enter a valid email address.");
         return false;
       }
     }
@@ -65,10 +68,11 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
       );
 
       window.confirmationResult = confirmationResult;
+      toast.success("✅ OTP sent successfully.");
       setStep("otp");
     } catch (error) {
       console.error("❌ Error sending OTP:", error);
-      alert("❌ Failed to send OTP. Please try again.");
+      toast.error("❌ Failed to send OTP. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -81,19 +85,19 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
       const user = result.user;
 
       if (mode === "signup") {
-        await createUserProfileIfNotExist(
-          user.uid,
-          username.trim(),
-          email.trim(),
-          phone.trim()
-        );
+        await createUserProfile({
+          uid: user.uid,
+          username: username.trim(),
+          email: email.trim(),
+          phone: phone.trim(),
+        });
       }
 
-      alert("✅ Successfully logged in!");
+      toast.success("✅ Successfully logged in!");
       onClose();
     } catch (err) {
       console.error("❌ Invalid OTP", err);
-      alert("❌ Invalid OTP. Please try again.");
+      toast.error("❌ Invalid OTP. Please try again.");
     } finally {
       setLoading(false);
     }
