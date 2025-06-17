@@ -12,7 +12,7 @@ interface InputProps {
   variant?: "primary" | "secondary";
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
-  error?: FieldError | undefined;
+  error?: FieldError | undefined | any;
 }
 
 const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
