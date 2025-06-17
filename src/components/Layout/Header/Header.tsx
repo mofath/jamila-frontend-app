@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { ROUTES } from "../../../constants/routes.constants";
 import Button from "../../Button/Button";
+import { useAuth } from "../../../hook/useAuth";
 import "./Header.css";
 
 interface HeaderProps {
@@ -9,6 +10,8 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
   const { pathname } = useLocation();
+
+  const { isAuthenticated, username, phone, logout } = useAuth();
 
   const isActive = (route: string) => pathname === route;
 
@@ -52,9 +55,22 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
         </li>
       </ul>
       <div className="flex flex-row gap-4">
-        <Button variant="transparent" onClick={onLoginClick}>
-          Login
-        </Button>{" "}
+        {isAuthenticated ? (
+          <div className="flex gap-4 items-center">
+            {/* <span>👤 {username}</span> */}
+            <Button
+              variant="transparent"
+              onClick={logout}
+              className="btn-logout"
+            >
+              Logout
+            </Button>
+          </div>
+        ) : (
+          <Button variant="transparent" onClick={onLoginClick}>
+            Login
+          </Button>
+        )}
         <Button to={ROUTES.PARTNERSHIP}>Franchise</Button>
       </div>
     </nav>

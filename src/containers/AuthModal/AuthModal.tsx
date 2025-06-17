@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useDispatch } from "react-redux";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import toast from "react-hot-toast";
 import { useCreateUserProfileMutation } from "../../apis/firebaseApi";
-import { loginSchema, signupSchema, otpSchema } from "../../utils/generateValidationSchema";
+import {
+  loginSchema,
+  signupSchema,
+  otpSchema,
+} from "../../utils/generateValidationSchema";
 import { auth } from "../../firebase/firebaseApp";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
+import { setUser } from "../../store/authSlice";
 import "./AuthModal.css";
 
 type AuthFormData = {
@@ -22,6 +28,7 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
   const [mode, setMode] = useState<"signup" | "login">("signup");
   const [loading, setLoading] = useState(false);
   const [createUserProfile] = useCreateUserProfileMutation();
+  const dispatch = useDispatch();
 
   const schema =
     step === "otp" ? otpSchema : mode === "signup" ? signupSchema : loginSchema;
@@ -63,11 +70,11 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
       );
 
       window.confirmationResult = confirmationResult;
-      toast.success("✅ OTP sent successfully.");
+      toast.success("OTP sent successfully.");
       setStep("otp");
     } catch (error) {
-      console.error("❌ Error sending OTP:", error);
-      toast.error("❌ Failed to send OTP. Please try again.");
+      console.error("Error sending OTP:", error);
+      toast.error("Failed to send OTP. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -81,20 +88,24 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
       const result = await window.confirmationResult.confirm(otp.trim());
       const user = result.user;
 
+      const userPayload = {
+        uid: user.uid,
+        phone: phone?.trim() || "",
+        username: username?.trim() || "",
+        email: email?.trim() || "",
+      };
+
       if (mode === "signup") {
-        await createUserProfile({
-          uid: user.uid,
-          username: username?.trim() || "",
-          email: email?.trim() || "",
-          phone: phone?.trim() || "",
-        });
+        await createUserProfile(userPayload);
       }
 
-      toast.success("✅ Successfully logged in!");
+      dispatch(setUser({ ...userPayload, isAuthenticated: true }));
+
+      toast.success("Successfully logged in!");
       onClose();
     } catch (err) {
-      console.error("❌ Invalid OTP", err);
-      toast.error("❌ Invalid OTP. Please try again.");
+      console.error("Invalid OTP", err);
+      toast.error("Invalid OTP. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -113,10 +124,7 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
             <h2 className="auth-modal__title">
               {mode === "signup" ? "Sign Up" : "Login"}
             </h2>
-            <form
-              onSubmit={handleSubmit(sendOTP)}
-              className="auth-modal__form"
-            >
+            <form onSubmit={handleSubmit(sendOTP)} className="auth-modal__form">
               {mode === "signup" && (
                 <>
                   <Input
@@ -139,8 +147,11 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
                 {...register("phone")}
               />
 
-              <div id="auth-modal__recaptcha"  className="auth-modal__recaptcha"/>
-              
+              <div
+                id="auth-modal__recaptcha"
+                className="auth-modal__recaptcha"
+              />
+
               <Button variant="success" type="submit" disabled={loading}>
                 {loading ? "Sending..." : "Send OTP"}
               </Button>
