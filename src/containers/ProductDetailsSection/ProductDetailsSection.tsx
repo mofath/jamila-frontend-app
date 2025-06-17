@@ -68,10 +68,11 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
         )}
         <div className="product-details-section__comment-input">
           <p className="heading-5">Add A Comment with Your Order</p>
-          <Textarea rows={6} />
+          <Textarea rows={6} placeholder="Add notes" />
         </div>
-        <div>
-          <Button variant="secondary">Order juice</Button>
+        <div className="flex flex-row gap-3">
+          <Button variant="secondary">Order Now</Button>
+          <Button variant="primary">Add to Cart</Button>
         </div>
       </div>
     </div>

@@ -34,9 +34,6 @@ const MenuPage: React.FC = () => {
       <div className="menu-page__container container mx-auto">
         {/* Heading */}
         <div className="menu-page__heading">
-          <h1 className="heading-1">
-            Watch Our Menu, This Is The Best Products Made For You.
-          </h1>
           <div className="menu-page__sub-heading">
             <span className="subtitle">Menu</span>
             <p className="heading-2">

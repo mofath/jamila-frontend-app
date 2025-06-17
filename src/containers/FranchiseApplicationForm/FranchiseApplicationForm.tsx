@@ -2,9 +2,19 @@ import React from "react";
 import PartnerInfoForm from "./PartnerInfoForm/PartnerInfoForm";
 import PartnershipCostPlanner from "./PartnershipCostPlanner/PartnershipCostPlanner";
 import { Button } from "../../components";
+import { useGetSettingsQuery } from "../../apis/firebaseApi";
 import "./FranchiseApplicationForm.css";
 
 const FranchiseApplicationForm: React.FC = () => {
+  const { data } = useGetSettingsQuery();
+
+  const {
+    adFees = [],
+    royaltyFees = [],
+    netWorth = [],
+    liquidCapitals = [],
+  } = data?.[0] || {};
+
   return (
     <div className="franchise-application-form">
       <div className="franchise-application-form__container container mx-auto">
@@ -32,7 +42,10 @@ const FranchiseApplicationForm: React.FC = () => {
               great together today.
             </p>
           </div>
-          <PartnerInfoForm />
+          <PartnerInfoForm
+            liquidCapitals={liquidCapitals}
+            netWorth={netWorth}
+          />
           <div>
             <Button variant="secondary">Join Now</Button>
           </div>

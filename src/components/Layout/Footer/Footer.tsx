@@ -10,28 +10,28 @@ const Footer: React.FC = () => {
           <span className="subtitle">Jamila Juice</span>
           <p className="subtitle">Revitalize your senses, one sip at a time.</p>
         </div>
-        <div className="footer__opening-hours">
+        {/* <div className="footer__opening-hours">
           <span className="heading-4">Opening Hours</span>
           <span className="heading-4">Monday - Saturday</span>
           <span className="heading-4">08.00 am - 09.00 pm</span>
-        </div>
-        <div className="footer__contact">
+        </div> */}
+        <div className="footer__contact mt-[48px]">
           <span className="footer__contact-item">
             <img src="/assets/icons/call.svg" alt="" />
-            <span className="heading-4">+20 1143698267</span>
+            <span className="heading-4">+1 714 215 4499</span>
           </span>
           <span className="footer__contact-item">
             <img src="/assets/icons/message.svg" alt="" />
-            <span className="heading-4">Jamila@Jamila.com</span>
+            <span className="heading-4">jamilajuc@gmail.com</span>
           </span>
           <span className="footer__contact-item">
             <img src="/assets/icons/location.svg" alt="" />
-            <span className="heading-4">New Cairo 658 st</span>
+            <span className="heading-4">512 South Brookhurst st #4 Anaheim, CA, 92804</span>
           </span>
-          <span className="footer__contact-item">
+          {/* <span className="footer__contact-item">
             <img src="/assets/icons/planet.svg" alt="" />
-            <span className="heading-4"> Jamila.com</span>
-          </span>
+            <span className="heading-4">Jamila.com</span>
+          </span> */}
         </div>
         <div className="footer__social-media">
           <span>Copyright 2025 @Jamila all right reserved</span>

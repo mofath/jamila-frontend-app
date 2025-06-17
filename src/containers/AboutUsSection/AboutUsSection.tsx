@@ -3,10 +3,19 @@ import "./AboutUsSection.css";
 const AboutUsSection: React.FC = () => {
   return (
     <div className="about-section container mx-auto">
-      <div className="about-section__heading">
-        <p className="subtitle">Who We Are</p>
-        <h2 className="heading-2">Meet the Juice Crafters</h2>
-        <h2 className="heading-2">Crafting Healthy Delights</h2>
+      <div className="flex flex-row justify-between items-center">
+        <div className="about-section__heading">
+          <p className="subtitle">Who We Are</p>
+          <h2 className="heading-2">Meet the Juice Crafters</h2>
+          <h2 className="heading-2">Crafting Healthy Delights</h2>
+        </div>
+        <div>
+          <img
+            className="w-[250px]"
+            src="/assets/icons/jamila-logo.png"
+            alt="Logo"
+          />
+        </div>
       </div>
       <div className="about-section__content">
         <p className="text">

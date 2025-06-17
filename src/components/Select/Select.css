@@ -42,11 +42,11 @@
 
 .form-group__label {
   display: block;
-  font-size: var(--text-md);
-  font-weight: var(--fw-medium);
-  color: var(--color-primary-100);
-  line-height: var(--line-height-normal);
-  margin-bottom: var(--space-sm);
+  font-family: var(--font-outfit);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 
 .form-group__error-message {

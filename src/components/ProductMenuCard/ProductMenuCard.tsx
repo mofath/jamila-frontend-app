@@ -38,7 +38,7 @@ const ProductMenuCard: React.FC<ProductMenuCardProps> = ({
         <div className="product-menu-card__info">
           <p className="heading-4">{name}</p>
           <p className="text">{description}</p>
-          <StarRating rating={rating} variant="character" />
+          {/* <StarRating rating={rating} variant="character" /> */}
           <div className="product-menu-card__price heading-2">${price}</div>
         </div>
       </div>
