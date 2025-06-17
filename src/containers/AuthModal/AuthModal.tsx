@@ -1,65 +1,46 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import toast from "react-hot-toast";
 import { useCreateUserProfileMutation } from "../../apis/firebaseApi";
+import { loginSchema, signupSchema, otpSchema } from "../../utils/generateValidationSchema";
 import { auth } from "../../firebase/firebaseApp";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
 import "./AuthModal.css";
 
-type FormData = {
-  username: string;
-  email: string;
-  phone: string;
-  otp: string;
+type AuthFormData = {
+  username?: string;
+  email?: string;
+  phone?: string;
+  otp?: string;
 };
 
 export const AuthModal = ({ onClose }: { onClose: () => void }) => {
   const [step, setStep] = useState<"form" | "otp">("form");
   const [mode, setMode] = useState<"signup" | "login">("signup");
   const [loading, setLoading] = useState(false);
-
   const [createUserProfile] = useCreateUserProfileMutation();
+
+  const schema =
+    step === "otp" ? otpSchema : mode === "signup" ? signupSchema : loginSchema;
 
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<FormData>();
+  } = useForm<AuthFormData>({
+    resolver: yupResolver(schema as any),
+  });
 
   const phone = watch("phone");
   const username = watch("username");
   const email = watch("email");
   const otp = watch("otp");
 
-  const validateInputs = () => {
-    const trimmedPhone = phone?.trim();
-    if (!trimmedPhone.match(/^\+?\d{10,15}$/)) {
-      toast.error("❌ Please enter a valid phone number with country code.");
-      return false;
-    }
-    if (mode === "signup") {
-      const trimmedUsername = username?.trim();
-      const trimmedEmail = email?.trim();
-      if (!trimmedUsername) {
-        toast.error("❌ Username is required.");
-        return false;
-      }
-      if (
-        !trimmedEmail.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
-      ) {
-        toast.error("❌ Please enter a valid email address.");
-        return false;
-      }
-    }
-    return true;
-  };
-
   const sendOTP = async () => {
-    if (!validateInputs()) return;
-
     try {
       setLoading(true);
       if (!window.recaptchaVerifier) {
@@ -68,19 +49,16 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
           "auth-modal__recaptcha",
           {
             size: "invisible",
-            callback: (response: any) => {
-              console.log("reCAPTCHA solved ✅", response);
-            },
+            callback: () => console.log("reCAPTCHA solved ✅"),
           }
         );
         await window.recaptchaVerifier.render();
       }
 
       const appVerifier = window.recaptchaVerifier;
-
       const confirmationResult = await signInWithPhoneNumber(
         auth,
-        phone.trim(),
+        phone!.trim(),
         appVerifier
       );
 
@@ -98,15 +76,17 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
   const verifyOTP = async () => {
     try {
       setLoading(true);
+      if (!otp) throw new Error("OTP is missing");
+
       const result = await window.confirmationResult.confirm(otp.trim());
       const user = result.user;
 
       if (mode === "signup") {
         await createUserProfile({
           uid: user.uid,
-          username: username.trim(),
-          email: email.trim(),
-          phone: phone.trim(),
+          username: username?.trim() || "",
+          email: email?.trim() || "",
+          phone: phone?.trim() || "",
         });
       }
 
@@ -135,57 +115,48 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
             </h2>
             <form
               onSubmit={handleSubmit(sendOTP)}
-              className="flex flex-col gap-3"
+              className="auth-modal__form"
             >
               {mode === "signup" && (
                 <>
                   <Input
-                    // label="Username"
                     placeholder="Enter your username"
                     error={errors.username}
-                    {...register("username", {
-                      required: "Username is required",
-                    })}
+                    {...register("username")}
                   />
                   <Input
-                    // label="Email"
                     type="email"
                     placeholder="Enter your email"
                     error={errors.email}
-                    {...register("email", {
-                      required: "Email is required",
-                      pattern: {
-                        value:
-                          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                        message: "Invalid email format",
-                      },
-                    })}
+                    {...register("email")}
                   />
                 </>
               )}
               <Input
-                // label="Phone"
                 type="tel"
                 placeholder="Phone (e.g. +201234567890)"
                 error={errors.phone}
-                {...register("phone", { required: "Phone number is required" })}
+                {...register("phone")}
               />
 
-              <div id="auth-modal__recaptcha"></div>
-
+              <div id="auth-modal__recaptcha"  className="auth-modal__recaptcha"/>
+              
               <Button variant="success" type="submit" disabled={loading}>
                 {loading ? "Sending..." : "Send OTP"}
               </Button>
             </form>
+
             <span className="flex flex-row items-center gap-2">
               <span>
-                {mode === "signup" ? "Already registered? " : "New user? "}
+                {mode === "signup" ? "Already registered?" : "New user?"}
               </span>
               <Button
                 variant="text"
-                onClick={() => setMode(mode === "signup" ? "login" : "signup")}
+                onClick={() =>
+                  setMode((prev) => (prev === "signup" ? "login" : "signup"))
+                }
               >
-                {mode === "signup" ? "Login in" : "Sign up"}
+                {mode === "signup" ? "Login" : "Sign up"}
               </Button>
             </span>
           </>
@@ -194,13 +165,13 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
             <h2 className="auth-modal__title">Enter OTP</h2>
             <form
               onSubmit={handleSubmit(verifyOTP)}
-              className="flex flex-col gap-3"
+              className="auth-modal__form"
             >
               <Input
                 label="OTP Code"
                 placeholder="Enter the code"
                 error={errors.otp}
-                {...register("otp", { required: "OTP is required" })}
+                {...register("otp")}
               />
               <Button variant="success" type="submit" disabled={loading}>
                 {loading ? "Verifying..." : "Verify & Login"}

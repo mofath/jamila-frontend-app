@@ -17,14 +17,19 @@
 .auth-modal__content {
   position: relative;
   background: #fff;
-  max-width: 400px;
+  max-width: 500px;
   margin: 10% auto;
   padding: 2rem;
   border-radius: 8px;
   z-index: 1001;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+}
+
+.auth-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
 }
 
 .auth-modal__close {
@@ -51,3 +56,6 @@
   width: 100%;
 }
 
+.auth-modal__recaptcha {
+  margin-top: -32px;
+}

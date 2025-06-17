@@ -8,7 +8,6 @@ export type AllowedFields =
   | "password"
   | "newPassword";
 
-
 export const generateValidationSchema = (fields: AllowedFields[]) => {
   const schemaShape: Record<AllowedFields, Yup.AnySchema> = {
     username: Yup.string().min(3).required("Username is required"),
@@ -26,3 +25,29 @@ export const generateValidationSchema = (fields: AllowedFields[]) => {
 
   return Yup.object().shape(shape);
 };
+
+// Define separate schemas
+export const signupSchema = Yup.object({
+  username: Yup.string().trim().required("Username is required"),
+  email: Yup.string()
+    .trim()
+    .email("Invalid email format")
+    .required("Email is required"),
+  phone: Yup.string()
+    .trim()
+    .matches(/^\+?\d{10,15}$/, "Enter a valid phone number with country code")
+    .required("Phone number is required"),
+  otp: Yup.string().optional(),
+});
+
+export const loginSchema = Yup.object({
+  phone: Yup.string()
+    .trim()
+    .matches(/^\+?\d{10,15}$/, "Enter a valid phone number with country code")
+    .required("Phone number is required"),
+  otp: Yup.string().optional(),
+});
+
+export const otpSchema = Yup.object({
+  otp: Yup.string().trim().required("OTP is required"),
+});
