@@ -1,5 +1,6 @@
-import { initializeApp, getApps } from "firebase/app";
+import { initializeApp, getApps, setLogLevel } from "firebase/app";
 import { getFirestore, Firestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDc4iPR32e2U3BdrR3BbC8o4tVPN68FX70",
@@ -30,4 +31,7 @@ try {
   console.error("❌ Failed to connect to Firestore:", error);
 }
 
-export { firebaseApp, firebaseDb };
+const auth = getAuth(firebaseApp);
+setLogLevel("debug"); // 👈 Add this right after getAuth()
+
+export { firebaseApp, firebaseDb, auth };

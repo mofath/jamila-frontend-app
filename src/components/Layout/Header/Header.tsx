@@ -3,7 +3,11 @@ import { ROUTES } from "../../../constants/routes.constants";
 import Button from "../../Button/Button";
 import "./Header.css";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onLoginClick: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
   const { pathname } = useLocation();
 
   const isActive = (route: string) => pathname === route;
@@ -15,21 +19,44 @@ const Header: React.FC = () => {
       </div>
       <ul className="navbar__nav">
         <li>
-          <a href={ROUTES.HOME} className={isActive(ROUTES.HOME) ? "active" : ""}>Home</a>
+          <a
+            href={ROUTES.HOME}
+            className={isActive(ROUTES.HOME) ? "active" : ""}
+          >
+            Home
+          </a>
         </li>
         <li>
-          <a href={ROUTES.ABOUT} className={isActive(ROUTES.ABOUT) ? "active" : ""}>About Us</a>
+          <a
+            href={ROUTES.ABOUT}
+            className={isActive(ROUTES.ABOUT) ? "active" : ""}
+          >
+            About Us
+          </a>
         </li>
         <li>
-          <a href={ROUTES.MENU} className={isActive(ROUTES.MENU) ? "active" : ""}>Menu</a>
+          <a
+            href={ROUTES.MENU}
+            className={isActive(ROUTES.MENU) ? "active" : ""}
+          >
+            Menu
+          </a>
         </li>
         <li>
-          <a href={ROUTES.CONTACT} className={isActive(ROUTES.CONTACT) ? "active" : ""}>Contact Us</a>
+          <a
+            href={ROUTES.CONTACT}
+            className={isActive(ROUTES.CONTACT) ? "active" : ""}
+          >
+            Contact Us
+          </a>
         </li>
       </ul>
-      <Button to={ROUTES.PARTNERSHIP}>
-        Franchise
-      </Button>
+      <div className="flex flex-row gap-4">
+        <Button variant="transparent" onClick={onLoginClick}>
+          Login
+        </Button>{" "}
+        <Button to={ROUTES.PARTNERSHIP}>Franchise</Button>
+      </div>
     </nav>
   );
 };

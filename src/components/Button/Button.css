@@ -56,15 +56,44 @@
   color: white;
 }
 
+.button--transparent {
+  background: transparent;
+  color: var(--color-primary-100);
+  border: 1px solid var(--color-primary-100);
+}
+
 .button--accent {
   background-color: var(--color-red-100) !important;
   color: white;
+}
+
+.button--success {
+  background: var(--color-success-100) !important;
+  color: #fff !important;
 }
 
 .button--danger {
   background-color: var(--color-red-200);
   color: white;
 }
+
+.button--text {
+  background-color: transparent;
+  color: var(--color-link); 
+  padding: 0;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.button--text:hover {
+  text-decoration: none;
+  color: var(--color-link-hover); 
+}
+
 
 .button--outline {
   background-color: transparent;
@@ -80,11 +109,6 @@
   border-color: var(--color-primary-200);
 }
 
-.button--transparent {
-  padding: 0;
-  background-color: transparent;
-  color: var(--color-primary-200);
-}
 
 .button--rounded-large {
   border-radius: 8px;

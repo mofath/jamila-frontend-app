@@ -2,7 +2,7 @@
   --color-gray-100: #f2f2f2;
 
   --color-primary-100: #fe6060;
-  --color-secondary-200: #FCCA40;
+  --color-secondary-200: #fcca40;
   --color-secondary-300: #fde49f;
 
   --color-warm-orange: #ffb168;
@@ -10,8 +10,7 @@
   --color-light-green: #d0e484;
   --color-olive-green: #a1bc1b;
 
-
-  --color-text-200: #1A1A1A;
+  --color-text-200: #1a1a1a;
   --color-text-300: var(--color-gray-100);
   --color-text-400: #777777;
   --color-text-600: #f9b401;
@@ -39,6 +38,10 @@
   --color-kiwi: #a1bc1b;
 
   --color-danger-100: #ff4d4f;
+  --color-success-100: #4caf50;
+
+  --color-link: #1a73e8; 
+  --color-link-hover: #1558b0;
 
   --color-gold: #f9b401;
 
