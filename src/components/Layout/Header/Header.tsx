@@ -1,6 +1,9 @@
+/* Header.tsx */
+import { useState, useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { IoMdMenu as MenuIcon } from "react-icons/io";
+import { BiUser as UserIcon } from "react-icons/bi";
 import { ROUTES } from "../../../constants/routes.constants";
-import Button from "../../Button/Button";
 import { useAuth } from "../../../hook/useAuth";
 import "./Header.css";
 
@@ -8,70 +11,108 @@ interface HeaderProps {
   onLoginClick: () => void;
 }
 
+const navLinks = [
+  { name: "Home", path: ROUTES.HOME },
+  { name: "About Us", path: ROUTES.ABOUT },
+  { name: "Menu", path: ROUTES.MENU },
+  { name: "Contact Us", path: ROUTES.CONTACT },
+  { name: "Franchise", path: ROUTES.PARTNERSHIP },
+];
+
 const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
   const { pathname } = useLocation();
-
-  const { isAuthenticated, username, phone, logout } = useAuth();
+  const { isAuthenticated, logout } = useAuth();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const isActive = (route: string) => pathname === route;
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Just handle closing on resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024 && isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [isMenuOpen]);
+
   return (
-    <nav className="navbar container mx-auto">
-      <div className="navbar__logo">
-        <img src="/assets/icons/jamila-logo.svg" alt="Logo" />
-      </div>
-      <ul className="navbar__nav">
-        <li>
-          <a
-            href={ROUTES.HOME}
-            className={isActive(ROUTES.HOME) ? "active" : ""}
-          >
-            Home
-          </a>
-        </li>
-        <li>
-          <a
-            href={ROUTES.ABOUT}
-            className={isActive(ROUTES.ABOUT) ? "active" : ""}
-          >
-            About Us
-          </a>
-        </li>
-        <li>
-          <a
-            href={ROUTES.MENU}
-            className={isActive(ROUTES.MENU) ? "active" : ""}
-          >
-            Menu
-          </a>
-        </li>
-        <li>
-          <a
-            href={ROUTES.CONTACT}
-            className={isActive(ROUTES.CONTACT) ? "active" : ""}
-          >
-            Contact Us
-          </a>
-        </li>
-      </ul>
-      <div className="flex flex-row gap-4">
-        {isAuthenticated ? (
-          <div className="flex gap-4 items-center">
-            {/* <span>👤 {username}</span> */}
-            <Button
-              variant="transparent"
-              onClick={logout}
-              className="btn-logout"
+    <nav className="header">
+      <div className="header__container mx-auto container">
+        <div className="header__logo">
+          <img src="/assets/icons/jamila-logo.svg" alt="Logo" />
+        </div>
+
+        <ul className={`header__nav ${isMenuOpen ? "header__nav--open" : ""}`}>
+          {navLinks.map(({ name, path }) => (
+            <li key={path} className="header__nav-item">
+              <a
+                href={path}
+                className={`header__nav-link ${
+                  isActive(path) ? "header__nav-link--active" : ""
+                }`}
+              >
+                {name}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div className="header__actions">
+          <div className="header__user">
+            <button
+              onClick={() => {
+                if (isAuthenticated) {
+                  setDropdownOpen(!dropdownOpen);
+                } else {
+                  onLoginClick();
+                }
+              }}
+              className="header__icon-button"
             >
-              Logout
-            </Button>
+              <UserIcon size={32} color="var(--color-primary-100)" />
+            </button>
+
+            {isAuthenticated && dropdownOpen && (
+              <div ref={dropdownRef} className="header__dropdown">
+                <button
+                  onClick={() => {
+                    logout();
+                    setDropdownOpen(false);
+                  }}
+                  className="header__logout"
+                >
+                  Logout
+                </button>
+              </div>
+            )}
           </div>
-        ) : (
-          <Button variant="transparent" onClick={onLoginClick}>
-            Login
-          </Button>
-        )}
-        <Button to={ROUTES.PARTNERSHIP}>Franchise</Button>
+
+          <button
+            className="header__burger"
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+          >
+            <MenuIcon size={40} color="var(--color-primary-100)" />
+          </button>
+        </div>
       </div>
     </nav>
   );

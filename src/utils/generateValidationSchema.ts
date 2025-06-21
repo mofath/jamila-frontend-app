@@ -35,7 +35,7 @@ export const signupSchema = Yup.object({
     .required("Email is required"),
   phone: Yup.string()
     .trim()
-    .matches(/^\+?\d{10,15}$/, "Enter a valid phone number with country code")
+    // .matches(/^\+?\d{10,15}$/, "Enter a valid phone number with country code")
     .required("Phone number is required"),
   otp: Yup.string().optional(),
 });
