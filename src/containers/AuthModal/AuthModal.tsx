@@ -13,6 +13,8 @@ import {
 import { auth } from "../../firebase/firebaseApp";
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
+import PhoneInput from "../../components/PhoneInput/PhoneInput";
+
 import { setUser } from "../../store/authSlice";
 import "./AuthModal.css";
 
@@ -140,13 +142,17 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
                   />
                 </>
               )}
-              <Input
-                type="tel"
-                placeholder="Phone (e.g. +201234567890)"
-                error={errors.phone}
-                {...register("phone")}
-              />
-
+   <PhoneInput
+  placeholder="Phone (e.g. +201234567890)"
+  error={errors.phone}
+  {...register("phone", {
+    required: "Phone is required",
+    pattern: {
+      value: /^\+20\d{10}$/, // Egyptian mobile number
+      message: "Invalid phone format (e.g. +201234567890)",
+    },
+  })}
+/>
               <div
                 id="auth-modal__recaptcha"
                 className="auth-modal__recaptcha"
@@ -178,12 +184,17 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
               onSubmit={handleSubmit(verifyOTP)}
               className="auth-modal__form"
             >
-              <Input
-                label="OTP Code"
-                placeholder="Enter the code"
-                error={errors.otp}
-                {...register("otp")}
-              />
+   <PhoneInput
+  placeholder="Phone (e.g. +201234567890)"
+  error={errors.phone}
+  {...register("phone", {
+    required: "Phone is required",
+    minLength: {
+      value: 11,
+      message: "Too short",
+    },
+  })}
+/>
               <Button variant="success" type="submit" disabled={loading}>
                 {loading ? "Verifying..." : "Verify & Login"}
               </Button>

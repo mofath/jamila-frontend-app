@@ -26,8 +26,8 @@
 .form-group__select:focus,
 .form-group__select:active {
   outline: none;
-  border-width: 2px;
   background: transparent;
+  box-shadow: 0 0 0 .2rem rgba(0, 123, 255, 0.25);
 }
 
 .form-group__select--error {

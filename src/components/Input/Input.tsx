@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import { FieldError, FieldErrorsImpl, Merge } from "react-hook-form";
+import { FieldError } from "react-hook-form";
 import "./Input.css";
 
 interface InputProps {
