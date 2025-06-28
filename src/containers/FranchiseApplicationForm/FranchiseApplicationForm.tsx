@@ -1,7 +1,7 @@
 import React from "react";
 import PartnerInfoForm from "./PartnerInfoForm/PartnerInfoForm";
 import PartnershipCostPlanner from "./PartnershipCostPlanner/PartnershipCostPlanner";
-import { Button } from "../../components";
+import Button from "../../components/Button/Button";
 import { useGetSettingsQuery } from "../../apis/firebaseApi";
 import "./FranchiseApplicationForm.css";
 

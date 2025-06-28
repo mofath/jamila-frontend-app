@@ -31,7 +31,6 @@
   margin-bottom: 16px;
 }
 
-
 .banner__image {
   background-image: url("/public/assets/images/banner-bg.png");
   background-size: contain;
@@ -51,8 +50,10 @@
   bottom: 16px;
   left: 100px;
   width: 373px;
-  background: var(--gradient-warm-to-yellow);
   color: var(--color-text-300);
+  background: linear-gradient(90deg,
+      var(--color-warm-orange),
+      var(--color-light-yellow));
 }
 
 .floating-review-card--top-right {
@@ -62,4 +63,41 @@
   width: 373px;
   background: var(--gradient-warm-to-olive);
   color: var(--color-text-300);
+}
+
+@media (max-width: 768px) {
+  .banner__wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .banner__image {
+    background-image: none;
+    /* Or use a smaller background */
+    height: auto;
+  }
+
+  .banner__heading {
+    gap: 32px;
+    padding: 32px 1rem;
+  }
+
+  .banner__heading .subtitle {
+    text-align: center;
+  }
+
+
+  .floating-review-card--top-right,
+  .floating-review-card--bottom-left {
+    position: static;
+    width: 100%;
+    margin: 16px auto;
+  }
+
+  .banner__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
 }

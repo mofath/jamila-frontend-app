@@ -1,7 +1,5 @@
-import React from "react";
-import "./TeamSection.css";
 import { teamMembersData } from "../../data/teamMembersData";
-import { Button } from "../../components";
+import "./TeamSection.css";
 
 const TeamSection = () => {
   return (

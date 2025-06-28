@@ -26,3 +26,12 @@
   position: relative;
 }
 
+@media (max-width: 1024px) {
+  .our-story-section__content {
+    justify-content: center;
+    text-align: center;
+  }
+  .our-story-section__decoration {
+    display: none;
+  }
+}

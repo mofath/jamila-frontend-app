@@ -21,11 +21,8 @@
   --color-border-400: #d5d5d5
 
   /*  */
-  --gradient-warm-to-yellow: linear-gradient(
-    90deg,
-    var(--color-warm-orange),
-    var(--color-light-yellow)
-  );
+  --gradient-warm-to-yellow: linear-gradient(90deg, var(--color-warm-orange), var(--color-light-yellow));
+
 
   --gradient-warm-to-olive: linear-gradient(
     90deg,

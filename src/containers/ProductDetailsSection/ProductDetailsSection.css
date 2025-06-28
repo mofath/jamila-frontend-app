@@ -81,3 +81,48 @@
 .product-details-section__comment-input textarea {
   margin-bottom: 24px;
 }
+
+.product-details-section__actions {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .product-details-section {
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .product-details-page__image-wrapper {
+    height: auto;
+    transform: none;
+    max-width: 90%;
+  }
+
+  .product-details-section__content {
+    width: 100%;
+    padding: 0 16px;
+    align-items: center;
+  }
+
+  .product-details-section__info {
+    text-align: center;
+  }
+
+  .product-details-section__select-size {
+    align-items: center;
+  }
+
+  .product-details-section__size-options {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .product-details-section__comment-input {
+    width: 100%;
+    padding: 0 16px;
+  }
+}
+

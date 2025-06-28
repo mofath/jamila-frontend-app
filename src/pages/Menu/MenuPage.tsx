@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { RiDrinksLine as DrinkIcon } from "react-icons/ri";
-import { ProductMenuCard } from "../../components";
+import ProductMenuCard from "../../components/ProductMenuCard/ProductMenuCard";
 import {
   useGetCategoriesQuery,
   useLazyGetProductsByCategoryQuery,
@@ -30,7 +30,7 @@ const MenuPage: React.FC = () => {
   }, [activeCategory, getProducts]);
 
   return (
-    <div className="menu-page">
+    <div className="menu-page page">
       <div className="menu-page__container container mx-auto">
         {/* Heading */}
         <div className="menu-page__heading">
@@ -57,7 +57,10 @@ const MenuPage: React.FC = () => {
                 id={product.id}
                 name={product.name}
                 image={product.image}
-                price={product?.pricesBySize?.medium || product?.pricesBySize?.default}
+                price={
+                  product?.pricesBySize?.medium ||
+                  product?.pricesBySize?.default
+                }
                 rating={product.rating}
                 description={product.description}
                 gradient={product.gradient}

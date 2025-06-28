@@ -104,7 +104,7 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-row gap-3">
+        <div className="product-details-section__actions">
           <Button variant="secondary" onClick={handleOrderNow}>
             Order Now
           </Button>

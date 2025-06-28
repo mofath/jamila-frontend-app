@@ -1,6 +1,6 @@
 import React from "react";
+import Button from "../../components/Button/Button";
 import "./BrandStorySection.css";
-import { Button } from "../../components";
 
 const BrandStorySection: React.FC = () => {
   return (
@@ -26,8 +26,8 @@ const BrandStorySection: React.FC = () => {
             body and elevate your day. With every bottle, we bring you closer to
             nature, wellness, and vibrant living.
           </p>
-          <div className="w-fit">
-            <Button to="/menu" variant="secondary" >
+          <div className="brand-story-section__menu-btn">
+            <Button to="/menu" variant="secondary">
               Book Juice
             </Button>
           </div>

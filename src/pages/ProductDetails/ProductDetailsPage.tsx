@@ -24,7 +24,7 @@ const ProductDetailsPage: React.FC = () => {
   if (!product) return <div className="not-found">Product not found</div>;
 
   return (
-    <div className="product-details-page">
+    <div className="product-details-page page">
       <div className="product-details-page__container">
         <ProductDetailsSection
           name={product.name}

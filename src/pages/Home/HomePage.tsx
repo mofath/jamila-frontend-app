@@ -6,12 +6,12 @@ import NutritionStats from "../../containers/NutritionStats/NutritionStats";
 import OurStorySection from "../../containers/OurStorySection/OurStorySection";
 import QoutesSection from "../../containers/QouteSection/QoutesSection";
 import TeamSection from "../../containers/TeamSection/TeamSection";
-import TopSellingProducts from "../../containers/TopSellingProducts/TopSellingProducts";
+// import TopSellingProducts from "../../containers/TopSellingProducts/TopSellingProducts";
 import "./HomePage.css";
 
 const HomePage: React.FC = () => {
   return (
-    <div className="home-page">
+    <div className="home-page page">
       <Banner />
       <NutritionStats />
       <BrandStorySection />

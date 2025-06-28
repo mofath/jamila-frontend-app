@@ -1,13 +1,16 @@
 import { useForm } from "react-hook-form";
-import { Input } from "../../../components";
-import "./PartnerInfoForm.css";
+import Input from "../../../components/Input/Input";
 import Select from "../../../components/Select/Select";
+import "./PartnerInfoForm.css";
 
 interface PartnerInfoFormProps {
   liquidCapitals: any[];
   netWorth: any[];
 }
-const PartnerInfoForm: React.FC<PartnerInfoFormProps> = ({ liquidCapitals, netWorth }) => {
+const PartnerInfoForm: React.FC<PartnerInfoFormProps> = ({
+  liquidCapitals,
+  netWorth,
+}) => {
   const {
     register,
     handleSubmit,

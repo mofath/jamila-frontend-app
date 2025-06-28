@@ -1,13 +1,14 @@
 import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
 import {
   FaInstagram as InstagramIcon,
   FaFacebook as FacebookIcon,
   FaYoutube as YoutubeIcon,
   FaTwitter as TwitterIcon,
 } from "react-icons/fa";
-import { Button, Input, Textarea } from "../../components";
-import emailjs from "@emailjs/browser";
-
+import Button from "../../components/Button/Button";
+import Textarea from "../../components/Textarea/Textarea";
+import Input from "../../components/Input/Input";
 import "./ContactUsSection.css";
 
 const templateId = "template_5i8wddn";
@@ -37,7 +38,7 @@ const ContactUsSection: React.FC = () => {
 
     emailjs
       .send(serviceId, templateId, templateParams, publicKey)
-      .then((res:any) => {
+      .then((res: any) => {
         console.log("SUCCESS ✅", res.status, res.text);
         alert("Message sent!");
       })
@@ -84,7 +85,9 @@ const ContactUsSection: React.FC = () => {
             />
           </div>
           <div className="contact-form__row">
-            <Button variant="secondary" type="submit">Send message</Button>
+            <Button variant="secondary" type="submit">
+              Send message
+            </Button>
           </div>
         </form>
       </div>

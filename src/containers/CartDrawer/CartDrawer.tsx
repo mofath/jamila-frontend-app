@@ -6,7 +6,7 @@ import {
   clearCart,
   updateItemQuantity,
 } from "../../store/cartSlice";
-import { Button } from "../../components";
+import Button from "../../components/Button/Button";
 import CartItem from "../../components/CartItem/CartItem";
 import "./CartDrawer.css";
 

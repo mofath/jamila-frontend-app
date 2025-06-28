@@ -1,4 +1,5 @@
-import { Button, Input } from "../../components";
+import Button from "../../components/Button/Button";
+import Input from "../../components/Input/Input";
 import "./NewsletterSection.css";
 
 const NewsletterSection = () => {
@@ -16,7 +17,11 @@ const NewsletterSection = () => {
           </div>
           {/* Subscription form */}
           <div className="newsletter-section__form">
-            <Input type="email" placeholder="Enter your email..." variant="secondary" />
+            <Input
+              type="email"
+              placeholder="Enter your email..."
+              variant="secondary"
+            />
             <Button>Subscribe</Button>
           </div>
         </div>

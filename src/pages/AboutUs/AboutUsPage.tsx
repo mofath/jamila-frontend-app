@@ -6,7 +6,7 @@ import "./AboutUsPage.css";
 
 const AboutUsPage: React.FC = () => {
   return (
-    <div className="about-us-page">
+    <div className="about-us-page page">
       {/* <Banner /> */}
       <AboutUsSection />
       <TeamSection />

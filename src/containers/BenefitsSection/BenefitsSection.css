@@ -32,3 +32,10 @@
   color: var(--color-text-400);
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .benefits-sections__benefits-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}

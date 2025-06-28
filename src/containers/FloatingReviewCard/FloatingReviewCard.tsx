@@ -1,5 +1,5 @@
 import React from "react";
-import { StarRating } from "../../components";
+import StarRating from "../../components/StarRating/StarRating";
 import "./FloatingReviewCard.css";
 
 interface FloatingReviewCardProps {
