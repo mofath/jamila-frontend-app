@@ -3,9 +3,13 @@ import { useState, useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { IoMdMenu as MenuIcon } from "react-icons/io";
 import { BiUser as UserIcon } from "react-icons/bi";
+import { FiShoppingCart as CartIcon } from "react-icons/fi";
 import { ROUTES } from "../../../constants/routes.constants";
 import { useAuth } from "../../../hook/useAuth";
+
 import "./Header.css";
+import { toggleCart } from "../../../store/cartSlice";
+import { useDispatch } from "react-redux";
 
 interface HeaderProps {
   onLoginClick: () => void;
@@ -25,8 +29,13 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const dispatch = useDispatch();
 
   const isActive = (route: string) => pathname === route;
+
+  const openCartDrawer = () => {
+    dispatch(toggleCart());
+  };
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -77,6 +86,10 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
         </ul>
 
         <div className="header__actions">
+          {/* 🛒 Cart Button */}
+          <button className="header__icon-button" onClick={openCartDrawer}>
+            <CartIcon size={28} color="var(--color-primary-100)" />
+          </button>
           <div className="header__user">
             <button
               onClick={() => {

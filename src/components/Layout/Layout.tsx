@@ -4,6 +4,7 @@ import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import "./Layout.css";
 import { AuthModal } from "../../containers/AuthModal/AuthModal";
+import CartDrawer from "../../containers/CartDrawer/CartDrawer";
 
 const Layout: React.FC = () => {
   const [isAuthModalOpen, setAuthModalOpen] = useState(false);
@@ -12,7 +13,8 @@ const Layout: React.FC = () => {
     <div className="layout-container">
       <Header onLoginClick={() => setAuthModalOpen(true)} />
       <main className="main-content">
-        <Outlet /> {/* This is where the routed page will render */}
+        <Outlet />
+        <CartDrawer />
       </main>
       <Footer />
       {isAuthModalOpen && (

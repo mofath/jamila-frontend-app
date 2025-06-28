@@ -18,6 +18,7 @@
   --color-border-100: #000;
   --color-border-200: var(--color-gray-100);
   --color-border-300: #777777;
+  --color-border-400: #d5d5d5
 
   /*  */
   --gradient-warm-to-yellow: linear-gradient(

@@ -1,5 +1,8 @@
-import { useState } from "react";
-import { Button, Textarea } from "../../components";
+import { useState, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { addItem, toggleCart } from "../../store/cartSlice";
+import Button  from "../../components/Button/Button";
+import Textarea  from "../../components/Textarea/Textarea";
 import "./ProductDetailsSection.css";
 
 interface ProductDetailsSectionProps {
@@ -22,9 +25,34 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
     sizes.includes("default") ? "default" : sizes[0]
   );
 
+  const commentRef = useRef<HTMLTextAreaElement>(null);
+  const dispatch = useDispatch();
+
+  const handleOrderNow = () => {
+    // Future use: navigate('/checkout') or open a modal
+    alert("🚚 Order placement feature coming soon!");
+  };
+
+  const handleAddToCart = () => {
+    const comment = commentRef.current?.value || "";
+    const item = {
+      id: `${name}-${selectedSize}`,
+      name,
+      price: pricesBySize[selectedSize],
+      size: selectedSize,
+      quantity: 1,
+      comment,
+      image,
+    };
+
+    dispatch(addItem(item));
+    dispatch(toggleCart()); 
+  };
+
   const handleSizeClick = (size: string) => {
     setSelectedSize(size);
   };
+
   return (
     <div className="product-details-section mx-auto container">
       {/* Product Poster */}
@@ -35,6 +63,7 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
           className="brand-story-section__image"
         />
       </div>
+
       {/* Product info */}
       <div className="product-details-section__content">
         <div className="product-details-section__info">
@@ -57,8 +86,9 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
                 <button
                   key={size}
                   onClick={() => handleSizeClick(size)}
-                  className={`product-size-button ${selectedSize === size ? "active" : ""
-                    }`}
+                  className={`product-size-button ${
+                    selectedSize === size ? "active" : ""
+                  }`}
                 >
                   {size === "default" ? "Standard" : size}
                 </button>
@@ -66,13 +96,21 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
             </div>
           </div>
         )}
+
+        {/* Comment */}
         <div className="product-details-section__comment-input">
           <p className="heading-5">Add A Comment with Your Order</p>
-          <Textarea rows={6} placeholder="Add notes" />
+          <Textarea ref={commentRef} rows={6} placeholder="Add notes" />
         </div>
+
+        {/* Buttons */}
         <div className="flex flex-row gap-3">
-          <Button variant="secondary">Order Now</Button>
-          <Button variant="primary">Add to Cart</Button>
+          <Button variant="secondary" onClick={handleOrderNow}>
+            Order Now
+          </Button>
+          <Button variant="primary" onClick={handleAddToCart}>
+            Add to Cart
+          </Button>
         </div>
       </div>
     </div>

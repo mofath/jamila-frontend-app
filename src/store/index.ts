@@ -11,17 +11,19 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import authReducer from "./authSlice";
+import cartReducer from "./cartSlice";
 import { firebaseApi } from "../apis/firebaseApi";
 
 const rootReducer = combineReducers({
   user: authReducer,
+  cart: cartReducer,
   [firebaseApi.reducerPath]: firebaseApi.reducer,
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["user"],
+  whitelist: ["user", "cart"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
