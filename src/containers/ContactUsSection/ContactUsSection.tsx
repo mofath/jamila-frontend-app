@@ -6,8 +6,13 @@ import {
   FaTwitter as TwitterIcon,
 } from "react-icons/fa";
 import { Button, Input, Textarea } from "../../components";
+import emailjs from "@emailjs/browser";
 
 import "./ContactUsSection.css";
+
+const templateId = "template_5i8wddn";
+const serviceId = "service_s9crvjt";
+const publicKey = "TPX_twKXlRrHJMngb";
 
 const ContactUsSection: React.FC = () => {
   const {
@@ -17,7 +22,29 @@ const ContactUsSection: React.FC = () => {
   } = useForm();
 
   const onSubmit = (data: any) => {
+    console.log(88888888);
     console.log(data);
+
+    console.log(88888888);
+
+    const templateParams = {
+      first_name: data.firstName,
+      last_name: data.lastName,
+      email: data.email,
+      phone: data.phone,
+      message: data.message,
+    };
+
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then((res:any) => {
+        console.log("SUCCESS ✅", res.status, res.text);
+        alert("Message sent!");
+      })
+      .catch((err: any) => {
+        console.error("FAILED ❌", err);
+        alert("Failed to send message.");
+      });
   };
 
   return (
@@ -53,11 +80,11 @@ const ContactUsSection: React.FC = () => {
           <div className="contact-form__row">
             <Textarea
               label="Message"
-              {...register("phone", { required: "Required" })}
+              {...register("message", { required: "Required" })}
             />
           </div>
           <div className="contact-form__row">
-            <Button variant="secondary">Send message</Button>
+            <Button variant="secondary" type="submit">Send message</Button>
           </div>
         </form>
       </div>
