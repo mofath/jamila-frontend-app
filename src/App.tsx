@@ -11,6 +11,7 @@ import {
   ProductDetailsPage,
   ContactUsPage,
 } from "./pages";
+import CheckoutPage from "./pages/Checkout/CheckoutPage";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Route path={ROUTES.CONTACT} element={<ContactUsPage />} />
         </Route>
         {/* Login page has no layout */}
+                <Route path={ROUTES.CHECKOUT} element={<CheckoutPage />} />
         <Route path={ROUTES.LOGIN} element={<LoginPage />} />
       </Routes>
       <Toaster position="top-center" />

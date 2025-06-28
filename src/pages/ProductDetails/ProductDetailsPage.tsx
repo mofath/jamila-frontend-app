@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { loadStripe } from '@stripe/stripe-js';
 import ProductDetailsSection from "../../containers/ProductDetailsSection/ProductDetailsSection";
 import BenefitsSection from "../../containers/BenefitsSection/BenefitsSection";
 import FAQSection from "../../containers/FSQSection/FAQSection";

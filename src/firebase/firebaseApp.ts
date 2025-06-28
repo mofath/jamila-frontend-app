@@ -1,4 +1,4 @@
-import { initializeApp, getApps, setLogLevel } from "firebase/app";
+import { initializeApp, getApps, setLogLevel, FirebaseApp } from "firebase/app";
 import { getFirestore, Firestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
@@ -12,7 +12,7 @@ export const firebaseConfig = {
   measurementId: "G-HBMKN0S9MP",
 };
 
-let firebaseApp;
+let firebaseApp: FirebaseApp;
 
 if (!getApps().length) {
   firebaseApp = initializeApp(firebaseConfig);

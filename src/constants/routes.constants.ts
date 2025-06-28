@@ -7,6 +7,7 @@ export const ROUTES = {
   PRODUCTS: "/products/",
   CONTACT: "/contact",
   LOGIN: "/login",
+  CHECKOUT: "/checkout",
 
   getProductDetails: (categoryId: string | number, id: string | number) => {
     return `/categories/${categoryId}/products/${id}`;
