@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface CartItem {
+export interface ICartItem {
     id: string;
     name: string;
     size: string;
@@ -11,7 +11,7 @@ export interface CartItem {
 
 interface CartState {
     isOpen: boolean;
-    items: CartItem[];
+    items: ICartItem[];
 }
 
 const initialState: CartState = {
@@ -32,7 +32,7 @@ const cartSlice = createSlice({
         closeCart: (state) => {
             state.isOpen = false;
         },
-        addItem: (state, action: PayloadAction<CartItem>) => {
+        addItem: (state, action: PayloadAction<ICartItem>) => {
             const existing = state.items.find(item => item.id === action.payload.id);
             if (existing) {
                 existing.quantity += action.payload.quantity;

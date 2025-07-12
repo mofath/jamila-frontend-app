@@ -1,5 +1,6 @@
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
+import { ROUTES } from "../../constants/routes.constants";
 import "./NewsletterSection.css";
 
 const NewsletterSection = () => {
@@ -9,20 +10,14 @@ const NewsletterSection = () => {
         <div className="newsletter-section__content">
           {/* Heading */}
           <div className="newsletter-section__heading">
-            <h2 className="heading-2">Join Our Newsletter</h2>
+            <h2 className="heading-2">Join Us</h2>
             <p className="text">
-              Stay updated with our latest juice blends, exclusive offers, and
-              health tips.
+              Partner with us and become a part of our growing juice franchise. Let's blend success together!
             </p>
           </div>
           {/* Subscription form */}
           <div className="newsletter-section__form">
-            <Input
-              type="email"
-              placeholder="Enter your email..."
-              variant="secondary"
-            />
-            <Button>Subscribe</Button>
+            <Button to={ROUTES.PARTNERSHIP} fullWidth>Franchise</Button>
           </div>
         </div>
       </div>

@@ -3,22 +3,32 @@
   flex-direction: row;
   gap: 10%;
   justify-content: space-between;
+  min-height: 600px;
+  content: "";
 }
+
 
 .product-details-page__image-wrapper {
-  height: 750px;
-  transform: rotate(-11deg);
+  position: relative;
+  padding-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.brand-story-section__image {
-  position: relative;
-  width: 100%;
+.brand-story-section__image  {
+  width: 450px !important;
+  height: 450px !important;
+  min-width: 450px !important;
+  min-width: 450px !important;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #eee;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: none;
   left: 0;
-  display: block;
-  object-fit: contain;
-  max-width: 100%;
-  height: auto;
 }
+
 
 .product-details-section > div {
   flex: 1;

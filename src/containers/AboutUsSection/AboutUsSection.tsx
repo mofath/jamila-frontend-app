@@ -19,25 +19,16 @@ const AboutUsSection: React.FC = () => {
       </div>
       <div className="about-section__content">
         <p className="text">
-          accumsan vivamus sit tellus. Adipiscing morbi viverra amet justo dolor
-          enim cursus. Nibh duis vel at placerat. Ultricies ornare ut hendrerit
-          ut donec semper etiam nec commodo.Mauris purus egestas convallis
-          ipsumaccumsan vivamus sit tellus. Adipiscing morbi viverra amet justo
-          dolor enim cursus. Nibh duis vel at placerat. Ultricies ornare ut
-          hendrerit ut donec semper etiam nec commodo.Mauris purus egestas
-          convallis ipsum.
-        </p>
-        <p className="text">
-          Dui morbi mi nibh velit neque rhoncus vitae lorem curabitur. Duis
-          dolor tortor viverra ut suscipit nisl. Ultrices vitae pretium molestie
-          sed blandit pellentesque eu amet proin Adipiscing aliquam hac
-          tincidunt.accumsan vivamus sit tellus. Adipiscing morbi viverra amet
-          justo dolor enim cursus. Nibh duis vel at placerat. Ultricies ornare
-          ut hendrerit ut donec semper etiam nec commodo.Mauris purus egestas
-          convallis ipsumaccumsan vivamus sit tellus. Adipiscing morbi viverra
-          amet justo dolor enim cursus. Nibh duis vel at placerat. Ultricies
-          ornare ut hendrerit ut donec semper etiam nec commodo.Mauris purus
-          egestas convallis ipsum
+          Founded in 2017, our juice bar has established itself as a trusted
+          destination for health-conscious individuals seeking high-quality,
+          nutritious refreshments in California. We take pride in offering a
+          thoughtfully curated menu that includes freshly prepared smoothies,
+          juices, wellness shots, açaí bowls and more. Made with premium,
+          natural ingredients to support a balanced and active lifestyle. Our
+          commitment to excellence, wellness, and customer satisfaction is
+          reflected in every product we serve. We are dedicated to promoting
+          healthy living within our community and providing exceptional customer
+          experience to each of our valued customers.
         </p>
       </div>
     </div>

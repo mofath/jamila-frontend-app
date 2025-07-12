@@ -1,34 +1,26 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { FaTimes } from "react-icons/fa";
-import { RootState } from "../../store";
-import {
-  closeCart,
-  clearCart,
-  updateItemQuantity,
-} from "../../store/cartSlice";
+import { closeCart } from "../../store/cartSlice";
 import Button from "../../components/Button/Button";
 import CartItem from "../../components/CartItem/CartItem";
+import { useCart } from "../../hook/useCart";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../constants/routes.constants";
 import "./CartDrawer.css";
 
 const CartDrawer = () => {
   const dispatch = useDispatch();
-  const isOpen = useSelector((state: RootState) => state.cart.isOpen);
-  const cartItems = useSelector((state: RootState) => state.cart.items);
+  const navigate = useNavigate();
+
+  const { isOpen, items: cartItems, total, updateQuantity, removeCartItem } = useCart();
 
   const handleBuy = () => {
-    alert("🛒 Purchase complete!");
-    dispatch(clearCart());
-    dispatch(closeCart());
+    navigate(ROUTES.CHECKOUT);
   };
 
   const handleQuantityChange = (itemId: string, quantity: number) => {
-    dispatch(updateItemQuantity({ id: itemId, quantity }));
+    updateQuantity(itemId, quantity);
   };
-
-  const totalPrice = cartItems.reduce(
-    (acc, item) => acc + item.price * (item.quantity || 1),
-    0
-  );
 
   return (
     <>
@@ -58,6 +50,7 @@ const CartDrawer = () => {
                   size={item.size}
                   quantity={item.quantity}
                   handleQuantityChange={handleQuantityChange}
+                  removeCartItem={removeCartItem}
                 />
               );
             })}
@@ -66,7 +59,7 @@ const CartDrawer = () => {
           <div className="cart-summary">
             <p className="cart-sumary__total">
               <span className="heading-5">Total:</span>
-              <span className="heading-5">${totalPrice.toFixed(2)}</span>
+              <span className="heading-5">${total}</span>
             </p>
             <Button onClick={handleBuy}>Checkout</Button>
           </div>

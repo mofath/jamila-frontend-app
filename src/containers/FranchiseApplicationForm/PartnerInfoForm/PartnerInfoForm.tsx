@@ -1,103 +1,183 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../../components/Input/Input";
 import Select from "../../../components/Select/Select";
+import { countries } from "../../../data/countries-data";
+import { PartnerInfoSchema } from "../../../utils/generateValidationSchema";
+import { sendEmail } from "../../../utils/emailService";
+import Spinner from "../../../components/Spinner/Spinner";
+import CheckboxGroup from "../../../components/CheckboxGroup/CheckboxGroup";
 import "./PartnerInfoForm.css";
+import Button from "../../../components/Button/Button";
 
 interface PartnerInfoFormProps {
-  liquidCapitals: any[];
-  netWorth: any[];
+  liquidCapitals: { label: string; value: string }[];
+  netWorth: { label: string; value: string }[];
 }
+
 const PartnerInfoForm: React.FC<PartnerInfoFormProps> = ({
   liquidCapitals,
   netWorth,
 }) => {
+  const [loading, setLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+    reset,
+    watch,
+  } = useForm({
+    resolver: yupResolver(PartnerInfoSchema),
+  });
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const watchHasBusinessExperience = watch("hasBusinessExperience");
+
+  const onSubmit = async (data: any) => {
+    setLoading(true); // Optional: make sure `setLoading` is declared via `useState`
+    const templateParams = {
+      title: "A new partnership request",
+      name: `${data.personal.firstName} ${data.personal.lastName}`,
+      email: data.personal.email,
+      currentPhone: data.currentAddress.phone,
+      interestPhone: data.locationOfInterest.phone,
+      currentAddress: `${data.currentAddress.city}, ${data.currentAddress.country}`,
+      locationOfInterest: `${data.locationOfInterest.city}, ${data.locationOfInterest.country}`,
+      netWorth: data.netWorth,
+      liquidCapital: data.liquidCapital,
+      hasBusinessExperience: data?.hasBusinessExperience ? "Yes" : "No",
+      time: new Date().toLocaleString(),
+    };
+
+    try {
+      await sendEmail("partner-info", templateParams);
+      toast.success("Partner request sent successfully");
+      reset(); // Don't forget to import reset from useForm
+      // Optional redirect or modal close
+    } catch (err: any) {
+      console.error("Email sending failed:", err);
+      toast.error("Failed to send request. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <form className="partner-info-form" onSubmit={handleSubmit(onSubmit)}>
-      <div className="partner-info-form__row">
-        <Input
-          label="First Legal Name"
-          {...register("firstName", { required: "Required" })}
-        />
-        <Input
-          label="Last Legal Name"
-          {...register("lastName", { required: "Required" })}
-        />
-      </div>
-      <div className="partner-info-form__row">
-        <Input
-          label="Email"
-          type="email"
-          {...register("email", { required: "Required" })}
-        />
-      </div>
-      {/* City where you live */}
-      <div className="form-group">
-        <label className="form-group__label"> City where you live</label>
-        <div className="partner-info-form__row address">
+    <div className="partner-info-form-container">
+      {loading && <Spinner />}
+      <form className="partner-info-form" onSubmit={handleSubmit(onSubmit)}>
+        {/* Personal Information */}
+        <div className="partner-info-form__row">
           <Input
-            placeholder="Country"
-            {...register("country", { required: "Required" })}
+            label="First Legal Name"
+            placeholder="Enter your first name"
+            {...register("personal.firstName")}
+            error={errors.personal?.firstName}
           />
           <Input
-            placeholder="City"
-            {...register("city", { required: "Required" })}
-          />
-          <Input
-            placeholder="Phone"
-            {...register("phone", { required: "Required" })}
+            label="Last Legal Name"
+            placeholder="Enter your last name"
+            {...register("personal.lastName")}
+            error={errors.personal?.lastName}
           />
         </div>
-      </div>
 
-      {/* City where you interest in to open */}
-      <div className="form-group">
-        <label className="form-group__label">
-          {" "}
-          City where you interest in to open
-        </label>
-        <div className="partner-info-form__row address">
+        {/* Email */}
+        <div className="partner-info-form__row">
           <Input
-            placeholder="Country"
-            {...register("country", { required: "Required" })}
-          />
-          <Input
-            placeholder="City"
-            {...register("city", { required: "Required" })}
-          />
-          <Input
-            placeholder="Phone"
-            {...register("phone", { required: "Required" })}
+            label="Email"
+            type="email"
+            placeholder="Enter your email"
+            {...register("personal.email")}
+            error={errors.personal?.email}
           />
         </div>
-      </div>
-      <div className="partner-info-form__row">
-        <Select
-          options={netWorth}
-          label="Net Worth Liquid"
-          {...register("netWorth", { required: "Required" })}
+
+        {/* Current Address */}
+        <div className="form-group">
+          <label className="form-group__label">Current Address</label>
+          <div className="partner-info-form__row address">
+            <Select
+              placeholder="Select Country"
+              options={countries}
+              {...register("currentAddress.country")}
+              error={errors.currentAddress?.country}
+            />
+            <Input
+              placeholder="Enter city"
+              {...register("currentAddress.city")}
+              error={errors.currentAddress?.city}
+            />
+            <Input
+              placeholder="Enter phone number"
+              {...register("currentAddress.phone")}
+              error={errors.currentAddress?.phone}
+            />
+          </div>
+        </div>
+
+        {/* Location of Interest */}
+        <div className="form-group">
+          <label className="form-group__label">Location of Interest</label>
+          <div className="partner-info-form__row address">
+            <Select
+              placeholder="Select Country"
+              options={countries}
+              {...register("locationOfInterest.country", {
+                required: "Required",
+              })}
+              error={errors.locationOfInterest?.country}
+            />
+            <Input
+              placeholder="Enter city"
+              {...register("locationOfInterest.city")}
+              error={errors.locationOfInterest?.city}
+            />
+            <Input
+              placeholder="Enter phone number"
+              {...register("locationOfInterest.phone", {
+                required: "Required",
+              })}
+              error={errors.locationOfInterest?.phone}
+            />
+          </div>
+        </div>
+
+        {/* Financial Details */}
+        <div className="partner-info-form__row">
+          <Select
+            label="Net Worth"
+            placeholder="Select Net Worth"
+            options={netWorth}
+            {...register("netWorth")}
+            error={errors.netWorth}
+          />
+          <Select
+            label="Liquid Capital"
+            placeholder="Select Liquid Capital"
+            options={liquidCapitals}
+            {...register("liquidCapital")}
+            error={errors.liquidCapital}
+          />
+        </div>
+
+        {/* Business Experience */}
+        <CheckboxGroup
+          label="Have you been in business before?"
+          options={[{ label: "Yes", value: "yes" }]}
+          {...register("hasBusinessExperience")}
+          error={errors.hasBusinessExperience}
         />
-        <Select
-          label="Capital Liquids"
-          options={liquidCapitals}
-          {...register("interest", { required: "Required" })}
-        />
-      </div>
-      {/* Todo: Add checkbox */}
-      <div className="flex flex-row gap-2">
-        <input type="checkbox" />
-        <label htmlFor="">Have you been in buissness before</label>
-      </div>
-    </form>
+
+        <div>
+          <Button type="submit" variant="secondary">
+            Join Now
+          </Button>
+        </div>
+      </form>
+    </div>
   );
 };
 

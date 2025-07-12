@@ -1,6 +1,7 @@
 import { IoLogoInstagram } from "react-icons/io5";
-import { FaFacebook, FaYoutube, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaGoogle, FaTwitter } from "react-icons/fa";
 import { contactInfo } from "../../../data/contact-info";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const Footer: React.FC = () => {
@@ -28,10 +29,15 @@ const Footer: React.FC = () => {
         <div className="footer__social-media">
           <span>Copyright 2025 @Jamila all right reserved</span>
           <div className="footer__social-media-icons">
-            <IoLogoInstagram size={24} />
-            <FaFacebook size={24} />
-            <FaYoutube size={24} />
-            <FaTwitter size={24} />
+            <Link to={contactInfo.instagram}>
+              <IoLogoInstagram size={24} />
+            </Link>
+            <Link to={contactInfo.facebook}>
+              <FaFacebook size={24} />
+            </Link>
+            <Link to={contactInfo.google}>
+              <FaGoogle size={24} />
+            </Link>
           </div>
         </div>
       </div>

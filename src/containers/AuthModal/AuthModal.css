@@ -26,6 +26,16 @@
   flex-direction: column;
 }
 
+.auth-modal__welcoming-banner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
 .auth-modal__form {
   display: flex;
   flex-direction: column;
@@ -59,3 +69,30 @@
 .auth-modal__recaptcha {
   margin-top: -32px;
 }
+
+.auth-modal__buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.social-btn{
+    display: flex;
+  align-items: center;
+  width: 300px;
+  height: 40px;
+  background-color: #fff;
+  outline: none;
+  font-weight: bold;
+  border: 1px solid rgb(211, 210, 210);
+  border-radius: 20px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.social-btn img {
+  margin: 0 0.5rem;
+}
+

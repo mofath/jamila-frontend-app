@@ -1,115 +1,56 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import { useDispatch } from "react-redux";
-import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import toast from "react-hot-toast";
-import { useCreateUserProfileMutation } from "../../apis/firebaseApi";
 import {
-  loginSchema,
-  signupSchema,
-  otpSchema,
-} from "../../utils/generateValidationSchema";
+  GoogleAuthProvider,
+  OAuthProvider,
+  signInWithPopup,
+  getAdditionalUserInfo,
+} from "firebase/auth";
 import { auth } from "../../firebase/firebaseApp";
-import Button from "../../components/Button/Button";
-import Input from "../../components/Input/Input";
-import PhoneInput from "../../components/PhoneInput/PhoneInput";
-
 import { setUser } from "../../store/authSlice";
+import { useCreateUserProfileMutation } from "../../apis/firebaseApi";
 import "./AuthModal.css";
 
-type AuthFormData = {
-  username?: string;
-  email?: string;
-  phone?: string;
-  otp?: string;
-};
-
 export const AuthModal = ({ onClose }: { onClose: () => void }) => {
-  const [step, setStep] = useState<"form" | "otp">("form");
-  const [mode, setMode] = useState<"signup" | "login">("signup");
-  const [loading, setLoading] = useState(false);
-  const [createUserProfile] = useCreateUserProfileMutation();
   const dispatch = useDispatch();
+  const [createUserProfile] = useCreateUserProfileMutation();
 
-  const schema =
-    step === "otp" ? otpSchema : mode === "signup" ? signupSchema : loginSchema;
-
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<AuthFormData>({
-    resolver: yupResolver(schema as any),
-  });
-
-  const phone = watch("phone");
-  const username = watch("username");
-  const email = watch("email");
-  const otp = watch("otp");
-
-  const sendOTP = async () => {
+  const handleSocialSignIn = async (providerName: "google" | "apple") => {
     try {
-      setLoading(true);
-      if (!window.recaptchaVerifier) {
-        window.recaptchaVerifier = new RecaptchaVerifier(
-          auth,
-          "auth-modal__recaptcha",
-          {
-            size: "invisible",
-            callback: () => console.log("reCAPTCHA solved ✅"),
-          }
-        );
-        await window.recaptchaVerifier.render();
-      }
+      const provider =
+        providerName === "google"
+          ? new GoogleAuthProvider()
+          : new OAuthProvider("apple.com");
 
-      const appVerifier = window.recaptchaVerifier;
-      const confirmationResult = await signInWithPhoneNumber(
-        auth,
-        phone!.trim(),
-        appVerifier
-      );
-
-      window.confirmationResult = confirmationResult;
-      toast.success("OTP sent successfully.");
-      setStep("otp");
-    } catch (error) {
-      console.error("Error sending OTP:", error);
-      toast.error("Failed to send OTP. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const verifyOTP = async () => {
-    try {
-      setLoading(true);
-      if (!otp) throw new Error("OTP is missing");
-
-      const result = await window.confirmationResult.confirm(otp.trim());
+      const result = await signInWithPopup(auth, provider);
       const user = result.user;
 
-      const userPayload = {
-        uid: user.uid,
-        phone: phone?.trim() || "",
-        username: username?.trim() || "",
-        email: email?.trim() || "",
-      };
+      const additionalInfo = getAdditionalUserInfo(result);
+      const isNew = additionalInfo?.isNewUser;
 
-      if (mode === "signup") {
-        await createUserProfile(userPayload);
+      if (isNew) {
+        await createUserProfile({
+          uid: user.uid,
+          email: user.email!,
+          username: user.displayName ?? "",
+        });
       }
 
-      dispatch(setUser({ ...userPayload, isAuthenticated: true }));
-
-      toast.success("Successfully logged in!");
+      dispatch(
+        setUser({
+          uid: user.uid,
+          email: user.email!,
+          username: user.displayName ?? "",
+          isAuthenticated: true,
+        })
+      );
+      toast.success(
+        `Logged in with ${providerName === "google" ? "Google" : "Apple"}!`
+      );
       onClose();
-    } catch (err) {
-      console.error("Invalid OTP", err);
-      toast.error("Invalid OTP. Please try again.");
-    } finally {
-      setLoading(false);
+    } catch (error: any) {
+      console.error(error);
+      toast.error(`${providerName} sign-in failed.`);
     }
   };
 
@@ -120,82 +61,26 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
         <button className="auth-modal__close" onClick={onClose}>
           ×
         </button>
-
-        {step === "form" ? (
-          <>
-            <h2 className="auth-modal__title">
-              {mode === "signup" ? "Sign Up" : "Login"}
-            </h2>
-            <form onSubmit={handleSubmit(sendOTP)} className="auth-modal__form">
-              {mode === "signup" && (
-                <>
-                  <Input
-                    placeholder="Enter your username"
-                    error={errors.username}
-                    {...register("username")}
-                  />
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    error={errors.email}
-                    {...register("email")}
-                  />
-                </>
-              )}
-              <PhoneInput
-                placeholder="Phone (e.g. +201234567890)"
-                error={errors.phone}
-                {...register("phone", {
-                  required: "Phone is required",
-                  pattern: {
-                    value: /^\+20\d{10}$/, // Egyptian mobile number
-                    message: "Invalid phone format (e.g. +201234567890)",
-                  },
-                })}
-              />
-              <div
-                id="auth-modal__recaptcha"
-                className="auth-modal__recaptcha"
-              />
-
-              <Button variant="success" type="submit" disabled={loading}>
-                {loading ? "Sending..." : "Send OTP"}
-              </Button>
-            </form>
-
-            <span className="flex flex-row items-center gap-2">
-              <span>
-                {mode === "signup" ? "Already registered?" : "New user?"}
-              </span>
-              <Button
-                variant="text"
-                onClick={() =>
-                  setMode((prev) => (prev === "signup" ? "login" : "signup"))
-                }
-              >
-                {mode === "signup" ? "Login" : "Sign up"}
-              </Button>
-            </span>
-          </>
-        ) : (
-          <>
-            <h2 className="auth-modal__title">Enter OTP</h2>
-            <form
-              onSubmit={handleSubmit(verifyOTP)}
-              className="auth-modal__form"
-            >
-              <Input
-                label="OTP Code"
-                placeholder="Enter the code"
-                error={errors.otp}
-                {...register("otp")}
-              />
-              <Button variant="success" type="submit" disabled={loading}>
-                {loading ? "Verifying..." : "Verify & Login"}
-              </Button>
-            </form>
-          </>
-        )}
+        <div className="auth-modal__welcoming-banner">
+          <h2 className="auth-modal__title">Welcome</h2>
+          <img src="/assets/icons/jamila-logo.png" alt="" width={150} />
+        </div>
+        <div className="auth-modal__buttons">
+          <button
+            className="social-btn"
+            onClick={() => handleSocialSignIn("google")}
+          >
+            <img src={`/assets/icons/google.png`} alt="google" width={19} />
+            <span>Sign in with Google</span>
+          </button>
+          <button
+            className="social-btn"
+            onClick={() => handleSocialSignIn("google")}
+          >
+            <img src={`/assets/icons/apple.png`} alt="apple" width={19} />
+            <span>Sign in with Apple</span>
+          </button>
+        </div>
       </div>
     </div>
   );

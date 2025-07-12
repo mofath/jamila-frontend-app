@@ -7,7 +7,6 @@ import "./FranchiseApplicationForm.css";
 
 const FranchiseApplicationForm: React.FC = () => {
   const { data } = useGetSettingsQuery();
-
   const {
     adFees = [],
     royaltyFees = [],
@@ -46,9 +45,6 @@ const FranchiseApplicationForm: React.FC = () => {
             liquidCapitals={liquidCapitals}
             netWorth={netWorth}
           />
-          <div>
-            <Button variant="secondary">Join Now</Button>
-          </div>
         </div>
       </div>
     </div>

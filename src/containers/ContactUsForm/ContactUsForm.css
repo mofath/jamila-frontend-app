@@ -73,7 +73,7 @@
   gap: 16px;
 }
 
-.contact-info__social-media-links li {
+.contact-info__social-media-links a {
   background-color: var(--color-gold);
   border-radius: 50%;
   padding: 10px;

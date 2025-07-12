@@ -1,0 +1,76 @@
+.checkout-form__section {
+  display: flex;
+}
+
+.checkout-form__container {
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  margin-right: auto;
+}
+
+.checkout-form__section h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #333;
+  text-align: center;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.checkout-form__label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.checkout-form__input-wrapper {
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.checkout-form__input {
+  width: 100%;
+}
+
+.checkout-form__row--two-cols {
+  display: flex;
+  gap: 16px;
+}
+
+.checkout-form__col {
+  flex: 1;
+}
+
+.checkout-form__actions {
+  margin-top: 32px;
+}
+
+.checkout-form__submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #5469d4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.checkout-form__submit-button:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+.checkout-form__message {
+  margin-top: 16px;
+  color: #e53e3e;
+  text-align: center;
+}

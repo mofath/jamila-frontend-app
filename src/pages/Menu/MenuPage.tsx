@@ -5,13 +5,15 @@ import {
   useGetCategoriesQuery,
   useLazyGetProductsByCategoryQuery,
 } from "../../apis/firebaseApi";
-import "./MenuPage.css";
 import Filters from "./Filters/Filters";
+import Spinner from "../../components/Spinner/Spinner";
+import "./MenuPage.css";
 
 const MenuPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("");
-  const { data: categories = [] } = useGetCategoriesQuery();
-  const [getProducts, { data: products = [], isLoading }] =
+  const { data: categories = [], isLoading: categoriesLoading } =
+    useGetCategoriesQuery();
+  const [getProducts, { data: products = [], isLoading: productsLoading }] =
     useLazyGetProductsByCategoryQuery();
 
   // 👉 Set first category once categories are fetched
@@ -31,6 +33,7 @@ const MenuPage: React.FC = () => {
 
   return (
     <div className="menu-page page">
+      {(categoriesLoading || categoriesLoading) && <Spinner />}
       <div className="menu-page__container container mx-auto">
         {/* Heading */}
         <div className="menu-page__heading">

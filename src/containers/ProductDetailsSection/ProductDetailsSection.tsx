@@ -1,11 +1,17 @@
 import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addItem, toggleCart } from "../../store/cartSlice";
-import Button  from "../../components/Button/Button";
-import Textarea  from "../../components/Textarea/Textarea";
+import Button from "../../components/Button/Button";
+import Textarea from "../../components/Textarea/Textarea";
+import { useAuth } from "../../hook/useAuth";
+import { useAuthModal } from "../AuthModal/AuthModalContext";
+import { ROUTES } from "../../constants/routes.constants";
+import Spinner from "../../components/Spinner/Spinner";
 import "./ProductDetailsSection.css";
 
 interface ProductDetailsSectionProps {
+  isLoading?: boolean;
   name: string;
   image: string;
   description: string;
@@ -15,11 +21,16 @@ interface ProductDetailsSectionProps {
 }
 
 const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
+  isLoading = false,
   name,
   image,
   description,
   pricesBySize,
 }) => {
+  const { isAuthenticated } = useAuth();
+  const { openAuthModal } = useAuthModal();
+  const navigate = useNavigate();
+
   const sizes = Object.keys(pricesBySize);
   const [selectedSize, setSelectedSize] = useState<string>(
     sizes.includes("default") ? "default" : sizes[0]
@@ -28,9 +39,13 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
   const commentRef = useRef<HTMLTextAreaElement>(null);
   const dispatch = useDispatch();
 
-  const handleOrderNow = () => {
-    // Future use: navigate('/checkout') or open a modal
-    alert("🚚 Order placement feature coming soon!");
+  const handleBuyNow = () => {
+    if (!isAuthenticated) {
+      openAuthModal();
+      return;
+    }
+
+    navigate(ROUTES.CHECKOUT);
   };
 
   const handleAddToCart = () => {
@@ -46,7 +61,7 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
     };
 
     dispatch(addItem(item));
-    dispatch(toggleCart()); 
+    dispatch(toggleCart());
   };
 
   const handleSizeClick = (size: string) => {
@@ -55,6 +70,7 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
 
   return (
     <div className="product-details-section mx-auto container">
+      {isLoading && <Spinner />}
       {/* Product Poster */}
       <div className="product-details-page__image-wrapper">
         <img
@@ -105,7 +121,7 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
 
         {/* Buttons */}
         <div className="product-details-section__actions">
-          <Button variant="secondary" onClick={handleOrderNow}>
+          <Button variant="secondary" onClick={handleBuyNow}>
             Order Now
           </Button>
           <Button variant="primary" onClick={handleAddToCart}>

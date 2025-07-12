@@ -1,13 +1,13 @@
 import React from "react";
 import ReactPhoneInput from "react-phone-input-2";
-import 'react-phone-input-2/lib/bootstrap.css'
+import "react-phone-input-2/lib/bootstrap.css";
 import "./PhoneInput.css";
 
 interface PhoneInputProps {
   name?: string;
   label?: string;
   value?: string;
-  country?: string,
+  country?: string;
   onChange?: (...event: any[]) => void;
   onBlur?: (...event: any[]) => void;
   error?: any;
@@ -20,7 +20,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
   name,
   label,
   value,
-  country='us',
+  country = "us",
   onChange,
   onBlur,
   error,
@@ -38,6 +38,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
       <ReactPhoneInput
         country="us"
         disableDropdown={true}
+        autoFormat={false}
         value={value}
         onChange={(val: string) => {
           onChange?.({ target: { value: val, name } }); // mimic native event
@@ -56,7 +57,9 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
         containerClass="form-group__phone-container"
         buttonClass="form-group__phone-button"
       />
-      {error && <span className="form-group__error-message">{error.message}</span>}
+      {error && (
+        <span className="form-group__error-message">{error.message}</span>
+      )}
     </div>
   );
 };

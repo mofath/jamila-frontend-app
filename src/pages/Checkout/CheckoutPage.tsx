@@ -1,15 +1,37 @@
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import { StripeCheckout } from "../../containers/StripeChecout/StripeCheckout";
+import CheckoutForm from "../../containers/StripeChecout/CheckoutForm";
+import { useAuth } from "../../hook/useAuth";
+import OrderSummary from "../../containers/OrderSummary/OrderSummary";
+import { useCart } from "../../hook/useCart";
+import "./CheckoutPage.css";
 
-const stripePromise = loadStripe("pk_test_XXXXXXXXXXXXXXXXXXXXXX");
+const STRIPE_PK_KEY = process.env.REACT_APP_STRIPE_PK_KEY as string;
 
-export default function CheckoutPage() {
-  const total = 23.5; // 🧮 Your calculated cart total
+const CheckoutPage = () => {
+  const { total, items } = useCart();
+  const stripePromise = loadStripe(STRIPE_PK_KEY);
+  const { uid: userId } = useAuth();
 
   return (
     <Elements stripe={stripePromise}>
-      <StripeCheckout total={total} />
+      <div className="checkout-page ">
+        <div className="checkout-page__order-summary">
+          <OrderSummary items={items} />
+        </div>
+        <div className="checkout-page__form">
+          {total ? (
+            <CheckoutForm
+              total={Math.round(Number(total) * 100)}
+              userId={userId}
+            />
+          ) : (
+            <p>loading</p>
+          )}
+        </div>
+      </div>
     </Elements>
   );
-}
+};
+
+export default CheckoutPage;

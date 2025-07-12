@@ -1,3 +1,4 @@
+import Button from "../Button/Button";
 import "./CartItem.css";
 
 interface CartItemProps {
@@ -7,7 +8,8 @@ interface CartItemProps {
   price: number;
   size: string;
   image?: string;
-  handleQuantityChange: any;
+  handleQuantityChange?: any;
+  removeCartItem?: any;
 }
 
 const CartItem: React.FC<CartItemProps> = ({
@@ -18,6 +20,7 @@ const CartItem: React.FC<CartItemProps> = ({
   id,
   image,
   handleQuantityChange,
+  removeCartItem,
 }) => {
   return (
     <li className="cart-item ">
@@ -30,14 +33,25 @@ const CartItem: React.FC<CartItemProps> = ({
         <span className="text">{size}</span>
       </div>
       <div className="cart-item__quantity-control ">
-        <input
-          type="number"
-          min="1"
-          value={quantity || 1}
-          onChange={(e) =>
-            handleQuantityChange(id, parseInt(e.target.value, 10))
-          }
-        />
+        {handleQuantityChange ? (
+          <div>
+            <input
+              type="number"
+              min="1"
+              value={quantity || 1}
+              onChange={(e) =>
+                handleQuantityChange(id, parseInt(e.target.value, 10))
+              }
+            />
+            {removeCartItem && (
+              <Button onClick={() => removeCartItem(id)} variant="text">
+                Remove
+              </Button>
+            )}
+          </div>
+        ) : (
+          <span className="text">{quantity}</span>
+        )}
       </div>
     </li>
   );

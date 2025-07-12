@@ -1,15 +1,15 @@
 /* Header.tsx */
 import { useState, useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { IoMdMenu as MenuIcon } from "react-icons/io";
 import { BiUser as UserIcon } from "react-icons/bi";
 import { FiShoppingCart as CartIcon } from "react-icons/fi";
 import { ROUTES } from "../../../constants/routes.constants";
 import { useAuth } from "../../../hook/useAuth";
-
-import "./Header.css";
 import { toggleCart } from "../../../store/cartSlice";
-import { useDispatch } from "react-redux";
+import { useAuthModal } from "../../../containers/AuthModal/AuthModalContext";
+import "./Header.css";
 
 interface HeaderProps {
   onLoginClick: () => void;
@@ -26,6 +26,7 @@ const navLinks = [
 const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
   const { pathname } = useLocation();
   const { isAuthenticated, logout } = useAuth();
+  const { openAuthModal } = useAuthModal(); // 👈 use modal hook
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -34,6 +35,11 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
   const isActive = (route: string) => pathname === route;
 
   const openCartDrawer = () => {
+    if (!isAuthenticated) {
+      openAuthModal();
+      return;
+    }
+
     dispatch(toggleCart());
   };
 

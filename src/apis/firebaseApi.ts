@@ -90,9 +90,9 @@ export const firebaseApi = createApi({
         }
       },
     }),
-    createUserProfile: builder.mutation<
+    createUserProfileWithPhone: builder.mutation<
       void,
-      { uid: string; username: string; email: string; phone: string }
+      { uid: string; username?: string; email: string; phone: string }
     >({
       async queryFn({ uid, username, email, phone }) {
         try {
@@ -104,6 +104,32 @@ export const firebaseApi = createApi({
               username,
               email,
               phone,
+              createdAt: new Date().toISOString(),
+            });
+            console.log("✅ New user profile created");
+          } else {
+            console.log("ℹ️ User already exists");
+          }
+
+          return { data: undefined };
+        } catch (error: any) {
+          return { error: { status: "CUSTOM_ERROR", error: error.message } };
+        }
+      },
+    }),
+    createUserProfile: builder.mutation<
+      void,
+      { uid: string; username: string; email: string }
+    >({
+      async queryFn({ uid, username, email }) {
+        try {
+          const userRef = doc(firebaseDb, "users", uid);
+          const snapshot = await getDoc(userRef);
+
+          if (!snapshot.exists()) {
+            await setDoc(userRef, {
+              username,
+              email,
               createdAt: new Date().toISOString(),
             });
             console.log("✅ New user profile created");
