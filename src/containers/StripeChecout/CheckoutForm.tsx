@@ -1,3 +1,7 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { doc, setDoc } from "firebase/firestore";
+import Stripe from "stripe";
 import {
   CardNumberElement,
   CardExpiryElement,
@@ -5,17 +9,13 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 import { useDispatch } from "react-redux";
-import axios from "./axios";
-import { doc, setDoc } from "firebase/firestore";
 import { firebaseDb } from "../../firebase/firebaseApp";
 import Button from "../../components/Button/Button";
-import Stripe from "stripe";
-import "./CheckoutForm.css";
 import { ROUTES } from "../../constants/routes.constants";
-import toast from "react-hot-toast";
+import { useCart } from "../../hook/useCart";
+import "./CheckoutForm.css";
 
 const STRIPE_SK_KEY = process.env.REACT_APP_STRIPE_SK_KEY as string;
 
@@ -35,6 +35,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ total, userId }) => {
   const elements = useElements();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { clearCart } = useCart();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -105,7 +106,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ total, userId }) => {
       setSucceeded(true);
       setError(null);
       setProcessing(false);
-      dispatch({ type: "EMPTY_BASKET" });
+      clearCart();
       toast.success("Success! Your order is placed");
       setTimeout(() => {
         navigate(ROUTES.MENU, { replace: true });

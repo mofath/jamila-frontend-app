@@ -72,6 +72,17 @@
   animation: fadeIn 0.3s ease;
 }
 
+.cart-empty {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+
 /* Optional fade animation */
 @keyframes fadeIn {
   from {
