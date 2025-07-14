@@ -1,0 +1,14 @@
+.price-tag {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.price-tag__original-price {
+  text-decoration: line-through;
+  color: pink;
+}
+
+.price-tag__actual-price {
+  color: var(--color-text-600);
+}

@@ -33,7 +33,7 @@ const MenuPage: React.FC = () => {
 
   return (
     <div className="menu-page page">
-      {(categoriesLoading || categoriesLoading) && <Spinner />}
+      {/* {(categoriesLoading || categoriesLoading) && <Spinner />} */}
       <div className="menu-page__container container mx-auto">
         {/* Heading */}
         <div className="menu-page__heading">
@@ -61,8 +61,9 @@ const MenuPage: React.FC = () => {
                 name={product.name}
                 image={product.image}
                 price={
-                  product?.pricesBySize?.medium ||
-                  product?.pricesBySize?.default
+                  product?.sizeSelection
+                    ? product?.pricesBySize?.medium
+                    : product?.pricesBySize?.default
                 }
                 rating={product.rating}
                 description={product.description}

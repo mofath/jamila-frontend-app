@@ -9,14 +9,19 @@ import { useAuthModal } from "../AuthModal/AuthModalContext";
 import { ROUTES } from "../../constants/routes.constants";
 import Spinner from "../../components/Spinner/Spinner";
 import "./ProductDetailsSection.css";
+import PriceTag from "../../components/PriceTag/PriceTag";
 
 interface ProductDetailsSectionProps {
   isLoading?: boolean;
   name: string;
   image: string;
   description: string;
+  sizeSelection?: boolean;
   pricesBySize: {
-    [size: string]: number;
+    [size: string]: {
+      price: number | string;
+      priceAfterDiscount?: number | string;
+    };
   };
 }
 
@@ -25,6 +30,7 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
   name,
   image,
   description,
+  sizeSelection = false,
   pricesBySize,
 }) => {
   const { isAuthenticated } = useAuth();
@@ -33,7 +39,7 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
 
   const sizes = Object.keys(pricesBySize);
   const [selectedSize, setSelectedSize] = useState<string>(
-    sizes.includes("default") ? "default" : sizes[0]
+    sizeSelection ? sizes[0] : "default"
   );
 
   const commentRef = useRef<HTMLTextAreaElement>(null);
@@ -53,7 +59,10 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
     const item = {
       id: `${name}-${selectedSize}`,
       name,
-      price: pricesBySize[selectedSize],
+      price: Number(
+        pricesBySize[selectedSize]?.priceAfterDiscount ||
+          pricesBySize[selectedSize]?.price
+      ),
       size: selectedSize,
       quantity: 1,
       comment,
@@ -89,29 +98,31 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
 
         <div>
           <span className="product-details-section__price heading-1">
-            ${pricesBySize[selectedSize]}
+            <PriceTag price={pricesBySize[selectedSize]} />
           </span>
         </div>
 
         {/* Size selector */}
-        {sizes.length > 1 && (
+        {sizeSelection ? (
           <div className="product-details-section__select-size">
             <span className="text-gray-500">Select Size</span>
             <div className="product-details-section__size-options">
-              {sizes.map((size) => (
-                <button
-                  key={size}
-                  onClick={() => handleSizeClick(size)}
-                  className={`product-size-button ${
-                    selectedSize === size ? "active" : ""
-                  }`}
-                >
-                  {size === "default" ? "Standard" : size}
-                </button>
-              ))}
+              {sizes
+                .filter((size) => size !== "default")
+                .map((size) => (
+                  <button
+                    key={size}
+                    onClick={() => handleSizeClick(size)}
+                    className={`product-size-button ${
+                      selectedSize === size ? "active" : ""
+                    }`}
+                  >
+                    {size}
+                  </button>
+                ))}
             </div>
           </div>
-        )}
+        ) : null}
 
         {/* Comment */}
         <div className="product-details-section__comment-input">

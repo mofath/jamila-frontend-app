@@ -56,16 +56,9 @@
   text-transform: capitalize;
 }
 
-.product-menu-card__price {
-  color: var(--color-text-600);
-  margin-top: 16px;
-}
-
 .product-menu-card__info .text {
   color: var(--color-text-400);
 }
-
-/* =============== */
 
 .menu-products-list {
   display: flex;

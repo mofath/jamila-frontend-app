@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
-import StarRating from "../StarRating/StarRating";
-import "./ProductMenuCard.css";
 import { ROUTES } from "../../constants/routes.constants";
+import PriceTag from "../PriceTag/PriceTag";
+import "./ProductMenuCard.css";
 
 interface ProductMenuCardProps {
   id: number;
   name: string;
   image: string;
-  price: number;
+  price: {
+    price: number | string;
+    priceAfterDiscount?: number | string;
+  };
   rating: number;
   description: string;
   gradient: string;
@@ -21,7 +24,6 @@ const ProductMenuCard: React.FC<ProductMenuCardProps> = ({
   name,
   image,
   price,
-  rating,
   description,
   label,
   categoryId,
@@ -31,15 +33,14 @@ const ProductMenuCard: React.FC<ProductMenuCardProps> = ({
       to={id ? ROUTES.getProductDetails(categoryId, id) : "#"}
       className="product-best-selling-card-link"
     >
-      <div className={`product-menu-card ${label}`}>
+      <div className={`product-menu-card ${label || ""}`}>
         <div className="product-menu-card__image-wrapper">
           <img src={image} alt={name} className="product-menu-card__image" />
         </div>
         <div className="product-menu-card__info">
           <p className="heading-4">{name}</p>
           <p className="text">{description}</p>
-          {/* <StarRating rating={rating} variant="character" /> */}
-          <div className="product-menu-card__price heading-2">${price}</div>
+          <PriceTag price={price} />
         </div>
       </div>
     </Link>

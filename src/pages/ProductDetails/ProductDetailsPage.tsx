@@ -20,7 +20,7 @@ const ProductDetailsPage: React.FC = () => {
   });
 
   if (isError)
-    return <div className="error">❌ Error: {(error as any).error}</div>;
+    return <div className="error">Error: {(error as any).error}</div>;
 
   return (
     <div className="A page">
@@ -34,6 +34,7 @@ const ProductDetailsPage: React.FC = () => {
             image={product?.image}
             description={product?.description}
             pricesBySize={product?.pricesBySize}
+            sizeSelection={product?.sizeSelection}
           />
           <BenefitsSection />
           <FAQSection />
