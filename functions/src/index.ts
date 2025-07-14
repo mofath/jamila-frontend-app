@@ -1,46 +1,44 @@
+import { getEmailTemplate } from "./utils/getEmailTemplate.util";
+import { sendEmail } from "./utils/sendEmail.util";
 import * as functions from "firebase-functions";
 import express, { Request, Response } from "express";
 import cors from "cors";
-import Stripe from "stripe";
-
-const STRIPE_SK_KEY = process.env.STRIPE_SK_KEY as string;
-
-const stripe = new Stripe(STRIPE_SK_KEY);
 
 // App configf
 const app = express();
 
-app.use(cors({ origin: true }));
+const corsOptions = {
+  origin: true, 
+  methods: ["GET", "POST", "OPTIONS"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions)); 
 app.use(express.json());
 
-app.get("/", (_req: Request, res: Response) => {
-  res.status(200).send("Hello World");
+// Define routes
+app.get("/ping", async (req: Request, res: Response) => {
+  return res.status(200).send("Hello world");
 });
 
-app.post("/temp", (_req: Request, res: Response) => {
-  res.status(200).send("Hello World");
-});
+app.post("/send-email", async (req: Request, res: Response) => {
+  const { from, type, payload } = req.body;
 
-app.post("/payments/create", async (req: Request, res: Response) => {
-  const total = Number(req.query.total);
+  if (!from || !type || !payload) {
+    return res
+      .status(400)
+      .json({ message: "Missing required fields: from, type, or payload" });
+  }
+
   try {
-    const paymentIntent = await stripe.paymentIntents.create(
-      {
-        amount: total,
-        currency: "usd",
-        payment_method_types: ["card"],
-      },
-      {
-        stripeAccount: "acct_1ReyzMQRjf21HlUx",
-      }
-    );
-
-    res.status(201).send({
-      clientSecret: paymentIntent.client_secret,
-    });
-  } catch (error) {
-    console.error("Stripe error:", error);
-    res.status(500).send({ error: "Payment creation failed" });
+    const { subject, html } = getEmailTemplate(type, payload);
+    await sendEmail({ from, subject, html });
+    return res.status(200).json({ message: "Email sent!" });
+  } catch (err) {
+    console.error("Email send error:", err);
+    return res
+      .status(500)
+      .json({ message: "Error sending email", error: err?.toString() });
   }
 });
 

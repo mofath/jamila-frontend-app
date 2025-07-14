@@ -14,14 +14,15 @@ import Input from "../../components/Input/Input";
 import { contactInfo } from "../../data/contact-info";
 import Spinner from "../../components/Spinner/Spinner";
 import { ROUTES } from "../../constants/routes.constants";
-import { sendEmail } from "../../utils/emailService";
+import { useSendEmailMutation } from "../../apis/mailerApi";
 import { contactUsSchema } from "../../utils/generateValidationSchema";
 import "./ContactUsForm.css";
-import { time } from "console";
 
 const ContactUsForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  const [sendEmail] = useSendEmailMutation();
 
   const {
     register,
@@ -35,21 +36,20 @@ const ContactUsForm: React.FC = () => {
   const onSubmit = async (data: any) => {
     setLoading(true);
     const templateParams = {
-      title: "A new request from Jamila EShop",
-      name: data.firstName + " " + data.lastName,
-      email: data.email,
+      type: "contact" as any,
+      from: data.email,
+      username: data.firstName + " " + data.lastName,
       phone: data.phone,
       message: data.message,
-      time: new Date().toLocaleString(),
     };
 
     try {
-      await sendEmail("contact", templateParams);
+      await sendEmail(templateParams);
       toast.success("Message sent successfully");
       reset();
       // Wait 2 seconds, then redirect to the menu
       setTimeout(() => {
-        navigate(ROUTES.MENU);
+        // navigate(ROUTES.MENU);
       }, 200);
     } catch (err: any) {
       console.error("FAILED", err);
