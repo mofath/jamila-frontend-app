@@ -1,15 +1,13 @@
 type EmailType = "contact" | "partnership" | "order";
 
 interface ContactPayload {
-  firstName: string;
-  lastName: string;
+  username: string;
   email: string;
   phone: string;
   message: string;
 }
 
 interface PartnershipPayload {
-  title: string;
   name: string;
   email: string;
   currentPhone: string;
@@ -19,7 +17,6 @@ interface PartnershipPayload {
   netWorth: string;
   liquidCapital: string;
   hasBusinessExperience: string;
-  time: string;
 }
 
 interface OrderItem {
@@ -38,7 +35,8 @@ interface User {
 
 interface OrderPayload {
   user: User;
-  cart: OrderItem[];
+  items: OrderItem[];
+  total: string | number;
 }
 
 type Payload = ContactPayload | PartnershipPayload | OrderPayload;
@@ -46,14 +44,16 @@ type Payload = ContactPayload | PartnershipPayload | OrderPayload;
 export const getEmailTemplate = (type: EmailType, payload: Payload) => {
   let subject = "";
   let html = "";
+  let from = "";
 
   switch (type) {
     case "contact":
       const contact = payload as ContactPayload;
-      subject = `Contact Request from ${contact.firstName} ${contact.lastName}`;
+      (from = contact.email),
+        (subject = `Contact Request from ${contact.username}`);
       html = `
         <h2>New Contact Message</h2>
-        <p><strong>Name:</strong> ${contact.firstName} ${contact.lastName}</p>
+        <p><strong>Name:</strong> ${contact.username}</p>
         <p><strong>Email:</strong> ${contact.email}</p>
         <p><strong>Phone:</strong> ${contact.phone}</p>
         <p><strong>Message:</strong><br/> ${contact.message}</p>
@@ -62,9 +62,9 @@ export const getEmailTemplate = (type: EmailType, payload: Payload) => {
 
     case "partnership":
       const partner = payload as PartnershipPayload;
-      subject = "New Partnership Request";
+      (from = partner.email), (subject = "New Partnership Request");
       html = `
-        <h2>${partner.title}</h2>
+        <h2>New Partnership Request</h2>
         <p><strong>Name:</strong> ${partner.name}</p>
         <p><strong>Email:</strong> ${partner.email}</p>
         <p><strong>Current Phone:</strong> ${partner.currentPhone}</p>
@@ -74,38 +74,72 @@ export const getEmailTemplate = (type: EmailType, payload: Payload) => {
         <p><strong>Net Worth:</strong> ${partner.netWorth}</p>
         <p><strong>Liquid Capital:</strong> ${partner.liquidCapital}</p>
         <p><strong>Business Experience:</strong> ${partner.hasBusinessExperience}</p>
-        <p><strong>Submitted:</strong> ${partner.time}</p>
       `;
       break;
 
     case "order":
       const order = payload as OrderPayload;
+      from = order.user.email;
       subject = `New Order from ${order.user.username}`;
+
+      const orderRows = order.items
+        .map(
+          (item) => `
+        <tr>
+          <td style="padding: 8px; border: 1px solid #ccc;">${item.name}</td>
+          <td style="padding: 8px; border: 1px solid #ccc;">${item.size}</td>
+          <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">${
+            item.quantity
+          }</td>
+          <td style="padding: 8px; border: 1px solid #ccc; text-align: right;">$${item.price.toFixed(
+            2
+          )}</td>
+          <td style="padding: 8px; border: 1px solid #ccc; text-align: right;">$${(
+            item.price * item.quantity
+          ).toFixed(2)}</td>
+        </tr>
+        ${
+          item.comment
+            ? `<tr><td colspan="5" style="padding: 6px 12px; font-style: italic; background: #f9f9f9;">Comment: ${item.comment}</td></tr>`
+            : ""
+        }
+      `
+        )
+        .join("");
+
       html = `
-        <h2>New Order</h2>
-        <p><strong>User:</strong> ${order.user.username}</p>
-        <p><strong>Email:</strong> ${order.user.email}</p>
-        <p><strong>Phone:</strong> ${order.user.phone || "N/A"}</p>
-        <hr/>
-        <h3>Order Items</h3>
-        ${order.cart
-          .map(
-            (item) => `
-            <div>
-              <p><strong>${item.name}</strong> (${item.size}) x ${
-              item.quantity
-            } - $${item.price}</p>
-              ${item.comment ? `<p>Comment: ${item.comment}</p>` : ""}
-            </div>
-          `
-          )
-          .join("")}
-      `;
+    <h2>New Order</h2>
+    <p><strong>User:</strong> ${order.user.username}</p>
+    <p><strong>Email:</strong> ${order.user.email}</p>
+    <p><strong>Phone:</strong> ${order.user.phone || "N/A"}</p>
+    <hr/>
+    <h3>Order Summary</h3>
+    <table style="border-collapse: collapse; width: 100%; font-family: sans-serif;">
+      <thead>
+        <tr style="background-color: #f2f2f2;">
+          <th style="padding: 8px; border: 1px solid #ccc;">Item</th>
+          <th style="padding: 8px; border: 1px solid #ccc;">Size</th>
+          <th style="padding: 8px; border: 1px solid #ccc;">Qty</th>
+          <th style="padding: 8px; border: 1px solid #ccc;">Price</th>
+          <th style="padding: 8px; border: 1px solid #ccc;">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${orderRows}
+        <tr>
+          <td colspan="4" style="padding: 8px; border: 1px solid #ccc; text-align: right;"><strong>Total</strong></td>
+          <td style="padding: 8px; border: 1px solid #ccc; text-align: right;"><strong>$${parseFloat(
+            `${order.total}`
+          ).toFixed(2)}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  `;
       break;
-      
+
     default:
       throw new Error("Invalid email type");
   }
 
-  return { subject, html };
+  return { subject, html, from };
 };
