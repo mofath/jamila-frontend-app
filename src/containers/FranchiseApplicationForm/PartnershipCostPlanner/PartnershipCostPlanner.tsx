@@ -1,30 +1,32 @@
 import React, { useState, useEffect } from "react";
-import  "./PartnershipCostPlanner.css";
+import "./PartnershipCostPlanner.css";
 
-type FeeSelection = {
-  year: string;
-  royaltyFee: string;
-  addFee: string;
-};
+interface PartnershipCostPlannerProps {
+  adFees: any[];
+  royaltyFees: any[];
+}
 
-const initialData: FeeSelection[] = [
-  { year: "Year 1", royaltyFee: "7%", addFee: "3%" },
-  { year: "Year 2", royaltyFee: "4%", addFee: "8%" },
-  { year: "Year 3", royaltyFee: "2%", addFee: "5%" },
-];
-
-const PartnershipCostPlanner = ({}) => {
-  const [fees, setFees] = useState<FeeSelection[]>(initialData);
-
-  const handleChange = (
-    index: number,
-    field: "royaltyFee" | "addFee",
-    value: string
-  ) => {
-    const updated = [...fees];
-    updated[index][field] = value;
-    setFees(updated);
-  };
+const PartnershipCostPlanner: React.FC<PartnershipCostPlannerProps> = ({
+  royaltyFees,
+  adFees,
+}) => {
+  const fees = [
+    {
+      year: "Year 1",
+      royaltyFee: `${royaltyFees[0]}%`,
+      addFee: `${adFees[0]}%`,
+    },
+    {
+      year: "Year 2",
+      royaltyFee: `${royaltyFees[1]}%`,
+      addFee: `${adFees[1]}%`,
+    },
+    {
+      year: "Year 3",
+      royaltyFee: `${royaltyFees[2]}%`,
+      addFee: `${adFees[2]}%`,
+    },
+  ];
 
   return (
     <div className="partnership-cost-planner">

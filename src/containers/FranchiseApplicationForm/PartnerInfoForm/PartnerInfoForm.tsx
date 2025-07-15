@@ -6,11 +6,11 @@ import Input from "../../../components/Input/Input";
 import Select from "../../../components/Select/Select";
 import { countries } from "../../../data/countries-data";
 import { PartnerInfoSchema } from "../../../utils/generateValidationSchema";
-import { sendEmail } from "../../../utils/emailService";
 import Spinner from "../../../components/Spinner/Spinner";
 import CheckboxGroup from "../../../components/CheckboxGroup/CheckboxGroup";
-import "./PartnerInfoForm.css";
 import Button from "../../../components/Button/Button";
+import { useSendEmailMutation } from "../../../apis/mailerApi";
+import "./PartnerInfoForm.css";
 
 interface PartnerInfoFormProps {
   liquidCapitals: { label: string; value: string }[];
@@ -23,6 +23,8 @@ const PartnerInfoForm: React.FC<PartnerInfoFormProps> = ({
 }) => {
   const [loading, setLoading] = useState(false);
 
+  const [sendEmail] = useSendEmailMutation();
+
   const {
     register,
     handleSubmit,
@@ -33,29 +35,27 @@ const PartnerInfoForm: React.FC<PartnerInfoFormProps> = ({
     resolver: yupResolver(PartnerInfoSchema),
   });
 
-  const watchHasBusinessExperience = watch("hasBusinessExperience");
-
   const onSubmit = async (data: any) => {
-    setLoading(true); // Optional: make sure `setLoading` is declared via `useState`
+    setLoading(true);
     const templateParams = {
-      title: "A new partnership request",
-      name: `${data.personal.firstName} ${data.personal.lastName}`,
-      email: data.personal.email,
-      currentPhone: data.currentAddress.phone,
-      interestPhone: data.locationOfInterest.phone,
-      currentAddress: `${data.currentAddress.city}, ${data.currentAddress.country}`,
-      locationOfInterest: `${data.locationOfInterest.city}, ${data.locationOfInterest.country}`,
-      netWorth: data.netWorth,
-      liquidCapital: data.liquidCapital,
-      hasBusinessExperience: data?.hasBusinessExperience ? "Yes" : "No",
-      time: new Date().toLocaleString(),
+      type: "partnership",
+      payload: {
+        name: `${data.personal.firstName} ${data.personal.lastName}`,
+        email: data.personal.email,
+        currentPhone: data.currentAddress.phone,
+        interestPhone: data.locationOfInterest.phone,
+        currentAddress: `${data.currentAddress.city}, ${data.currentAddress.country}`,
+        locationOfInterest: `${data.locationOfInterest.city}, ${data.locationOfInterest.country}`,
+        netWorth: data.netWorth,
+        liquidCapital: data.liquidCapital,
+        hasBusinessExperience: data?.hasBusinessExperience ? "Yes" : "No",
+      },
     };
 
     try {
-      await sendEmail("partner-info", templateParams);
+      await sendEmail(templateParams);
       toast.success("Partner request sent successfully");
-      reset(); // Don't forget to import reset from useForm
-      // Optional redirect or modal close
+      reset();
     } catch (err: any) {
       console.error("Email sending failed:", err);
       toast.error("Failed to send request. Please try again.");

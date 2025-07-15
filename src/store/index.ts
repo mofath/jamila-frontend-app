@@ -13,11 +13,13 @@ import storage from "redux-persist/lib/storage";
 import authReducer from "./authSlice";
 import cartReducer from "./cartSlice";
 import { firebaseApi } from "../apis/firebaseApi";
+import { mailerApi } from "../apis/mailerApi";
 
 const rootReducer = combineReducers({
   user: authReducer,
   cart: cartReducer,
   [firebaseApi.reducerPath]: firebaseApi.reducer,
+  [mailerApi.reducerPath]: mailerApi.reducer,
 });
 
 const persistConfig = {
@@ -35,7 +37,9 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(firebaseApi.middleware),
+    })
+      .concat(firebaseApi.middleware)
+      .concat(mailerApi.middleware),
 });
 
 export const persistor = persistStore(store);

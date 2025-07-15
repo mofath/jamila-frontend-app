@@ -82,8 +82,8 @@ export const getEmailTemplate = (type: EmailType, payload: Payload) => {
       from = order.user.email;
       subject = `New Order from ${order.user.username}`;
 
-      const orderRows = order.items
-        .map(
+      const orderRows = order?.items
+        ?.map(
           (item) => `
         <tr>
           <td style="padding: 8px; border: 1px solid #ccc;">${item.name}</td>

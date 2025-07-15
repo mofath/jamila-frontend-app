@@ -2799,3 +2799,923 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 [debug] [2025-07-14T22:01:00.101Z] [worker-us-central1-api-222d517e-4381-4ead-9558-df8b7fbf7047]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-222d517e-4381-4ead-9558-df8b7fbf7047]: FINISHING"}}
 [debug] [2025-07-14T22:01:00.109Z] [worker-us-central1-api-222d517e-4381-4ead-9558-df8b7fbf7047]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-222d517e-4381-4ead-9558-df8b7fbf7047]: exited"}}
 [debug] [2025-07-14T22:01:00.109Z] [worker-us-central1-api-222d517e-4381-4ead-9558-df8b7fbf7047]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-222d517e-4381-4ead-9558-df8b7fbf7047]: FINISHED"}}
+[debug] [2025-07-14T23:28:18.758Z] Functions emulator received unknown request at path /your-project-id/us-central1/api
+[debug] [2025-07-14T23:28:36.600Z] Received signal SIGINT (Ctrl-C) 1
+[info]  
+[info] i  emulators: Received SIGINT (Ctrl-C) for the first time. Starting a clean shutdown. 
+[info] i  emulators: Please wait for a clean shutdown or send the SIGINT (Ctrl-C) signal again to stop right now. 
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[info] i  functions: Stopping Functions Emulator {"metadata":{"emulator":{"name":"functions"},"message":"Stopping Functions Emulator"}}
+[info] i  eventarc: Stopping Eventarc Emulator {"metadata":{"emulator":{"name":"eventarc"},"message":"Stopping Eventarc Emulator"}}
+[info] i  tasks: Stopping Cloud Tasks Emulator {"metadata":{"emulator":{"name":"tasks"},"message":"Stopping Cloud Tasks Emulator"}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  logging: Stopping Logging Emulator {"metadata":{"emulator":{"name":"logging"},"message":"Stopping Logging Emulator"}}
+[debug] [2025-07-14T23:28:36.608Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: connect ECONNREFUSED 127.0.0.1:40001. If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[debug] [2025-07-14T23:28:36.773Z] Received signal SIGINT (Ctrl-C) 2
+[info]  
+[debug] [2025-07-14T23:28:36.773Z] Skipping clean onExit() and cleanShutdown()
+[warn] ⚠  emulators: Received SIGINT (Ctrl-C) 2 times. You have forced the Emulator Suite to exit without waiting for 0 subprocess to finish. These processes may still be running on your machine:  
+[info] 
+┌──────────┬───────────┬─────┐
+│ Emulator │ Host:Port │ PID │
+└──────────┴───────────┴─────┘
+
+To force them to exit run:
+
+[info] kill 
+
+[debug] [2025-07-14T23:28:36.901Z] Received signal SIGINT (Ctrl-C) 3
+[info]  
+[debug] [2025-07-14T23:28:36.901Z] Skipping clean onExit() and cleanShutdown()
+[warn] ⚠  emulators: Received SIGINT (Ctrl-C) 3 times. You have forced the Emulator Suite to exit without waiting for 0 subprocess to finish. These processes may still be running on your machine:  
+[info] 
+┌──────────┬───────────┬─────┐
+│ Emulator │ Host:Port │ PID │
+└──────────┴───────────┴─────┘
+
+To force them to exit run:
+
+[info] kill 
+
+[debug] [2025-07-14T23:28:41.830Z] Error: Timed out.
+    at Timeout._onTimeout (/home/mofath/.nvm/versions/node/v22.5.1/lib/node_modules/firebase-tools/lib/utils.js:267:49)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-14T23:28:47.088Z] ----------------------------------------------------------------------
+[debug] [2025-07-14T23:28:47.089Z] Command:       /home/mofath/.nvm/versions/node/v22.5.1/bin/node /home/mofath/.nvm/versions/node/v22.5.1/bin/firebase emulators:start --only functions --debug
+[debug] [2025-07-14T23:28:47.089Z] CLI Version:   14.9.0
+[debug] [2025-07-14T23:28:47.089Z] Platform:      linux
+[debug] [2025-07-14T23:28:47.089Z] Node Version:  v22.5.1
+[debug] [2025-07-14T23:28:47.090Z] Time:          Tue Jul 15 2025 02:28:47 GMT+0300 (Eastern European Summer Time)
+[debug] [2025-07-14T23:28:47.090Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-14T23:28:47.207Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-14T23:28:47.208Z] > authorizing via signed-in user (mohamed.elgaedi@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2025-07-14T23:28:47.210Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-14T23:28:47.210Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-07-14T23:28:47.213Z] [hub] writing locator at /tmp/hub-jamila-9f11a.json
+[debug] [2025-07-14T23:28:47.219Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-14T23:28:47.219Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-14T23:28:47.219Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-14T23:28:47.219Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2025-07-14T23:28:47.322Z] defaultcredentials: writing to file /home/mofath/.config/firebase/mohamed_elgaedi_gmail.com_application_default_credentials.json
+[debug] [2025-07-14T23:28:47.324Z] Setting GAC to /home/mofath/.config/firebase/mohamed_elgaedi_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/mofath/.config/firebase/mohamed_elgaedi_gmail.com_application_default_credentials.json"}}
+[debug] [2025-07-14T23:28:47.324Z] Checked if tokens are valid: false, expires at: 1752531955827
+[debug] [2025-07-14T23:28:47.325Z] Checked if tokens are valid: false, expires at: 1752531955827
+[debug] [2025-07-14T23:28:47.325Z] > refreshing access token with scopes: []
+[debug] [2025-07-14T23:28:47.326Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-07-14T23:28:47.326Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-07-14T23:28:47.572Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-07-14T23:28:47.572Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-07-14T23:28:47.578Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jamila-9f11a/adminSdkConfig [none]
+[debug] [2025-07-14T23:29:17.961Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jamila-9f11a/adminSdkConfig 503
+[debug] [2025-07-14T23:29:17.961Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jamila-9f11a/adminSdkConfig {"error":{"code":503,"message":"The service is currently unavailable.","status":"UNAVAILABLE"}}
+[debug] [2025-07-14T23:29:17.962Z] Failed to get Admin SDK config for jamila-9f11a, falling back to cache Failed to get Admin SDK for Firebase project jamila-9f11a. Please make sure the project exists and your account has permission to access it. {"name":"FirebaseError","children":[],"exit":2,"message":"Failed to get Admin SDK for Firebase project jamila-9f11a. Please make sure the project exists and your account has permission to access it.","original":{"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":503,"message":"The service is currently unavailable.","status":"UNAVAILABLE"}},"response":{"statusCode":503}},"exit":2,"message":"Request to https://firebase.googleapis.com/v1beta1/projects/jamila-9f11a/adminSdkConfig had HTTP Error: 503, The service is currently unavailable.","status":503},"status":500}
+[info] i  functions: Watching "/home/mofath/github/jamila-frontend-app/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/home/mofath/github/jamila-frontend-app/functions\" for Cloud Functions..."}}
+[debug] [2025-07-14T23:29:17.980Z] Validating nodejs source
+[debug] [2025-07-14T23:29:18.562Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "nodemailer": "^7.0.5",
+    "stripe": "^18.2.1"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.17",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^5.7.3"
+  },
+  "private": true
+}
+[debug] [2025-07-14T23:29:18.562Z] Building nodejs source
+[debug] [2025-07-14T23:29:18.563Z] Failed to find version of module node: reached end of search path /home/mofath/github/jamila-frontend-app/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2025-07-14T23:29:18.565Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-07-14T23:29:18.567Z] Found firebase-functions binary at '/home/mofath/github/jamila-frontend-app/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8826
+
+[debug] [2025-07-14T23:29:18.777Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[info] ✔  functions[us-central1-api]: http function initialized (http://127.0.0.1:5001/jamila-9f11a/us-central1/api). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/jamila-9f11a/us-central1/api)."}}
+[debug] [2025-07-14T23:29:23.801Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: connect ECONNREFUSED 127.0.0.1:40001. If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2025-07-14T23:29:27.694Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:29:27.694Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:29:27.694Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:29:27.694Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:29:27.695Z] Accepted request GET /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-14T23:29:27.695Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:29:27.696Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2025-07-14T23:29:27.701Z] [worker-pool] addWorker(us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-api)"}}
+[debug] [2025-07-14T23:29:27.702Z] [worker-pool] Adding worker with key us-central1-api, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-api, total=1"}}
+[info] >  (node:623703) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead. {"user":"(node:623703) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:623703) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead."}}
+[info] >  (Use `node --trace-deprecation ...` to show where the warning was created) {"user":"(Use `node --trace-deprecation ...` to show where the warning was created)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m (Use `node --trace-deprecation ...` to show where the warning was created)"}}
+[debug] [2025-07-14T23:29:28.039Z] [runtime-status] [623703] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [623703] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2025-07-14T23:29:28.039Z] [runtime-status] [623703] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [623703] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-14T23:29:28.039Z] [runtime-status] [623703] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [623703] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2025-07-14T23:29:28.039Z] [runtime-status] [623703] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [623703] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-14T23:29:28.120Z] [runtime-status] [623703] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [623703] Checked functions.config() {\"config\":{}}"}}
+[debug] [2025-07-14T23:29:28.120Z] [runtime-status] [623703] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [623703] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}}"}}
+[debug] [2025-07-14T23:29:28.120Z] [runtime-status] [623703] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [623703] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-14T23:29:28.121Z] [runtime-status] [623703] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [623703] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2025-07-14T23:29:28.122Z] [runtime-status] [623703] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [623703] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-14T23:29:28.122Z] [runtime-status] [623703] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [623703] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2025-07-14T23:29:28.160Z] [runtime-status] [623703] Functions runtime initialized. {"cwd":"/home/mofath/github/jamila-frontend-app/functions","node_version":"22.5.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [623703] Functions runtime initialized. {\"cwd\":\"/home/mofath/github/jamila-frontend-app/functions\",\"node_version\":\"22.5.1\"}"}}
+[debug] [2025-07-14T23:29:28.160Z] [runtime-status] [623703] Listening to port: /tmp/fire_emu_755c67dcacf5b32a.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [623703] Listening to port: /tmp/fire_emu_755c67dcacf5b32a.sock"}}
+[debug] [2025-07-14T23:29:28.214Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:29:28.214Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:29:28.214Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[debug] [2025-07-14T23:29:28.219Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 4.569613ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 4.569613ms"}}
+[debug] [2025-07-14T23:29:28.219Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:29:28.219Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:29:28.219Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:29:28.219Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:30:01.193Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:30:01.193Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:30:01.193Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:30:01.193Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:30:01.194Z] Accepted request OPTIONS /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-14T23:30:01.196Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:30:01.197Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-14T23:30:01.197Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:30:01.197Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[debug] [2025-07-14T23:30:01.203Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 5.729131ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 5.729131ms"}}
+[debug] [2025-07-14T23:30:01.203Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:30:01.203Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:30:01.203Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:30:01.204Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:30:01.206Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:30:01.206Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:30:01.207Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:30:01.206Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:30:01.207Z] Accepted request POST /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-14T23:30:01.208Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:30:01.209Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-14T23:30:01.209Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:30:01.209Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[debug] [2025-07-14T23:30:03.019Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 1810.224011ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 1810.224011ms"}}
+[debug] [2025-07-14T23:30:03.020Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:30:03.021Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:30:03.021Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:30:03.021Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:32:37.337Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email/send-email-2025-07-14T23:32:37.336Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:32:37.337Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email/send-email-2025-07-14T23:32:37.336Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:32:37.337Z] Accepted request OPTIONS /jamila-9f11a/us-central1/api/send-email/send-email --> us-central1-api
+[debug] [2025-07-14T23:32:37.339Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:32:37.340Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email/send-email, mapping to path=/send-email/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email/send-email, mapping to path=/send-email/send-email"}}
+[debug] [2025-07-14T23:32:37.340Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:32:37.340Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[debug] [2025-07-14T23:32:37.346Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 6.258379ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 6.258379ms"}}
+[debug] [2025-07-14T23:32:37.347Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:32:37.347Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:32:37.347Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:32:37.347Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:32:37.350Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email/send-email-2025-07-14T23:32:37.350Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:32:37.350Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email/send-email-2025-07-14T23:32:37.350Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:32:37.351Z] Accepted request POST /jamila-9f11a/us-central1/api/send-email/send-email --> us-central1-api
+[debug] [2025-07-14T23:32:37.352Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:32:37.353Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email/send-email, mapping to path=/send-email/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email/send-email, mapping to path=/send-email/send-email"}}
+[debug] [2025-07-14T23:32:37.353Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:32:37.353Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[debug] [2025-07-14T23:32:37.356Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 3.47628ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 3.47628ms"}}
+[debug] [2025-07-14T23:32:37.357Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:32:37.357Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:32:37.357Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:32:37.357Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:32:54.279Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email/send-email-2025-07-14T23:32:54.279Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:32:54.279Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email/send-email-2025-07-14T23:32:54.279Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:32:54.280Z] Accepted request GET /jamila-9f11a/us-central1/api/send-email/send-email --> us-central1-api
+[debug] [2025-07-14T23:32:54.281Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:32:54.282Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email/send-email, mapping to path=/send-email/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email/send-email, mapping to path=/send-email/send-email"}}
+[debug] [2025-07-14T23:32:54.282Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:32:54.282Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[debug] [2025-07-14T23:32:54.285Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 3.250932ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 3.250932ms"}}
+[debug] [2025-07-14T23:32:54.286Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:32:54.286Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:32:54.286Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:32:54.286Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:33:28.910Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:33:28.910Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:33:28.910Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:33:28.910Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:33:28.910Z] Accepted request OPTIONS /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-14T23:33:28.913Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:33:28.913Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-14T23:33:28.913Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:33:28.913Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[debug] [2025-07-14T23:33:28.915Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 2.24815ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 2.24815ms"}}
+[debug] [2025-07-14T23:33:28.916Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:33:28.916Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:33:28.916Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:33:28.916Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:33:28.919Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:33:28.919Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:33:28.919Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:33:28.919Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:33:28.919Z] Accepted request POST /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-14T23:33:28.921Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:33:28.921Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-14T23:33:28.921Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:33:28.921Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[debug] [2025-07-14T23:33:30.559Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 1638.4028039999998ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 1638.4028039999998ms"}}
+[debug] [2025-07-14T23:33:30.560Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:33:30.560Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:33:30.560Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:33:30.560Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:34:48.414Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:34:48.413Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:34:48.414Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:34:48.413Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:34:48.414Z] Accepted request OPTIONS /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-14T23:34:48.415Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:34:48.416Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-14T23:34:48.416Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:34:48.416Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[debug] [2025-07-14T23:34:48.420Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 3.934745ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 3.934745ms"}}
+[debug] [2025-07-14T23:34:48.420Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:34:48.420Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:34:48.420Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:34:48.420Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:34:48.422Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:34:48.421Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:34:48.422Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:34:48.421Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:34:48.422Z] Accepted request POST /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-14T23:34:48.423Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:34:48.423Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-14T23:34:48.423Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:34:48.423Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[debug] [2025-07-14T23:34:49.635Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 1212.766066ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 1212.766066ms"}}
+[debug] [2025-07-14T23:34:49.636Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:34:49.636Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:34:49.636Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:34:49.637Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:37:55.173Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:37:55.173Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:37:55.173Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:37:55.173Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:37:55.173Z] Accepted request OPTIONS /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-14T23:37:55.175Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:37:55.175Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-14T23:37:55.175Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:37:55.175Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[debug] [2025-07-14T23:37:55.178Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 2.488754ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 2.488754ms"}}
+[debug] [2025-07-14T23:37:55.178Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:37:55.178Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:37:55.178Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:37:55.178Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:37:55.180Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:37:55.180Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:37:55.180Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:37:55.180Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:37:55.180Z] Accepted request POST /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-14T23:37:55.181Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:37:55.181Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-14T23:37:55.181Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:37:55.182Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[debug] [2025-07-14T23:37:56.500Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 1318.742079ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 1318.742079ms"}}
+[debug] [2025-07-14T23:37:56.501Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:37:56.501Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:37:56.501Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:37:56.502Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:53:35.162Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:53:35.162Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:53:35.162Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:53:35.162Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:53:35.162Z] Accepted request OPTIONS /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-14T23:53:35.163Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:53:35.163Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-14T23:53:35.164Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:53:35.164Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[debug] [2025-07-14T23:53:35.167Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 3.14116ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 3.14116ms"}}
+[debug] [2025-07-14T23:53:35.167Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:53:35.167Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:53:35.167Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:53:35.168Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:53:35.173Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:53:35.173Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:53:35.173Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:53:35.173Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:53:35.173Z] Accepted request POST /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-14T23:53:35.175Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:53:35.176Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-14T23:53:35.176Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:53:35.176Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[info] >  Email send error: TypeError: Cannot read properties of undefined (reading 'map') {"user":"Email send error: TypeError: Cannot read properties of undefined (reading 'map')","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m Email send error: TypeError: Cannot read properties of undefined (reading 'map')"}}
+[info] >      at getEmailTemplate (/home/mofath/github/jamila-frontend-app/functions/lib/utils/getEmailTemplate.util.js:42:18) {"user":"    at getEmailTemplate (/home/mofath/github/jamila-frontend-app/functions/lib/utils/getEmailTemplate.util.js:42:18)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at getEmailTemplate (/home/mofath/github/jamila-frontend-app/functions/lib/utils/getEmailTemplate.util.js:42:18)"}}
+[info] >      at /home/mofath/github/jamila-frontend-app/functions/lib/index.js:66:86 {"user":"    at /home/mofath/github/jamila-frontend-app/functions/lib/index.js:66:86","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at /home/mofath/github/jamila-frontend-app/functions/lib/index.js:66:86"}}
+[info] >      at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17) {"user":"    at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17)"}}
+[info] >      at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:157:13) {"user":"    at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:157:13)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:157:13)"}}
+[info] >      at Route.dispatch (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:117:3) {"user":"    at Route.dispatch (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:117:3)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at Route.dispatch (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:117:3)"}}
+[info] >      at handle (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:435:11) {"user":"    at handle (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:435:11)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at handle (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:435:11)"}}
+[info] >      at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17) {"user":"    at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17)"}}
+[info] >      at /home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:295:15 {"user":"    at /home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:295:15","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at /home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:295:15"}}
+[info] >      at processParams (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:582:12) {"user":"    at processParams (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:582:12)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at processParams (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:582:12)"}}
+[info] >      at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:291:5) {"user":"    at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:291:5)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:291:5)"}}
+[debug] [2025-07-14T23:53:35.184Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 8.170414ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 8.170414ms"}}
+[debug] [2025-07-14T23:53:35.185Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:53:35.185Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:53:35.185Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:53:35.185Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:55:19.213Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:55:19.213Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:55:19.214Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:55:19.213Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:55:19.214Z] Accepted request OPTIONS /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-14T23:55:19.216Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:55:19.217Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-14T23:55:19.217Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:55:19.217Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[debug] [2025-07-14T23:55:19.221Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 4.043169ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 4.043169ms"}}
+[debug] [2025-07-14T23:55:19.221Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:55:19.222Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:55:19.222Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:55:19.222Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:55:19.225Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:55:19.225Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-14T23:55:19.225Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-14T23:55:19.225Z"],"workRunningCount":1}
+[debug] [2025-07-14T23:55:19.226Z] Accepted request POST /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-14T23:55:19.228Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-14T23:55:19.229Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-14T23:55:19.229Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-14T23:55:19.229Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: BUSY"}}
+[info] >  Email send error: TypeError: Cannot read properties of undefined (reading 'map') {"user":"Email send error: TypeError: Cannot read properties of undefined (reading 'map')","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m Email send error: TypeError: Cannot read properties of undefined (reading 'map')"}}
+[info] >      at getEmailTemplate (/home/mofath/github/jamila-frontend-app/functions/lib/utils/getEmailTemplate.util.js:42:18) {"user":"    at getEmailTemplate (/home/mofath/github/jamila-frontend-app/functions/lib/utils/getEmailTemplate.util.js:42:18)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at getEmailTemplate (/home/mofath/github/jamila-frontend-app/functions/lib/utils/getEmailTemplate.util.js:42:18)"}}
+[info] >      at /home/mofath/github/jamila-frontend-app/functions/lib/index.js:66:86 {"user":"    at /home/mofath/github/jamila-frontend-app/functions/lib/index.js:66:86","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at /home/mofath/github/jamila-frontend-app/functions/lib/index.js:66:86"}}
+[info] >      at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17) {"user":"    at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17)"}}
+[info] >      at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:157:13) {"user":"    at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:157:13)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:157:13)"}}
+[info] >      at Route.dispatch (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:117:3) {"user":"    at Route.dispatch (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:117:3)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at Route.dispatch (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:117:3)"}}
+[info] >      at handle (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:435:11) {"user":"    at handle (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:435:11)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at handle (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:435:11)"}}
+[info] >      at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17) {"user":"    at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17)"}}
+[info] >      at /home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:295:15 {"user":"    at /home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:295:15","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at /home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:295:15"}}
+[info] >      at processParams (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:582:12) {"user":"    at processParams (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:582:12)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at processParams (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:582:12)"}}
+[info] >      at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:291:5) {"user":"    at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:291:5)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:291:5)"}}
+[debug] [2025-07-14T23:55:19.238Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 8.774306ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 8.774306ms"}}
+[debug] [2025-07-14T23:55:19.239Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: IDLE"}}
+[debug] [2025-07-14T23:55:19.239Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-14T23:55:19.239Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-14T23:55:19.239Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:02:09.034Z] File /home/mofath/github/jamila-frontend-app/functions/src/utils/getEmailTemplate.util.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/mofath/github/jamila-frontend-app/functions/src/utils/getEmailTemplate.util.ts changed, reloading triggers"}}
+[debug] [2025-07-15T00:02:10.035Z] Validating nodejs source
+[debug] [2025-07-15T00:02:10.636Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "nodemailer": "^7.0.5",
+    "stripe": "^18.2.1"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.17",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^5.7.3"
+  },
+  "private": true
+}
+[debug] [2025-07-15T00:02:10.636Z] Building nodejs source
+[debug] [2025-07-15T00:02:10.636Z] Failed to find version of module node: reached end of search path /home/mofath/github/jamila-frontend-app/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2025-07-15T00:02:10.637Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-07-15T00:02:10.637Z] Found firebase-functions binary at '/home/mofath/github/jamila-frontend-app/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8652
+
+[debug] [2025-07-15T00:02:10.839Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-07-15T00:02:12.623Z] File /home/mofath/github/jamila-frontend-app/functions/src/utils/getEmailTemplate.util.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/mofath/github/jamila-frontend-app/functions/src/utils/getEmailTemplate.util.ts changed, reloading triggers"}}
+[debug] [2025-07-15T00:02:13.625Z] Validating nodejs source
+[debug] [2025-07-15T00:02:14.196Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "nodemailer": "^7.0.5",
+    "stripe": "^18.2.1"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.17",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^5.7.3"
+  },
+  "private": true
+}
+[debug] [2025-07-15T00:02:14.196Z] Building nodejs source
+[debug] [2025-07-15T00:02:14.196Z] Failed to find version of module node: reached end of search path /home/mofath/github/jamila-frontend-app/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2025-07-15T00:02:14.198Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-07-15T00:02:14.198Z] Found firebase-functions binary at '/home/mofath/github/jamila-frontend-app/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8297
+
+[debug] [2025-07-15T00:02:14.389Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2025-07-15T00:02:15.853Z] [worker-pool] Shutting down IDLE worker (us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-api)"}}
+[debug] [2025-07-15T00:02:15.854Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: FINISHING"}}
+[debug] [2025-07-15T00:02:15.863Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: exited"}}
+[debug] [2025-07-15T00:02:15.863Z] [worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a5366984-9a74-45d1-9f4b-6ee6963b4e31]: FINISHED"}}
+[info] ✔  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2025-07-15T00:02:40.947Z] File /home/mofath/github/jamila-frontend-app/functions/src/utils/getEmailTemplate.util.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /home/mofath/github/jamila-frontend-app/functions/src/utils/getEmailTemplate.util.ts changed, reloading triggers"}}
+[debug] [2025-07-15T00:02:41.948Z] Validating nodejs source
+[debug] [2025-07-15T00:02:47.664Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "nodemailer": "^7.0.5",
+    "stripe": "^18.2.1"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.17",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^5.7.3"
+  },
+  "private": true
+}
+[debug] [2025-07-15T00:02:47.664Z] Building nodejs source
+[debug] [2025-07-15T00:02:47.664Z] Failed to find version of module node: reached end of search path /home/mofath/github/jamila-frontend-app/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2025-07-15T00:02:47.665Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-07-15T00:02:47.666Z] Found firebase-functions binary at '/home/mofath/github/jamila-frontend-app/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8966
+
+[debug] [2025-07-15T00:02:47.878Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[debug] [2025-07-15T00:03:37.018Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:03:37.018Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:03:37.018Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:03:37.018Z"],"workRunningCount":1}
+[debug] [2025-07-15T00:03:37.018Z] Accepted request OPTIONS /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-15T00:03:37.022Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-15T00:03:37.022Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-15T00:03:37.022Z] [worker-pool] Cleaned up workers for us-central1-api: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-api: 1 --> 0"}}
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2025-07-15T00:03:37.028Z] [worker-pool] addWorker(us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-api)"}}
+[debug] [2025-07-15T00:03:37.029Z] [worker-pool] Adding worker with key us-central1-api, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-api, total=1"}}
+[info] >  (node:629893) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead. {"user":"(node:629893) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:629893) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead."}}
+[info] >  (Use `node --trace-deprecation ...` to show where the warning was created) {"user":"(Use `node --trace-deprecation ...` to show where the warning was created)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m (Use `node --trace-deprecation ...` to show where the warning was created)"}}
+[debug] [2025-07-15T00:03:37.444Z] [runtime-status] [629893] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [629893] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2025-07-15T00:03:37.444Z] [runtime-status] [629893] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [629893] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-15T00:03:37.444Z] [runtime-status] [629893] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [629893] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2025-07-15T00:03:37.445Z] [runtime-status] [629893] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [629893] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-15T00:03:37.549Z] [runtime-status] [629893] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [629893] Checked functions.config() {\"config\":{}}"}}
+[debug] [2025-07-15T00:03:37.549Z] [runtime-status] [629893] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [629893] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}}"}}
+[debug] [2025-07-15T00:03:37.549Z] [runtime-status] [629893] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [629893] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-15T00:03:37.551Z] [runtime-status] [629893] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [629893] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2025-07-15T00:03:37.551Z] [runtime-status] [629893] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [629893] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-15T00:03:37.552Z] [runtime-status] [629893] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [629893] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2025-07-15T00:03:37.596Z] [runtime-status] [629893] Functions runtime initialized. {"cwd":"/home/mofath/github/jamila-frontend-app/functions","node_version":"22.5.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [629893] Functions runtime initialized. {\"cwd\":\"/home/mofath/github/jamila-frontend-app/functions\",\"node_version\":\"22.5.1\"}"}}
+[debug] [2025-07-15T00:03:37.597Z] [runtime-status] [629893] Listening to port: /tmp/fire_emu_4c4fcd6ef405cd17.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [629893] Listening to port: /tmp/fire_emu_4c4fcd6ef405cd17.sock"}}
+[debug] [2025-07-15T00:03:37.639Z] [worker-us-central1-api-a395a620-387c-4f82-a083-6cef0cdfe2f9]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a395a620-387c-4f82-a083-6cef0cdfe2f9]: IDLE"}}
+[debug] [2025-07-15T00:03:37.639Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-15T00:03:37.639Z] [worker-us-central1-api-a395a620-387c-4f82-a083-6cef0cdfe2f9]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a395a620-387c-4f82-a083-6cef0cdfe2f9]: BUSY"}}
+[debug] [2025-07-15T00:03:37.643Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 3.807557ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 3.807557ms"}}
+[debug] [2025-07-15T00:03:37.643Z] [worker-us-central1-api-a395a620-387c-4f82-a083-6cef0cdfe2f9]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a395a620-387c-4f82-a083-6cef0cdfe2f9]: IDLE"}}
+[debug] [2025-07-15T00:03:37.643Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-15T00:03:37.643Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-15T00:03:37.644Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:03:37.645Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:03:37.645Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:03:37.646Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:03:37.645Z"],"workRunningCount":1}
+[debug] [2025-07-15T00:03:37.646Z] Accepted request POST /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-15T00:03:37.646Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-15T00:03:37.646Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-15T00:03:37.646Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-15T00:03:37.647Z] [worker-us-central1-api-a395a620-387c-4f82-a083-6cef0cdfe2f9]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a395a620-387c-4f82-a083-6cef0cdfe2f9]: BUSY"}}
+[info] >  Email send error: TypeError: Cannot read properties of undefined (reading 'map') {"user":"Email send error: TypeError: Cannot read properties of undefined (reading 'map')","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m Email send error: TypeError: Cannot read properties of undefined (reading 'map')"}}
+[info] >      at getEmailTemplate (/home/mofath/github/jamila-frontend-app/functions/lib/utils/getEmailTemplate.util.js:42:18) {"user":"    at getEmailTemplate (/home/mofath/github/jamila-frontend-app/functions/lib/utils/getEmailTemplate.util.js:42:18)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at getEmailTemplate (/home/mofath/github/jamila-frontend-app/functions/lib/utils/getEmailTemplate.util.js:42:18)"}}
+[info] >      at /home/mofath/github/jamila-frontend-app/functions/lib/index.js:66:86 {"user":"    at /home/mofath/github/jamila-frontend-app/functions/lib/index.js:66:86","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at /home/mofath/github/jamila-frontend-app/functions/lib/index.js:66:86"}}
+[info] >      at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17) {"user":"    at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17)"}}
+[info] >      at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:157:13) {"user":"    at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:157:13)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:157:13)"}}
+[info] >      at Route.dispatch (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:117:3) {"user":"    at Route.dispatch (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:117:3)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at Route.dispatch (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/route.js:117:3)"}}
+[info] >      at handle (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:435:11) {"user":"    at handle (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:435:11)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at handle (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:435:11)"}}
+[info] >      at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17) {"user":"    at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at Layer.handleRequest (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/lib/layer.js:152:17)"}}
+[info] >      at /home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:295:15 {"user":"    at /home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:295:15","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at /home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:295:15"}}
+[info] >      at processParams (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:582:12) {"user":"    at processParams (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:582:12)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at processParams (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:582:12)"}}
+[info] >      at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:291:5) {"user":"    at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:291:5)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m     at next (/home/mofath/github/jamila-frontend-app/functions/node_modules/router/index.js:291:5)"}}
+[debug] [2025-07-15T00:03:37.660Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 13.710505ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 13.710505ms"}}
+[debug] [2025-07-15T00:03:37.661Z] [worker-us-central1-api-a395a620-387c-4f82-a083-6cef0cdfe2f9]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a395a620-387c-4f82-a083-6cef0cdfe2f9]: IDLE"}}
+[debug] [2025-07-15T00:03:37.661Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-15T00:03:37.661Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-15T00:03:37.661Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:03:50.790Z] Received signal SIGINT (Ctrl-C) 1
+[info]  
+[info] i  emulators: Received SIGINT (Ctrl-C) for the first time. Starting a clean shutdown. 
+[info] i  emulators: Please wait for a clean shutdown or send the SIGINT (Ctrl-C) signal again to stop right now. 
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[info] i  functions: Stopping Functions Emulator {"metadata":{"emulator":{"name":"functions"},"message":"Stopping Functions Emulator"}}
+[info] i  eventarc: Stopping Eventarc Emulator {"metadata":{"emulator":{"name":"eventarc"},"message":"Stopping Eventarc Emulator"}}
+[info] i  tasks: Stopping Cloud Tasks Emulator {"metadata":{"emulator":{"name":"tasks"},"message":"Stopping Cloud Tasks Emulator"}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  logging: Stopping Logging Emulator {"metadata":{"emulator":{"name":"logging"},"message":"Stopping Logging Emulator"}}
+[debug] [2025-07-15T00:03:50.795Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: connect ECONNREFUSED 127.0.0.1:40001. If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[debug] [2025-07-15T00:03:50.798Z] [worker-us-central1-api-a395a620-387c-4f82-a083-6cef0cdfe2f9]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a395a620-387c-4f82-a083-6cef0cdfe2f9]: exited"}}
+[debug] [2025-07-15T00:03:50.798Z] [worker-us-central1-api-a395a620-387c-4f82-a083-6cef0cdfe2f9]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-a395a620-387c-4f82-a083-6cef0cdfe2f9]: FINISHED"}}
+[debug] [2025-07-15T00:03:50.965Z] Received signal SIGINT (Ctrl-C) 2
+[info]  
+[debug] [2025-07-15T00:03:50.965Z] Skipping clean onExit() and cleanShutdown()
+[warn] ⚠  emulators: Received SIGINT (Ctrl-C) 2 times. You have forced the Emulator Suite to exit without waiting for 0 subprocess to finish. These processes may still be running on your machine:  
+[info] 
+┌──────────┬───────────┬─────┐
+│ Emulator │ Host:Port │ PID │
+└──────────┴───────────┴─────┘
+
+To force them to exit run:
+
+[info] kill 
+
+[debug] [2025-07-15T00:04:05.278Z] ----------------------------------------------------------------------
+[debug] [2025-07-15T00:04:05.279Z] Command:       /home/mofath/.nvm/versions/node/v22.5.1/bin/node /home/mofath/.nvm/versions/node/v22.5.1/bin/firebase emulators:start --only functions --debug
+[debug] [2025-07-15T00:04:05.279Z] CLI Version:   14.9.0
+[debug] [2025-07-15T00:04:05.279Z] Platform:      linux
+[debug] [2025-07-15T00:04:05.279Z] Node Version:  v22.5.1
+[debug] [2025-07-15T00:04:05.280Z] Time:          Tue Jul 15 2025 03:04:05 GMT+0300 (Eastern European Summer Time)
+[debug] [2025-07-15T00:04:05.280Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-15T00:04:05.405Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-15T00:04:05.405Z] > authorizing via signed-in user (mohamed.elgaedi@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2025-07-15T00:04:05.408Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-15T00:04:05.408Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-07-15T00:04:05.411Z] [hub] writing locator at /tmp/hub-jamila-9f11a.json
+[debug] [2025-07-15T00:04:05.417Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-15T00:04:05.417Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-15T00:04:05.417Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-07-15T00:04:05.418Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2025-07-15T00:04:05.513Z] defaultcredentials: writing to file /home/mofath/.config/firebase/mohamed_elgaedi_gmail.com_application_default_credentials.json
+[debug] [2025-07-15T00:04:05.516Z] Setting GAC to /home/mofath/.config/firebase/mohamed_elgaedi_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/mofath/.config/firebase/mohamed_elgaedi_gmail.com_application_default_credentials.json"}}
+[debug] [2025-07-15T00:04:05.517Z] Checked if tokens are valid: true, expires at: 1752539326572
+[debug] [2025-07-15T00:04:05.517Z] Checked if tokens are valid: true, expires at: 1752539326572
+[debug] [2025-07-15T00:04:05.518Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jamila-9f11a/adminSdkConfig [none]
+[debug] [2025-07-15T00:04:06.114Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jamila-9f11a/adminSdkConfig 200
+[debug] [2025-07-15T00:04:06.115Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jamila-9f11a/adminSdkConfig {"projectId":"jamila-9f11a","storageBucket":"jamila-9f11a.firebasestorage.app"}
+[info] i  functions: Watching "/home/mofath/github/jamila-frontend-app/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/home/mofath/github/jamila-frontend-app/functions\" for Cloud Functions..."}}
+[debug] [2025-07-15T00:04:06.136Z] Validating nodejs source
+[debug] [2025-07-15T00:04:06.711Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "nodemailer": "^7.0.5",
+    "stripe": "^18.2.1"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.17",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^5.7.3"
+  },
+  "private": true
+}
+[debug] [2025-07-15T00:04:06.711Z] Building nodejs source
+[debug] [2025-07-15T00:04:06.712Z] Failed to find version of module node: reached end of search path /home/mofath/github/jamila-frontend-app/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2025-07-15T00:04:06.714Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-07-15T00:04:06.716Z] Found firebase-functions binary at '/home/mofath/github/jamila-frontend-app/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8476
+
+[debug] [2025-07-15T00:04:06.915Z] Got response from /__/functions.yaml {"endpoints":{"api":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: api. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: api."}}
+[info] ✔  functions[us-central1-api]: http function initialized (http://127.0.0.1:5001/jamila-9f11a/us-central1/api). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/jamila-9f11a/us-central1/api)."}}
+[debug] [2025-07-15T00:04:11.944Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: connect ECONNREFUSED 127.0.0.1:40001. If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2025-07-15T00:04:50.370Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:04:50.370Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:04:50.370Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:04:50.370Z"],"workRunningCount":1}
+[debug] [2025-07-15T00:04:50.370Z] Accepted request OPTIONS /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-15T00:04:50.372Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-15T00:04:50.372Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2025-07-15T00:04:50.377Z] [worker-pool] addWorker(us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-api)"}}
+[debug] [2025-07-15T00:04:50.377Z] [worker-pool] Adding worker with key us-central1-api, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-api, total=1"}}
+[info] >  (node:630030) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead. {"user":"(node:630030) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m (node:630030) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead."}}
+[info] >  (Use `node --trace-deprecation ...` to show where the warning was created) {"user":"(Use `node --trace-deprecation ...` to show where the warning was created)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"\u001b[90m> \u001b[39m (Use `node --trace-deprecation ...` to show where the warning was created)"}}
+[debug] [2025-07-15T00:04:50.798Z] [runtime-status] [630030] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [630030] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2025-07-15T00:04:50.799Z] [runtime-status] [630030] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [630030] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-15T00:04:50.799Z] [runtime-status] [630030] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [630030] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2025-07-15T00:04:50.800Z] [runtime-status] [630030] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [630030] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-15T00:04:50.928Z] [runtime-status] [630030] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [630030] Checked functions.config() {\"config\":{}}"}}
+[debug] [2025-07-15T00:04:50.928Z] [runtime-status] [630030] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [630030] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}}"}}
+[debug] [2025-07-15T00:04:50.929Z] [runtime-status] [630030] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [630030] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-15T00:04:50.931Z] [runtime-status] [630030] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [630030] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2025-07-15T00:04:50.932Z] [runtime-status] [630030] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.3.2","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [630030] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.3.2\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-07-15T00:04:50.932Z] [runtime-status] [630030] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"12.7.0","resolution":"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [630030] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/home/mofath/github/jamila-frontend-app/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2025-07-15T00:04:50.998Z] [runtime-status] [630030] Functions runtime initialized. {"cwd":"/home/mofath/github/jamila-frontend-app/functions","node_version":"22.5.1"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [630030] Functions runtime initialized. {\"cwd\":\"/home/mofath/github/jamila-frontend-app/functions\",\"node_version\":\"22.5.1\"}"}}
+[debug] [2025-07-15T00:04:51.000Z] [runtime-status] [630030] Listening to port: /tmp/fire_emu_efc7aab9762a0d50.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[runtime-status] [630030] Listening to port: /tmp/fire_emu_efc7aab9762a0d50.sock"}}
+[debug] [2025-07-15T00:04:51.086Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE"}}
+[debug] [2025-07-15T00:04:51.086Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-15T00:04:51.087Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY"}}
+[debug] [2025-07-15T00:04:51.091Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 4.192804ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 4.192804ms"}}
+[debug] [2025-07-15T00:04:51.091Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE"}}
+[debug] [2025-07-15T00:04:51.091Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-15T00:04:51.091Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-15T00:04:51.092Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:04:51.094Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:04:51.094Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:04:51.094Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:04:51.094Z"],"workRunningCount":1}
+[debug] [2025-07-15T00:04:51.094Z] Accepted request POST /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-15T00:04:51.095Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-15T00:04:51.095Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-15T00:04:51.095Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-15T00:04:51.095Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY"}}
+[debug] [2025-07-15T00:04:52.526Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 1431.0207639999999ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 1431.0207639999999ms"}}
+[debug] [2025-07-15T00:04:52.526Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE"}}
+[debug] [2025-07-15T00:04:52.527Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-15T00:04:52.527Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:05:15.050Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:05:15.050Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:05:15.050Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:05:15.050Z"],"workRunningCount":1}
+[debug] [2025-07-15T00:05:15.051Z] Accepted request OPTIONS /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-15T00:05:15.052Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-15T00:05:15.052Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-15T00:05:15.052Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-15T00:05:15.053Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY"}}
+[debug] [2025-07-15T00:05:15.056Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 3.534597ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 3.534597ms"}}
+[debug] [2025-07-15T00:05:15.056Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE"}}
+[debug] [2025-07-15T00:05:15.056Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-15T00:05:15.057Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-15T00:05:15.057Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:05:15.066Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:05:15.066Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:05:15.067Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:05:15.066Z"],"workRunningCount":1}
+[debug] [2025-07-15T00:05:15.067Z] Accepted request POST /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-15T00:05:15.070Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-15T00:05:15.071Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-15T00:05:15.071Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-15T00:05:15.071Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY"}}
+[debug] [2025-07-15T00:05:16.355Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 1284.353756ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 1284.353756ms"}}
+[debug] [2025-07-15T00:05:16.356Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE"}}
+[debug] [2025-07-15T00:05:16.356Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-15T00:05:16.357Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-15T00:05:16.357Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:06:21.492Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:06:21.492Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:06:21.493Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:06:21.492Z"],"workRunningCount":1}
+[debug] [2025-07-15T00:06:21.493Z] Accepted request OPTIONS /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-15T00:06:21.496Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-15T00:06:21.497Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-15T00:06:21.497Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-15T00:06:21.497Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY"}}
+[debug] [2025-07-15T00:06:21.503Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 6.521655ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 6.521655ms"}}
+[debug] [2025-07-15T00:06:21.505Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE"}}
+[debug] [2025-07-15T00:06:21.505Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-15T00:06:21.505Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-15T00:06:21.505Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:06:21.508Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:06:21.508Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:06:21.508Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:06:21.508Z"],"workRunningCount":1}
+[debug] [2025-07-15T00:06:21.508Z] Accepted request POST /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-15T00:06:21.509Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-15T00:06:21.510Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-15T00:06:21.510Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-15T00:06:21.510Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY"}}
+[debug] [2025-07-15T00:06:22.693Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 1183.601885ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 1183.601885ms"}}
+[debug] [2025-07-15T00:06:22.694Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE"}}
+[debug] [2025-07-15T00:06:22.694Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-15T00:06:22.694Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:06:44.922Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:06:44.922Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:06:44.922Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:06:44.922Z"],"workRunningCount":1}
+[debug] [2025-07-15T00:06:44.923Z] Accepted request OPTIONS /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-15T00:06:44.924Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-15T00:06:44.924Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-15T00:06:44.924Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-15T00:06:44.924Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY"}}
+[debug] [2025-07-15T00:06:44.928Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 3.869723ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 3.869723ms"}}
+[debug] [2025-07-15T00:06:44.928Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE"}}
+[debug] [2025-07-15T00:06:44.929Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-15T00:06:44.929Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-15T00:06:44.929Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:06:44.940Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:06:44.940Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:06:44.940Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:06:44.940Z"],"workRunningCount":1}
+[debug] [2025-07-15T00:06:44.940Z] Accepted request POST /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-15T00:06:44.942Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-15T00:06:44.942Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-15T00:06:44.942Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-15T00:06:44.943Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY"}}
+[debug] [2025-07-15T00:06:46.170Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 1227.775155ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 1227.775155ms"}}
+[debug] [2025-07-15T00:06:46.171Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE"}}
+[debug] [2025-07-15T00:06:46.171Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-15T00:06:46.172Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-15T00:06:46.172Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:08:58.563Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:08:58.563Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:08:58.563Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:08:58.563Z"],"workRunningCount":1}
+[debug] [2025-07-15T00:08:58.564Z] Accepted request OPTIONS /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-15T00:08:58.566Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-15T00:08:58.566Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-15T00:08:58.567Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-15T00:08:58.567Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY"}}
+[debug] [2025-07-15T00:08:58.572Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 5.546665ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 5.546665ms"}}
+[debug] [2025-07-15T00:08:58.573Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE"}}
+[debug] [2025-07-15T00:08:58.573Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-15T00:08:58.574Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-15T00:08:58.574Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:08:58.578Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:08:58.578Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:08:58.579Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:08:58.578Z"],"workRunningCount":1}
+[debug] [2025-07-15T00:08:58.579Z] Accepted request POST /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-15T00:08:58.583Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-15T00:08:58.583Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-15T00:08:58.583Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-15T00:08:58.584Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY"}}
+[debug] [2025-07-15T00:08:59.819Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 1235.780506ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 1235.780506ms"}}
+[debug] [2025-07-15T00:08:59.820Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE"}}
+[debug] [2025-07-15T00:08:59.820Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-15T00:08:59.821Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-15T00:08:59.821Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:24:55.309Z] Functions emulator received unknown request at path /your-project-id/us-central1/api/send-email
+[debug] [2025-07-15T00:25:46.877Z] Functions emulator received unknown request at path /your-project-id/us-central1/api/send-email
+[debug] [2025-07-15T00:25:54.224Z] Functions emulator received unknown request at path /your-project-id/us-central1/api/send-email
+[debug] [2025-07-15T00:25:54.409Z] Functions emulator received unknown request at path /favicon.ico
+[debug] [2025-07-15T00:27:10.624Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:27:10.624Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:27:10.625Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:27:10.624Z"],"workRunningCount":1}
+[debug] [2025-07-15T00:27:10.625Z] Accepted request OPTIONS /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-15T00:27:10.627Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-15T00:27:10.627Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-15T00:27:10.627Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-15T00:27:10.628Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY"}}
+[debug] [2025-07-15T00:27:10.630Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 2.970953ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 2.970953ms"}}
+[debug] [2025-07-15T00:27:10.631Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE"}}
+[debug] [2025-07-15T00:27:10.631Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-15T00:27:10.631Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-15T00:27:10.631Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:27:10.633Z] [work-queue] {"queuedWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:27:10.633Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-07-15T00:27:10.634Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/jamila-9f11a/us-central1/api/send-email-2025-07-15T00:27:10.633Z"],"workRunningCount":1}
+[debug] [2025-07-15T00:27:10.634Z] Accepted request POST /jamila-9f11a/us-central1/api/send-email --> us-central1-api
+[debug] [2025-07-15T00:27:10.635Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-07-15T00:27:10.636Z] [functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/jamila-9f11a/us-central1/api/send-email, mapping to path=/send-email"}}
+[debug] [2025-07-15T00:27:10.636Z] [worker-pool] submitRequest(triggerId=us-central1-api) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-api)"}}
+[info] i  functions: Beginning execution of "us-central1-api" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Beginning execution of \"us-central1-api\""}}
+[debug] [2025-07-15T00:27:10.636Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: BUSY"}}
+[debug] [2025-07-15T00:27:11.979Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-api" in 1343.490334ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finished \"us-central1-api\" in 1343.490334ms"}}
+[debug] [2025-07-15T00:27:11.980Z] [worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"[worker-us-central1-api-bb69e3d5-5c4c-478c-a338-bd922212c8cd]: IDLE"}}
+[debug] [2025-07-15T00:27:11.980Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-07-15T00:27:11.980Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-api"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-07-15T00:27:11.980Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}

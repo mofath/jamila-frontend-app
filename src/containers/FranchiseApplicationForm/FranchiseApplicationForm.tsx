@@ -27,7 +27,7 @@ const FranchiseApplicationForm: React.FC = () => {
               strong and grows efficiently with expert guidance.
             </p>
           </div>
-          <PartnershipCostPlanner />
+          <PartnershipCostPlanner adFees={adFees} royaltyFees={royaltyFees} />
         </div>
         <div className="partner-info-form__wrapper">
           <div className="partnership-cost-planner__heading">

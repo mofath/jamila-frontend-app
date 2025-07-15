@@ -35,12 +35,15 @@ const ContactUsForm: React.FC = () => {
 
   const onSubmit = async (data: any) => {
     setLoading(true);
+
     const templateParams = {
-      type: "contact" as any,
-      from: data.email,
-      username: data.firstName + " " + data.lastName,
-      phone: data.phone,
-      message: data.message,
+      type: "contact",
+      payload: {
+        username: data.firstName + " " + data.lastName,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+      },
     };
 
     try {
@@ -49,7 +52,7 @@ const ContactUsForm: React.FC = () => {
       reset();
       // Wait 2 seconds, then redirect to the menu
       setTimeout(() => {
-        // navigate(ROUTES.MENU);
+        navigate(ROUTES.MENU);
       }, 200);
     } catch (err: any) {
       console.error("FAILED", err);
