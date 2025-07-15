@@ -13,21 +13,21 @@ const Footer: React.FC = () => {
           <p className="subtitle">Revitalize your senses, one sip at a time.</p>
         </div>
         <div className="footer__contact mt-[48px]">
-          <span className="footer__contact-item">
+          <div className="footer__contact-item">
             <img src="/assets/icons/call.svg" alt="" />
-            <span className="heading-5">{contactInfo.phone}</span>
-          </span>
-          <span className="footer__contact-item">
+            <p className="heading-5">{contactInfo.phone}</p>
+          </div>
+          <div className="footer__contact-item">
             <img src="/assets/icons/message.svg" alt="" />
-            <span className="heading-5">{contactInfo.email}</span>
-          </span>
-          <span className="footer__contact-item">
+            <p className="heading-5">{contactInfo.email}</p>
+          </div>
+          <div className="footer__contact-item">
             <img src="/assets/icons/location.svg" alt="" />
-            <span className="heading-5">{contactInfo.address}</span>
-          </span>
+            <p className="heading-5">{contactInfo.address}</p>
+          </div>
         </div>
         <div className="footer__social-media">
-          <span>Copyright 2025 @Jamila all right reserved</span>
+          <p>Copyright 2025 @Jamila all right reserved</p>
           <div className="footer__social-media-icons">
             <Link to={contactInfo.instagram}>
               <IoLogoInstagram size={24} />

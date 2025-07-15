@@ -42,6 +42,8 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 .footer__social-media {
@@ -59,11 +61,24 @@
   gap: 16px;
 }
 
-
 @media screen and (max-width: 1250px) {
-   .footer__contact {
-      flex-direction: column;
-      gap: 24px;
-      align-items: center;
-   }
+  .footer__contact {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .footer .subtitle {
+    text-align: center;
+  }
+
+  .footer__contact-item {
+    text-align: center;
+    gap: 8px;
+  }
+  .footer__contact-item .heading-5 {
+    padding: 0;
+    margin: 0;
+    line-height: 1.2;
+  }
 }

@@ -8,7 +8,7 @@ const QoutesSection = () => {
         <div className="qout-section__heading">
           <img
             src="/assets/icons/qoute.svg"
-            className="brand-story-section__image"
+            className="qout-section__image"
           />
         </div>
         {/* Text */}
@@ -20,7 +20,7 @@ const QoutesSection = () => {
         <div className="qout-section__footer">
           <img
             src="/assets/icons/wheel.svg"
-            className="brand-story-section__image"
+            className="qout-section__image"
           />
           <span className="heading-4">George H</span>
         </div>

@@ -12,8 +12,8 @@
   gap: 50px;
 }
 
-.qout-section__heading img {
-  width: 64px;
+.qout-section__image {
+  width: 64px !important;
 }
 
 .qout-section__footer {
