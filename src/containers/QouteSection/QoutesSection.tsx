@@ -5,10 +5,10 @@ const QoutesSection = () => {
     <div className="qout-section container mx-auto">
       <div className="qoute-section__qoute">
         {/* Heading */}
-        <div className="qout-section__heading">
+        <div className="qoute-section__heading">
           <img
             src="/assets/icons/qoute.svg"
-            className="qout-section__image"
+            className="qoute-section__image"
           />
         </div>
         {/* Text */}
@@ -17,10 +17,10 @@ const QoutesSection = () => {
           Each sip is a burst of freshness and natural goodness.
         </p>
         {/* Footer */}
-        <div className="qout-section__footer">
+        <div className="qoute-section__footer ">
           <img
             src="/assets/icons/wheel.svg"
-            className="qout-section__image"
+            className="qoute-section__image"
           />
           <span className="heading-4">George H</span>
         </div>

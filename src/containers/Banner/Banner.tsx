@@ -1,6 +1,6 @@
 import FloatingReviewCard from "../FloatingReviewCard/FloatingReviewCard";
-import "./Banner.css";
 import { userReviews } from "../../data/user-reviews";
+import "./Banner.css";
 
 const Banner = () => {
   return (

@@ -85,7 +85,7 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
         <img
           src={image}
           alt="Jamila Juice Crafters"
-          className="brand-story-section__image"
+          className="product-details-page__image"
         />
       </div>
 
