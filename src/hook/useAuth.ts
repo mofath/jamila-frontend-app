@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
-import { RootState } from "../store";
+import { persistor, RootState } from "../store";
 import { clearUser } from "../store/authSlice";
 import { clearCart } from "../store/cartSlice";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../constants/routes.constants";
+import { auth } from "../firebase/firebaseApp";
 
 export const useAuth = () => {
   const dispatch = useDispatch();
@@ -17,10 +18,11 @@ export const useAuth = () => {
   const email = user.email;
   const phone = user.phone;
 
-  const logout = () => {
+  const logout = async () => {
+    await auth.signOut();
     dispatch(clearUser());
     dispatch(clearCart());
-    localStorage.removeItem("user");
+    persistor.purge();
     navigate(ROUTES.HOME);
     toast.success("Logged out successfully");
   };

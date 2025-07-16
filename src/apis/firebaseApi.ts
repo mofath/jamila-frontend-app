@@ -1,5 +1,13 @@
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
-import { collection, getDocs, doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  doc,
+  getDoc,
+  setDoc,
+  query,
+  where,
+} from "firebase/firestore";
 import { firebaseDb } from "../firebase/firebaseApp";
 import { toKebabCase } from "../utils/toKebabCase";
 
@@ -72,9 +80,14 @@ export const firebaseApi = createApi({
     getCategories: builder.query<any[], void>({
       async queryFn() {
         try {
-          const querySnapshot = await getDocs(
-            collection(firebaseDb, "Categories")
+          const q = query(
+            collection(firebaseDb, "Categories"),
+            where("isHidden", "==", false),
+            where("isDeleted", "==", false)
           );
+
+          const querySnapshot = await getDocs(q);
+
           const data = querySnapshot.docs.map((doc) => {
             const { image, name } = doc.data();
             return {

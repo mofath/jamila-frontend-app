@@ -37,10 +37,14 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
   const { openAuthModal } = useAuthModal();
   const navigate = useNavigate();
 
-  const sizes = Object.keys(pricesBySize);
-  const [selectedSize, setSelectedSize] = useState<string>(
-    sizeSelection ? sizes[0] : "default"
-  );
+  const sizes = Object.keys(pricesBySize).sort((a, b) => {
+    const order = ["small", "medium", "large"];
+    return order.indexOf(a) - order.indexOf(b);
+  });
+
+  const [selectedSize, setSelectedSize] = useState<string>(() => {
+    return sizeSelection ? "small" : "default";
+  });
 
   const commentRef = useRef<HTMLTextAreaElement>(null);
   const dispatch = useDispatch();
@@ -85,7 +89,7 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
         <img
           src={image}
           alt="Jamila Juice Crafters"
-          className="product-details-page__image"
+          className="brand-story-section__image"
         />
       </div>
 

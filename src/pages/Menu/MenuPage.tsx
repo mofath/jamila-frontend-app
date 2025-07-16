@@ -33,7 +33,7 @@ const MenuPage: React.FC = () => {
 
   return (
     <div className="menu-page page">
-      {/* {(categoriesLoading || categoriesLoading) && <Spinner />} */}
+      {(categoriesLoading || categoriesLoading) && <Spinner />}
       <div className="menu-page__container container mx-auto">
         {/* Heading */}
         <div className="menu-page__heading">
