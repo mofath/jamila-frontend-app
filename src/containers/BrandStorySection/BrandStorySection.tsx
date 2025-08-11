@@ -23,12 +23,12 @@ const BrandStorySection: React.FC = () => {
           <p className="text">
             At Jamila Juice, we blend passion with purpose. Our expert crafters
             handpick the freshest ingredients to create juices that nourish your
-            body and elevate your day. With every bottle, we bring you closer to
+            body and elevate your day. with every drink, we bring you closer to
             nature, wellness, and vibrant living.
           </p>
           <div className="brand-story-section__menu-btn">
             <Button to="/menu" variant="secondary">
-              Book Juice
+              Order Now
             </Button>
           </div>
         </div>

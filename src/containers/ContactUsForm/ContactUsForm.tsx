@@ -127,18 +127,21 @@ const ContactUsForm: React.FC = () => {
           </p>
         </div>
         <div className="contact-info__details">
-          <div className="contact-info__item">
+          <a href={`tel:${contactInfo.phone}`} className="contact-info__item">
             <img src="/assets/icons/phone.svg" alt="phone" />
             <span className="heading-5">{contactInfo.phone}</span>
-          </div>
-          <div className="contact-info__item">
+          </a>
+          <a
+            className="contact-info__item"
+            href={`mailto:${contactInfo.email}`}
+          >
             <img src="/assets/icons/message.svg" alt="email" />
             <span className="heading-5">{contactInfo.email}</span>
-          </div>
-          <div className="contact-info__item">
+          </a>
+          <a href={contactInfo.google} className="contact-info__item">
             <img src="/assets/icons/location.svg" alt="location" />
             <span className="heading-5">{contactInfo.address}</span>
-          </div>
+          </a>
         </div>
         <div className="contact-info__social-media">
           <p className="heading-4">Follow our social media</p>

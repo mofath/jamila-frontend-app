@@ -10,6 +10,7 @@ import { useAuth } from "../../../hook/useAuth";
 import { toggleCart } from "../../../store/cartSlice";
 import { useAuthModal } from "../../../containers/AuthModal/AuthModalContext";
 import "./Header.css";
+import Button from "../../Button/Button";
 
 interface HeaderProps {
   onLoginClick: () => void;
@@ -20,7 +21,7 @@ const navLinks = [
   { name: "About Us", path: ROUTES.ABOUT },
   { name: "Menu", path: ROUTES.MENU },
   { name: "Contact Us", path: ROUTES.CONTACT },
-  { name: "Franchise", path: ROUTES.PARTNERSHIP },
+  // { name: "Franchise", path: ROUTES.PARTNERSHIP },
 ];
 
 const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
@@ -73,25 +74,42 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
     <nav className="header">
       <div className="header__container mx-auto container">
         <div className="header__logo">
-          <img src="/assets/icons/jamila-logo.svg" alt="Logo" />
+          <img src="/assets/icons/jamila-logo.png" alt="Logo" />
         </div>
 
         <ul className={`header__nav ${isMenuOpen ? "header__nav--open" : ""}`}>
-          {navLinks.map(({ name, path }) => (
-            <li key={path} className="header__nav-item">
-              <a
-                href={path}
-                className={`header__nav-link ${
-                  isActive(path) ? "header__nav-link--active" : ""
-                }`}
-              >
-                {name}
-              </a>
-            </li>
-          ))}
+          {navLinks.map(({ name, path }) => {
+            // if (path === ROUTES.PARTNERSHIP) {
+            //   return (
+            //     <li key={path} className="header__nav-item">
+            //       <Button
+            //         to={path}
+            //         className="partnership-button header__nav-link"
+            //       >
+            //         {name}
+            //       </Button>
+            //     </li>
+            //   );
+            // }
+            return (
+              <li key={path} className="header__nav-item">
+                <a
+                  href={path}
+                  className={`header__nav-link ${
+                    isActive(path) ? "header__nav-link--active" : ""
+                  }`}
+                >
+                  {name}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="header__actions">
+          <Button className="partnership-button" to={ROUTES.PARTNERSHIP}>
+            Franchise
+          </Button>
           {/* 🛒 Cart Button */}
           <button className="header__icon-button" onClick={openCartDrawer}>
             <CartIcon size={28} color="var(--color-primary-100)" />

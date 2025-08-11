@@ -1,5 +1,4 @@
 import React, { forwardRef } from "react";
-import { FieldError } from "react-hook-form";
 import "./Input.css";
 
 interface InputProps {
@@ -12,7 +11,7 @@ interface InputProps {
   variant?: "primary" | "secondary";
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
-  error?: FieldError | undefined | any;
+  error?: any;
 }
 
 const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (

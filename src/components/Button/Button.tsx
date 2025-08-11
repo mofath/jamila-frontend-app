@@ -86,7 +86,6 @@ const Button: React.FC<ButtonProps> = ({
       {isLoading ? "Loading..." : children}
     </button>
   );
-  return null;
 };
 
 export default Button;

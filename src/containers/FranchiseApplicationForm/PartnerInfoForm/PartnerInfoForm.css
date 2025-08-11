@@ -9,13 +9,6 @@
   gap: 48px;
 }
 
-.partner-info-form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-}
-
 .partner-info-form__row {
   display: flex;
   flex-direction: row;

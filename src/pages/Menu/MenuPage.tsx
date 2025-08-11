@@ -62,7 +62,7 @@ const MenuPage: React.FC = () => {
                 image={product.image}
                 price={
                   product?.sizeSelection
-                    ? product?.pricesBySize?.medium
+                    ? product?.pricesBySize?.small
                     : product?.pricesBySize?.default
                 }
                 rating={product.rating}

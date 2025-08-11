@@ -11,6 +11,7 @@ import CheckboxGroup from "../../../components/CheckboxGroup/CheckboxGroup";
 import Button from "../../../components/Button/Button";
 import { useSendEmailMutation } from "../../../apis/mailerApi";
 import "./PartnerInfoForm.css";
+import Textarea from "../../../components/Textarea/Textarea";
 
 interface PartnerInfoFormProps {
   liquidCapitals: { label: string; value: string }[];
@@ -30,7 +31,6 @@ const PartnerInfoForm: React.FC<PartnerInfoFormProps> = ({
     handleSubmit,
     formState: { errors },
     reset,
-    watch,
   } = useForm({
     resolver: yupResolver(PartnerInfoSchema),
   });
@@ -49,6 +49,7 @@ const PartnerInfoForm: React.FC<PartnerInfoFormProps> = ({
         netWorth: data.netWorth,
         liquidCapital: data.liquidCapital,
         hasBusinessExperience: data?.hasBusinessExperience ? "Yes" : "No",
+        bio: data.bio,
       },
     };
 
@@ -97,7 +98,9 @@ const PartnerInfoForm: React.FC<PartnerInfoFormProps> = ({
 
         {/* Current Address */}
         <div className="form-group">
-          <label className="form-group__label">Current Address</label>
+          <label htmlFor="current-address" className="form-group__label">
+            Current Address
+          </label>
           <div className="partner-info-form__row address">
             <Select
               placeholder="Select Country"
@@ -120,7 +123,9 @@ const PartnerInfoForm: React.FC<PartnerInfoFormProps> = ({
 
         {/* Location of Interest */}
         <div className="form-group">
-          <label className="form-group__label">Location of Interest</label>
+          <label htmlFor="location-of-interest" className="form-group__label">
+            Location You Are Interested In
+          </label>
           <div className="partner-info-form__row address">
             <Select
               placeholder="Select Country"
@@ -162,15 +167,20 @@ const PartnerInfoForm: React.FC<PartnerInfoFormProps> = ({
             error={errors.liquidCapital}
           />
         </div>
-
         {/* Business Experience */}
         <CheckboxGroup
-          label="Have you been in business before?"
-          options={[{ label: "Yes", value: "yes" }]}
+          options={[
+            { label: "Have you been in business before?", value: "yes" },
+          ]}
           {...register("hasBusinessExperience")}
           error={errors.hasBusinessExperience}
         />
-
+        <Textarea
+          rows={6}
+          {...register("bio")}
+          error={errors.bio}
+          placeholder="Tell us about yourself"
+        />
         <div>
           <Button type="submit" variant="secondary">
             Join Now

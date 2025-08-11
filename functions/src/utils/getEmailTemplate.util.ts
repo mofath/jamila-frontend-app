@@ -17,6 +17,7 @@ interface PartnershipPayload {
   netWorth: string;
   liquidCapital: string;
   hasBusinessExperience: string;
+  bio: string;
 }
 
 interface OrderItem {
@@ -74,6 +75,8 @@ export const getEmailTemplate = (type: EmailType, payload: Payload) => {
         <p><strong>Net Worth:</strong> ${partner.netWorth}</p>
         <p><strong>Liquid Capital:</strong> ${partner.liquidCapital}</p>
         <p><strong>Business Experience:</strong> ${partner.hasBusinessExperience}</p>
+        <p><strong>Client Bio:</strong> ${partner.bio}</p>
+
       `;
       break;
 

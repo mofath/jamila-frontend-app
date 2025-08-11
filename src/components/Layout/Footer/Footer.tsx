@@ -13,18 +13,21 @@ const Footer: React.FC = () => {
           <p className="subtitle">Revitalize your senses, one sip at a time.</p>
         </div>
         <div className="footer__contact mt-[48px]">
-          <div className="footer__contact-item">
+          <a href={`tel:${contactInfo.phone}`} className="footer__contact-item">
             <img src="/assets/icons/call.svg" alt="" />
             <p className="heading-5">{contactInfo.phone}</p>
-          </div>
-          <div className="footer__contact-item">
+          </a>
+          <a
+            href={`mailto:${contactInfo.email}`}
+            className="footer__contact-item"
+          >
             <img src="/assets/icons/message.svg" alt="" />
             <p className="heading-5">{contactInfo.email}</p>
-          </div>
-          <div className="footer__contact-item">
+          </a>
+          <a href={contactInfo.google} className="footer__contact-item">
             <img src="/assets/icons/location.svg" alt="" />
             <p className="heading-5">{contactInfo.address}</p>
-          </div>
+          </a>
         </div>
         <div className="footer__social-media">
           <p>Copyright 2025 @Jamila all right reserved</p>

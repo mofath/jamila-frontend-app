@@ -98,6 +98,8 @@ export const PartnerInfoSchema = Yup.object({
   liquidCapital: Yup.string().required("Liquid capital selection is required"),
 
   hasBusinessExperience: Yup.string().default("Yes"),
+
+  bio: Yup.string().required("Bio is required"),
 });
 
 export const contactUsSchema = Yup.object().shape({

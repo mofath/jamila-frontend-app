@@ -7,6 +7,6 @@ export const userReviews = [
   {
     rating: 5.0,
     title: "Good taste juice",
-    text: "Great service but wish there were more flavors available.",
+    text: "The taste is phenomenal, and the service was top-tier!",
   },
 ];

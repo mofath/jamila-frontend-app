@@ -24,11 +24,19 @@ export const firebaseApi = createApi({
             categoryId,
             "Products"
           );
-          const querySnapshot = await getDocs(productsRef);
+
+          const q = query(
+            productsRef,
+            where("isDeleted", "==", false),
+            where("isHidden", "==", false)
+          );
+
+          const querySnapshot = await getDocs(q);
           const data = querySnapshot.docs.map((doc) => ({
             id: doc.id,
             ...doc.data(),
           }));
+
           return { data };
         } catch (error: any) {
           return { error: { status: "CUSTOM_ERROR", error: error.message } };
