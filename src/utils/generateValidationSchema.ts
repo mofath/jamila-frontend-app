@@ -75,7 +75,7 @@ export const otpSchema = Yup.object({
 export const PartnerInfoSchema = Yup.object({
   personal: Yup.object({
     firstName: Yup.string().trim().required("First name is required"),
-    lastName: Yup.string().trim().required("Last name is required"),
+    lastName: Yup.string().trim(),
     email: Yup.string()
       .trim()
       .email("Invalid email format")
@@ -83,23 +83,23 @@ export const PartnerInfoSchema = Yup.object({
   }),
 
   currentAddress: Yup.object({
-    country: Yup.string().required("Country is required"),
-    city: Yup.string().trim().required("City is required"),
-    phone: Yup.string().trim().required("Phone is required"),
+    country: Yup.string(),
+    city: Yup.string().trim(),
+    phone: Yup.string().trim(),
   }),
 
   locationOfInterest: Yup.object({
-    country: Yup.string().required("Country is required"),
-    city: Yup.string().trim().required("City is required"),
-    phone: Yup.string().trim().required("Phone is required"),
+    country: Yup.string(),
+    city: Yup.string().trim(),
+    phone: Yup.string().trim(),
   }),
 
-  netWorth: Yup.string().required("Net worth selection is required"),
-  liquidCapital: Yup.string().required("Liquid capital selection is required"),
+  netWorth: Yup.string(),
+  liquidCapital: Yup.string(),
 
   hasBusinessExperience: Yup.string().default("Yes"),
 
-  bio: Yup.string().required("Bio is required"),
+  bio: Yup.string(),
 });
 
 export const contactUsSchema = Yup.object().shape({

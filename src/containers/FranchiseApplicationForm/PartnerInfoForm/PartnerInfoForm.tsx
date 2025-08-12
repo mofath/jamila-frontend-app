@@ -109,7 +109,7 @@ const PartnerInfoForm: React.FC<PartnerInfoFormProps> = ({
               error={errors.currentAddress?.country}
             />
             <Input
-              placeholder="Enter city"
+              placeholder="Enter state, city"
               {...register("currentAddress.city")}
               error={errors.currentAddress?.city}
             />
@@ -136,7 +136,7 @@ const PartnerInfoForm: React.FC<PartnerInfoFormProps> = ({
               error={errors.locationOfInterest?.country}
             />
             <Input
-              placeholder="Enter city"
+              placeholder="Enter state, city"
               {...register("locationOfInterest.city")}
               error={errors.locationOfInterest?.city}
             />

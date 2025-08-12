@@ -16,6 +16,7 @@ import { useCart } from "../../hook/useCart";
 import { useSendEmailMutation } from "../../apis/mailerApi";
 import { firebaseDb } from "../../firebase/firebaseApp";
 import "./CheckoutPage.css";
+import Button from "../../components/Button/Button";
 
 const STRIPE_PK_KEY = process.env.REACT_APP_STRIPE_PK_KEY as string;
 const STRIPE_SK_KEY = process.env.REACT_APP_STRIPE_SK_KEY as string;
@@ -24,7 +25,7 @@ const stripe = new Stripe(STRIPE_SK_KEY);
 const CheckoutPage = () => {
   const { total, items, clearCart } = useCart();
   const stripePromise = loadStripe(STRIPE_PK_KEY);
-  const { uid: userId, username, phone, email, user } = useAuth();
+  const { uid: userId, user } = useAuth();
   const navigate = useNavigate();
 
   const [sendEmail] = useSendEmailMutation();
@@ -115,15 +116,50 @@ const CheckoutPage = () => {
     }
   };
 
+  const handleDirectCheckout = async () => {
+    try {
+      const ref = doc(firebaseDb, "users", userId, "orders", new Date().toISOString());
+
+      await setDoc(ref, {
+        amount: total,
+        created: new Date().toISOString(),
+      });
+
+      const templateParams = {
+        type: "order",
+        payload: {
+          user: {
+            username: user.username,
+            email: user.email,
+            phone: user.phone,
+          },
+          items: items,
+          total,
+        },
+      };
+
+      await sendEmail(templateParams);
+
+      toast.success("Success! Your order is placed");
+      clearCart();
+      setTimeout(() => {
+        navigate("/menu", { replace: true });
+      }, 300);
+    } catch (err) {
+      toast.error("Unexpected error during payment.");
+    }
+  };
+
   return (
     <Elements stripe={stripePromise}>
       <div className="checkout-page">
         <div className="checkout-page__order-summary">
           <OrderSummary items={items} />
+          <Button onClick={handleDirectCheckout}>Checkout</Button>
         </div>
-        <div className="checkout-page__form">
-          {total ? <CheckoutForm onSubmit={handleSubmit} /> : <p>Loading...</p>}
-        </div>
+        {/* <div className="checkout-page__form"> */}
+        {/* {total ? <CheckoutForm onSubmit={handleSubmit} /> : <p>Loading...</p>} */}
+        {/* </div> */}
       </div>
     </Elements>
   );
