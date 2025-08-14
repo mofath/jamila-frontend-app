@@ -55,6 +55,21 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
       return;
     }
 
+    const comment = commentRef.current?.value || "";
+    const item = {
+      id: `${name}-${selectedSize}`,
+      name,
+      price: Number(
+        pricesBySize[selectedSize]?.priceAfterDiscount ||
+          pricesBySize[selectedSize]?.price
+      ),
+      size: selectedSize,
+      quantity: 1,
+      comment,
+      image,
+    };
+
+    dispatch(addItem(item)); 
     navigate(ROUTES.CHECKOUT);
   };
 

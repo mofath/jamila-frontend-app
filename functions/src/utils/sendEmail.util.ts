@@ -2,11 +2,12 @@ import nodemailer from "nodemailer";
 
 interface SendEmailParams {
   from: string;
+  to: string
   subject: string;
   html: string;
 }
 
-export const sendEmail = async ({ from, subject, html }: SendEmailParams) => {
+export const sendEmail = async ({ from, to, subject, html}: SendEmailParams) => {
   const { MAIL_USER, MAIL_PASS } = process.env;
 
   if (!MAIL_USER || !MAIL_PASS) {
@@ -22,8 +23,8 @@ export const sendEmail = async ({ from, subject, html }: SendEmailParams) => {
   });
 
   await transporter.sendMail({
-    from: from,
-    to: MAIL_USER,
+    from,
+    to,
     subject,
     html,
   });

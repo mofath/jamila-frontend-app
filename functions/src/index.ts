@@ -23,6 +23,7 @@ app.get("/ping", async (req: Request, res: Response) => {
 
 app.post("/send-email", async (req: Request, res: Response) => {
   const { type, payload } = req.body;
+  const { MAIL_USER: jamilaEmail } = process.env;
 
   if (!type || !payload) {
     return res
@@ -31,8 +32,27 @@ app.post("/send-email", async (req: Request, res: Response) => {
   }
 
   try {
-    const { from, subject, html } = getEmailTemplate(type, payload);
-    await sendEmail({ subject, html, from });
+    const { from, subject, html, userOrderHtml } = getEmailTemplate(
+      type,
+      payload
+    );
+    const userEmail = payload?.user?.email || payload.email;
+
+    await sendEmail({
+      from: userEmail as string,
+      to: jamilaEmail as string,
+      subject,
+      html,
+    });
+
+    if (type === "order") {
+      await sendEmail({
+        from: jamilaEmail as string,
+        to: userEmail as string,
+        subject: "New order from Jamila",
+        html: userOrderHtml,
+      });
+    }
     return res
       .status(200)
       .json({ message: "Email sent!", payload, from, type });

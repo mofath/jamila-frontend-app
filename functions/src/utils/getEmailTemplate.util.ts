@@ -44,6 +44,7 @@ type Payload = ContactPayload | PartnershipPayload | OrderPayload;
 
 export const getEmailTemplate = (type: EmailType, payload: Payload) => {
   let subject = "";
+  let userOrderHtml = "";
   let html = "";
   let from = "";
 
@@ -91,21 +92,19 @@ export const getEmailTemplate = (type: EmailType, payload: Payload) => {
         <tr>
           <td style="padding: 8px; border: 1px solid #ccc;">${item.name}</td>
           <td style="padding: 8px; border: 1px solid #ccc;">${item.size}</td>
-          <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">${
-            item.quantity
-          }</td>
+          <td style="padding: 8px; border: 1px solid #ccc; text-align: center;">${item.quantity
+            }</td>
           <td style="padding: 8px; border: 1px solid #ccc; text-align: right;">$${item.price.toFixed(
-            2
-          )}</td>
+              2
+            )}</td>
           <td style="padding: 8px; border: 1px solid #ccc; text-align: right;">$${(
-            item.price * item.quantity
-          ).toFixed(2)}</td>
+              item.price * item.quantity
+            ).toFixed(2)}</td>
         </tr>
-        ${
-          item.comment
-            ? `<tr><td colspan="5" style="padding: 6px 12px; font-style: italic; background: #f9f9f9;">Comment: ${item.comment}</td></tr>`
-            : ""
-        }
+        ${item.comment
+              ? `<tr><td colspan="5" style="padding: 6px 12px; font-style: italic; background: #f9f9f9;">Comment: ${item.comment}</td></tr>`
+              : ""
+            }
       `
         )
         .join("");
@@ -132,17 +131,45 @@ export const getEmailTemplate = (type: EmailType, payload: Payload) => {
         <tr>
           <td colspan="4" style="padding: 8px; border: 1px solid #ccc; text-align: right;"><strong>Total</strong></td>
           <td style="padding: 8px; border: 1px solid #ccc; text-align: right;"><strong>$${parseFloat(
-            `${order.total}`
-          ).toFixed(2)}</strong></td>
+        `${order.total}`
+      ).toFixed(2)}</strong></td>
         </tr>
       </tbody>
     </table>
   `;
+
+      userOrderHtml = `
+    <h2>New Order</h2>
+    <p><strong>New order from Jamila</p>
+    <hr/>
+    <h3>Order Summary</h3>
+    <table style="border-collapse: collapse; width: 100%; font-family: sans-serif;">
+      <thead>
+        <tr style="background-color: #f2f2f2;">
+          <th style="padding: 8px; border: 1px solid #ccc;">Item</th>
+          <th style="padding: 8px; border: 1px solid #ccc;">Size</th>
+          <th style="padding: 8px; border: 1px solid #ccc;">Qty</th>
+          <th style="padding: 8px; border: 1px solid #ccc;">Price</th>
+          <th style="padding: 8px; border: 1px solid #ccc;">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${orderRows}
+        <tr>
+          <td colspan="4" style="padding: 8px; border: 1px solid #ccc; text-align: right;"><strong>Total</strong></td>
+          <td style="padding: 8px; border: 1px solid #ccc; text-align: right;"><strong>$${parseFloat(
+        `${order.total}`
+      ).toFixed(2)}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  `;
+
       break;
 
     default:
       throw new Error("Invalid email type");
   }
 
-  return { subject, html, from };
+  return { subject, html, from, userOrderHtml };
 };

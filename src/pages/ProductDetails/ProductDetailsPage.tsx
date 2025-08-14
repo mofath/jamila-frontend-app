@@ -23,7 +23,7 @@ const ProductDetailsPage: React.FC = () => {
     return <div className="error">Error: {(error as any).error}</div>;
 
   return (
-    <div className="A page">
+    <div className="page">
       {isLoading ? (
         <Spinner />
       ) : (
