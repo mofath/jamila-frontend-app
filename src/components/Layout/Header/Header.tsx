@@ -9,8 +9,8 @@ import { ROUTES } from "../../../constants/routes.constants";
 import { useAuth } from "../../../hook/useAuth";
 import { toggleCart } from "../../../store/cartSlice";
 import { useAuthModal } from "../../../containers/AuthModal/AuthModalContext";
-import Button from "../../Button/Button";
 import "./Header.css";
+import Button from "../../Button/Button";
 
 interface HeaderProps {
   onLoginClick: () => void;
@@ -79,18 +79,6 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
 
         <ul className={`header__nav ${isMenuOpen ? "header__nav--open" : ""}`}>
           {navLinks.map(({ name, path }) => {
-            // if (path === ROUTES.PARTNERSHIP) {
-            //   return (
-            //     <li key={path} className="header__nav-item">
-            //       <Button
-            //         to={path}
-            //         className="partnership-button header__nav-link"
-            //       >
-            //         {name}
-            //       </Button>
-            //     </li>
-            //   );
-            // }
             return (
               <li key={path} className="header__nav-item">
                 <a
