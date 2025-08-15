@@ -7,7 +7,6 @@ import {
   setDoc,
   query,
   where,
-  orderBy,
 } from "firebase/firestore";
 import { firebaseDb } from "../firebase/firebaseApp";
 import { toKebabCase } from "../utils/toKebabCase";
@@ -29,17 +28,30 @@ export const firebaseApi = createApi({
           const q = query(
             productsRef,
             where("isDeleted", "==", false),
-            where("isHidden", "==", false),
-            orderBy("order", "asc")
+            where("isHidden", "==", false)
+            // orderBy("order", "asc")
           );
 
           const querySnapshot = await getDocs(q);
-          const data = querySnapshot.docs.map((doc) => ({
-            id: doc.id,
-            ...doc.data(),
-          }));
+          const data: any[] = querySnapshot.docs.map((doc) => {
+            return {
+              id: doc.id,
+              ...doc.data(),
+            };
+          });
 
-          return { data };
+          const sortedData = data?.sort(
+            (a, b) => (a?.order ?? 0) - (b?.order ?? 0)
+          );
+
+          console.log(66666666);
+
+          console.log(sortedData);
+          console.log(66666666);
+
+          return {
+            data: sortedData,
+          };
         } catch (error: any) {
           return { error: { status: "CUSTOM_ERROR", error: error.message } };
         }
