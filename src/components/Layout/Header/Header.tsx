@@ -9,8 +9,8 @@ import { ROUTES } from "../../../constants/routes.constants";
 import { useAuth } from "../../../hook/useAuth";
 import { toggleCart } from "../../../store/cartSlice";
 import { useAuthModal } from "../../../containers/AuthModal/AuthModalContext";
-import "./Header.css";
 import Button from "../../Button/Button";
+import "./Header.css";
 
 interface HeaderProps {
   onLoginClick: () => void;
@@ -107,7 +107,7 @@ const Header: React.FC<HeaderProps> = ({ onLoginClick }) => {
         </ul>
 
         <div className="header__actions">
-          <Button className="partnership-button" to={ROUTES.PARTNERSHIP}>
+          <Button className="partnership-button" to={ROUTES.PARTNERSHIP} size="small">
             Franchise
           </Button>
           {/* 🛒 Cart Button */}

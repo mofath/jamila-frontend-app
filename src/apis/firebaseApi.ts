@@ -7,6 +7,7 @@ import {
   setDoc,
   query,
   where,
+  orderBy,
 } from "firebase/firestore";
 import { firebaseDb } from "../firebase/firebaseApp";
 import { toKebabCase } from "../utils/toKebabCase";
@@ -28,7 +29,8 @@ export const firebaseApi = createApi({
           const q = query(
             productsRef,
             where("isDeleted", "==", false),
-            where("isHidden", "==", false)
+            where("isHidden", "==", false),
+            orderBy("order", "asc")
           );
 
           const querySnapshot = await getDocs(q);
