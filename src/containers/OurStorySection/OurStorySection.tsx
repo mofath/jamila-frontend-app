@@ -27,15 +27,15 @@ const OurStorySection: React.FC = () => {
         <div className="our-story-section__content">
           <p className="subtitle">Story</p>
           <h2 className="heading-2">Story of Our Juice Shop</h2>
-          <p className="text">
+          <p className="text-lg">
             Founded in the heart of the city, our juice shop began with a simple
             mission: to provide fresh, natural, and delicious juices that
             refresh both body and mind. We believe in quality ingredients and
             passionate craftsmanship.
           </p>
-          <p className="text">
+          <p className="text-lg">
             Over the years, our commitment to health and flavor has made us a
-            favorite spot for locals and visitors alike. Every bottle tells a
+            favorite spot for locals and visitors alike. Every drink tells a
             story of nature’s bounty, care, and the joy of sharing something
             truly wholesome.
           </p>

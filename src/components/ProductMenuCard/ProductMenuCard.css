@@ -56,7 +56,7 @@
   text-transform: capitalize;
 }
 
-.product-menu-card__info .text {
+.product-menu-card__info .text-lg {
   color: var(--color-text-400);
 }
 

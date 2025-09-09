@@ -1,17 +1,17 @@
-export const teamMembersData  = [
+export const teamMembersData = [
   {
     id: 1,
-    name: "Sabrina Doe",
-    image: "/assets/images/user-1.jpg",
+    name: "Hadeya H",
+    image: "/user-hadeya.jpeg",
   },
   {
     id: 2,
-    name: "Johb Alex",
-    image: "/assets/images/user-2.jpg",
+    name: "Livier A",
+    image: "/user-livier.jpeg",
   },
   {
     id: 3,
-    name: "Lucas George",
-    image: "/assets/images/user-3.jpg",
+    name: "Monique M",
+    image: "/user-monique.jpeg",
   },
 ];

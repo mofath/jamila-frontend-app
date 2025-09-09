@@ -28,7 +28,7 @@
   color: var(--color-text-600);
 }
 
-.benefits-sections__benefits-item .text {
+.benefits-sections__benefits-item .text-lg {
   color: var(--color-text-400);
   text-align: center;
 }

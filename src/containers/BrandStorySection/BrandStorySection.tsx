@@ -17,10 +17,10 @@ const BrandStorySection: React.FC = () => {
           <div>
             <h2 className="subtitle">Who We Are</h2>
             <h4 className="heading-2">
-              Meet the Juice Crafters Crafting Healthy Delights
+              Crafting Healthy Delights
             </h4>
           </div>
-          <p className="text">
+          <p className="text-lg">
             At Jamila Juice, we blend passion with purpose. Our expert crafters
             handpick the freshest ingredients to create juices that nourish your
             body and elevate your day. with every drink, we bring you closer to

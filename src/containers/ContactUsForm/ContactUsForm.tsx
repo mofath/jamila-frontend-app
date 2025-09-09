@@ -121,7 +121,7 @@ const ContactUsForm: React.FC = () => {
       <div className="contact-info__wrapper">
         <div className="contact-section__heading">
           <p className="heading-3">Need more information</p>
-          <p className="text">
+          <p className="text-lg">
             Please reach out to our support team for assistance. We are happy to
             help with any questions or concerns.
           </p>

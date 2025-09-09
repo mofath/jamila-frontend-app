@@ -15,7 +15,7 @@ const BenefitsSection = () => {
               <div key={id} className="benefits-sections__benefits-item">
                 <img src={image} alt="" />
                 <p className="heading-4">{title}</p>
-                <p className="text">{text}</p>
+                <p className="text-lg">{text}</p>
               </div>
             );
           })}

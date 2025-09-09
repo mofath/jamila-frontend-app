@@ -191,7 +191,7 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
                 {mode === "signup" ? "Already registered?" : "New user?"}
               </span>
               <Button
-                variant="text"
+                variant="text-lg"
                 onClick={() =>
                   setMode((prev) => (prev === "signup" ? "login" : "signup"))
                 }

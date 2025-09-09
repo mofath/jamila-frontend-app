@@ -16,7 +16,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | "primary-outline"
     | "accent"
     | "success"
-    | "text";
+    | "text-lg";
   children: ReactNode;
   className?: string;
   radius?: "large" | "full";

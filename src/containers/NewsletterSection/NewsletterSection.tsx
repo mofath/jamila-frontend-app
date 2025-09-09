@@ -11,7 +11,7 @@ const NewsletterSection = () => {
           {/* Heading */}
           <div className="newsletter-section__heading">
             <h2 className="heading-2">Join Us</h2>
-            <p className="text">
+            <p className="text-lg">
               Partner with us and become a part of our growing juice franchise. Let's blend success together!
             </p>
           </div>

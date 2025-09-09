@@ -1,7 +1,6 @@
 import React from "react";
 import PartnerInfoForm from "./PartnerInfoForm/PartnerInfoForm";
 import PartnershipCostPlanner from "./PartnershipCostPlanner/PartnershipCostPlanner";
-import Button from "../../components/Button/Button";
 import { useGetSettingsQuery } from "../../apis/firebaseApi";
 import "./FranchiseApplicationForm.css";
 
@@ -21,7 +20,7 @@ const FranchiseApplicationForm: React.FC = () => {
           <div className="partnership-cost-planner__heading">
             <p className="subtitle">Franchising</p>
             <h2 className="heading-2">Reduced Franchise Royalty & Ad Fee</h2>
-            <p className="text">
+            <p className="text-lg">
               Discover exclusive benefits crafted for new partners. Our
               streamlined onboarding and support ensure your franchise starts
               strong and grows efficiently with expert guidance.
@@ -35,7 +34,7 @@ const FranchiseApplicationForm: React.FC = () => {
             <h2 className="heading-2">
               Refreshing Beverages Explore Our Booking Options
             </h2>
-            <p className="text">
+            <p className="text-lg">
               Fill out the application to begin your journey. Our franchise team
               is here to help you every step of the way. Let’s build something
               great together today.

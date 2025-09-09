@@ -115,3 +115,14 @@ export const contactUsSchema = Yup.object().shape({
     .required("Phone number is required"),
   message: Yup.string().trim().required("Message is required"),
 });
+
+
+
+const phoneRegExp = /^(\+1)?[ -]?(\([2-9][0-9]{2}\)|[2-9][0-9]{2})[ -]?[0-9]{3}[ -]?[0-9]{4}$/;
+
+export const checkoutSchema = Yup.object().shape({
+  phone: Yup
+    .string()
+    .matches(phoneRegExp, "Phone number is not valid")
+    .required("Phone number is required"),
+});

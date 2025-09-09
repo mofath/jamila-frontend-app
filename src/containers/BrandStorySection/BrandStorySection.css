@@ -32,7 +32,7 @@
   margin-bottom: 50px;
 }
 
-.brand-story-section__content .text {
+.brand-story-section__content .text-lg {
   color: var(--color-text-400);
 }
 
@@ -64,7 +64,7 @@
     margin-bottom: 32px;
   }
 
-  .brand-story-section__content .text {
+  .brand-story-section__content .text-lg {
     font-size: 1rem;
     line-height: 1.6;
   }
@@ -88,7 +88,7 @@
     margin-bottom: 24px;
   }
 
-  .brand-story-section__content .text {
+  .brand-story-section__content .text-lg {
     font-size: 0.95rem;
   }
 

@@ -4,6 +4,8 @@ import { doc, setDoc } from "firebase/firestore";
 import toast from "react-hot-toast";
 import Stripe from "stripe";
 import { loadStripe } from "@stripe/stripe-js";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup"
 import {
   Elements,
   useStripe,
@@ -18,6 +20,8 @@ import { useSendEmailMutation } from "../../apis/mailerApi";
 import { firebaseDb } from "../../firebase/firebaseApp";
 import Button from "../../components/Button/Button";
 import Spinner from "../../components/Spinner/Spinner";
+import Input from "../../components/Input/Input";
+import { checkoutSchema } from "../../utils/generateValidationSchema";
 import "./CheckoutPage.css";
 
 const STRIPE_PK_KEY = process.env.REACT_APP_STRIPE_PK_KEY as string;
@@ -119,10 +123,19 @@ const CheckoutPage = () => {
   //   }
   // };
 
-  const handleDirectCheckout = async () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(checkoutSchema),
+  });
+
+  const handleDirectCheckout = async (data: any) => {
     try {
       setIsCheckoutLoading(true);
-      const ref = doc(
+
+      const orderRef = doc(
         firebaseDb,
         "users",
         userId,
@@ -130,7 +143,7 @@ const CheckoutPage = () => {
         new Date().toISOString()
       );
 
-      await setDoc(ref, {
+      await setDoc(orderRef, {
         amount: total,
         created: new Date().toISOString(),
       });
@@ -141,7 +154,7 @@ const CheckoutPage = () => {
           user: {
             username: user.username,
             email: user.email,
-            phone: user.phone,
+            phone: user.phone || data.phone,
           },
           items: items,
           total,
@@ -158,6 +171,8 @@ const CheckoutPage = () => {
       }, 300);
       setIsCheckoutLoading(false);
     } catch (err) {
+      console.log(err);
+      setIsCheckoutLoading(false);
       toast.error("Unexpected error during payment.");
     }
   };
@@ -171,7 +186,21 @@ const CheckoutPage = () => {
           <div className="checkout-page">
             <div className="checkout-page__order-summary">
               <OrderSummary items={items} />
-              <Button onClick={handleDirectCheckout}>Checkout</Button>
+              <div className="container mx-auto flex flex-col gap-14">
+                <form
+                  className="contact-form"
+                  onSubmit={handleSubmit(handleDirectCheckout)}
+                >
+                  <Input
+                    label="Phone"
+                    placeholder="Enter your phone number (e.g. 212-555-1234)"
+                    {...register("phone")}
+                    error={errors.phone}
+                    defaultValue={user?.phone || ""}
+                  />
+                  <Button type="submit">Checkout</Button>
+                </form>
+              </div>
             </div>
             {/* <div className="checkout-page__form"> */}
             {/* {total ? <CheckoutForm onSubmit={handleSubmit} /> : <p>Loading...</p>} */}

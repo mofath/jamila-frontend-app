@@ -112,7 +112,7 @@ const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({
       <div className="product-details-section__content">
         <div className="product-details-section__info">
           <p className="heading-2">{name}</p>
-          <p className="text">{description}</p>
+          <p className="text-lg">{description}</p>
         </div>
 
         <div>

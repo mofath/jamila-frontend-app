@@ -31,7 +31,7 @@
   color: var(--color-text-600);
 }
 
-.team-section__intro .text {
+.team-section__intro .text-lg {
   color: var(--color-text-400);
 }
 

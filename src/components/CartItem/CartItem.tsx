@@ -28,9 +28,9 @@ const CartItem: React.FC<CartItemProps> = ({
         <img src={image} alt="" />
       </div>
       <div className="cart-item__info">
-        <p className="text">{name}</p>
-        <span className="text">${price}</span>
-        <span className="text">{size}</span>
+        <p className="text-lg">{name}</p>
+        <span className="text-lg">${price}</span>
+        <span className="text-lg">{size}</span>
       </div>
       <div className="cart-item__quantity-control ">
         {handleQuantityChange ? (
@@ -44,13 +44,13 @@ const CartItem: React.FC<CartItemProps> = ({
               }
             />
             {removeCartItem && (
-              <Button onClick={() => removeCartItem(id)} variant="text">
+              <Button onClick={() => removeCartItem(id)} variant="text-lg">
                 Remove
               </Button>
             )}
           </div>
         ) : (
-          <span className="text">{quantity}</span>
+          <span className="text-lg">{quantity}</span>
         )}
       </div>
     </li>

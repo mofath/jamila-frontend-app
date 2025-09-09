@@ -19,7 +19,7 @@
   color: var(--color-text-600);
 }
 
-.contact-section__heading .text {
+.contact-section__heading .text-lg {
   color: var(--color-text-400);
 }
 

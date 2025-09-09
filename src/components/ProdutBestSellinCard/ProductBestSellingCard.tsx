@@ -39,7 +39,7 @@ const ProductBestSellingCard: React.FC<ProductBestSellingCardProps> = ({
           <span className="product-best-selling-card__price-display">
             <div className="product-best-selling-card__price-display-content">
               <span className="price heading-2">{price}</span>
-              <span className="text">{volume}</span>
+              <span className="text-lg">{volume}</span>
             </div>
           </span>
         </div>

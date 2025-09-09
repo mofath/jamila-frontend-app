@@ -18,7 +18,7 @@ const AboutUsSection: React.FC = () => {
         </div>
       </div>
       <div className="about-section__content">
-        <p className="text">
+        <p className="text-lg">
           Founded in 2017, our juice bar has established itself as a trusted
           destination for health-conscious individuals seeking high-quality,
           nutritious refreshments in California. We take pride in offering a

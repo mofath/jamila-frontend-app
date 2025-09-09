@@ -173,7 +173,7 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
 
             <span className="flex flex-row items-center gap-2 mt-4">
               <span>Already registered?</span>
-              <Button variant="text" onClick={() => setMode("login")}>
+              <Button variant="text-lg" onClick={() => setMode("login")}>
                 Login
               </Button>
             </span>
@@ -196,7 +196,7 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
                 {...register("password")}
               />
               <Button
-                variant="text"
+                variant="text-lg"
                 className="text-sm p-0"
                 onClick={() => setMode("forgot")}
               >
@@ -210,7 +210,7 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
 
             <span className="flex flex-row items-center gap-2 mt-4">
               <span >New user?</span>
-              <Button variant="text" onClick={() => setMode("signup")}>
+              <Button variant="text-lg" onClick={() => setMode("signup")}>
                 Sign Up
               </Button>
             </span>
@@ -235,7 +235,7 @@ export const AuthModal = ({ onClose }: { onClose: () => void }) => {
 
             <span className="flex flex-row items-center gap-2 mt-4">
               <span>Remember your password?</span>
-              <Button variant="text" onClick={() => setMode("login")}>
+              <Button variant="text-lg" onClick={() => setMode("login")}>
                 Back to Login
               </Button>
             </span>

@@ -17,8 +17,8 @@
   color: var(--color-text-600);
 }
 
-.partnership-cost-planner__wrapper .text,
-.partner-info-form__wrapper .text {
+.partnership-cost-planner__wrapper .text-lg,
+.partner-info-form__wrapper .text-lg {
   color: var(--color-text-400);
 }
 
@@ -36,7 +36,7 @@
 
   .franchise-application-form .subtitle,
   .franchise-application-form .heading-2,
-  .franchise-application-form .text {
+  .franchise-application-form .text-lg {
     text-align: center;
   }
 

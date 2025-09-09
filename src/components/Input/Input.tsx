@@ -12,13 +12,16 @@ interface InputProps {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
   error?: any;
+  pattern?: any;
+  inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"];
+  defaultValue?: string;
 }
 
 const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   {
     id,
     name,
-    type = "text",
+    type = "text-lg",
     label,
     placeholder,
     value,
@@ -26,6 +29,9 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     onChange,
     onBlur,
     error,
+    pattern,
+    inputMode,
+    defaultValue,
   },
   ref
 ) => {
@@ -45,6 +51,9 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
         value={value}
         onChange={onChange}
         onBlur={onBlur}
+        pattern={pattern}
+        inputMode={inputMode}
+        defaultValue={defaultValue}
         className={
           error
             ? `form-group__input form-group__input--error`

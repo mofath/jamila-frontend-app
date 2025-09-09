@@ -9,7 +9,7 @@ const TeamSection = () => {
         <div className="team-section__intro">
           <h3 className="subtitle">Team</h3>
           <h2 className="heading-2">Our team</h2>
-          <p className="text">
+          <p className="text-lg">
             Passionate minds building fresh ideas and wellness-focused experiences
             with every juice we craft.
           </p>
@@ -25,7 +25,7 @@ const TeamSection = () => {
                 }`}
             >
               <div className="team-section__image-wrapper">
-                <img src={image} alt={name} className="team-section__image" />
+                <img src={`/assets/images/${image}`} alt={name} className="team-section__image" />
               </div>
               <div className="team-section__name">{name}</div>
             </div>

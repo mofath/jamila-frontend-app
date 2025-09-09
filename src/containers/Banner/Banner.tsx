@@ -9,9 +9,9 @@ const Banner = () => {
         <div className="banner__heading">
           <div className="banner__headline-group">
             <p className="heading-1"> Crafting Wellness, One Glass </p>
-            <p className="heading-1"> at a Time Meet Our Juice Shop</p>
+            <p className="heading-1"> at a Time</p>
           </div>
-          <p className="subtitle">Crafting Wellness, One Glass at a Time Meet Our Juice Shop</p>
+          {/* <p className="subtitle">Crafting Wellness, One Glass at a Time</p> */}
         </div>
       </div>
       <div className="banner__wrapper">

@@ -47,7 +47,7 @@
   justify-content: flex-end;
 }
 
-.product-details-section__content .text {
+.product-details-section__content .text-lg {
   color: var(--color-text-400);
 }
 

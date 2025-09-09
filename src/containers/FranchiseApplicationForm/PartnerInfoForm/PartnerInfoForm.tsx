@@ -10,8 +10,9 @@ import Spinner from "../../../components/Spinner/Spinner";
 import CheckboxGroup from "../../../components/CheckboxGroup/CheckboxGroup";
 import Button from "../../../components/Button/Button";
 import { useSendEmailMutation } from "../../../apis/mailerApi";
-import "./PartnerInfoForm.css";
 import Textarea from "../../../components/Textarea/Textarea";
+import { useAuth } from "../../../hook/useAuth";
+import "./PartnerInfoForm.css";
 
 interface PartnerInfoFormProps {
   liquidCapitals: { label: string; value: string }[];
@@ -23,8 +24,9 @@ const PartnerInfoForm: React.FC<PartnerInfoFormProps> = ({
   netWorth,
 }) => {
   const [loading, setLoading] = useState(false);
-
   const [sendEmail] = useSendEmailMutation();
+    const { email } = useAuth();
+  
 
   const {
     register,
@@ -91,6 +93,7 @@ const PartnerInfoForm: React.FC<PartnerInfoFormProps> = ({
             label="Email"
             type="email"
             placeholder="Enter your email"
+            defaultValue={email}
             {...register("personal.email")}
             error={errors.personal?.email}
           />
